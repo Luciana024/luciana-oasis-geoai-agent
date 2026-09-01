@@ -1,0 +1,96 @@
+# Data paths and PHS sources. Raw extracts are never modified.
+# Existing frozen artefacts stay under data/results (do not move rolling_v1).
+
+project_root: .
+
+raw:
+  covid: data/raw/covid
+  population: data/raw/population
+  deprivation: data/raw/deprivation
+  housing: data/raw/housing
+  gp: data/raw/gp
+  boundaries: data/raw/boundaries
+  roads: data/raw/roads
+  mobility: data/raw/mobility
+  candidate_sites: data/raw/candidate_sites
+  travel_time: data/raw/travel_time
+
+interim: data/interim
+processed: data/processed
+web: data/web
+
+# Historical writes remain here so rolling/fixed checkpoints stay valid.
+results: data/results
+logs: logs
+
+outputs:
+  model: outputs/model
+  rolling: outputs/rolling
+  operational: outputs/operational
+  geoshapley: outputs/geoshapley
+  allocation: outputs/allocation
+  website: outputs/website
+  validation: outputs/validation
+
+ckan:
+  base_url: https://www.opendata.nhs.scot/api/3/action
+  package_id: covid-19-in-scotland
+  dataset_url: https://www.opendata.nhs.scot/dataset/covid-19-in-scotland
+  licence: Open Government Licence
+  geography: 2011 Intermediate Zones
+
+covid_iz_resources:
+  2020:
+    resource_id: 8906de12-f413-4b3f-95a0-11ed15e61773
+    resource_name: ARCHIVE - Seven Day Trends by Neighbourhood - 2020-2021
+    local_filename: 2020-2021.csv
+  2021:
+    resource_id: 8906de12-f413-4b3f-95a0-11ed15e61773
+    resource_name: ARCHIVE - Seven Day Trends by Neighbourhood - 2020-2021
+    local_filename: 2020-2021.csv
+  2022:
+    resource_id: a50eab84-396f-41e2-87a9-f09431e3be92
+    resource_name: ARCHIVE - Seven Day Trends by Neighbourhood - 2022
+    local_filename: 2022.csv
+  2023:
+    resource_id: c4b35a96-53fd-4832-915b-87e522ce6892
+    resource_name: ARCHIVE - Seven Day Trends by Neighbourhood - 2023
+    local_filename: 2023.csv
+
+data_source_choices:
+  api:
+    description: Query the PHS CKAN datastore for the user-specified year and City of Edinburgh.
+  local:
+    description: Read the registered extract in data/raw/covid for the user-specified year.
+  silent_fallback: false
+
+# PHS CKAN healthcare lists (January 2023 snapshots used by oasis-v4).
+healthcare_resources:
+  gp:
+    resource_id: 993422a6-c64f-4c57-ba41-9279ad5a7c89
+    resource_name: GP Practices and List sizes January 2023
+    dataset_url: https://www.opendata.nhs.scot/dataset/gp-practice-contact-details-and-list-sizes
+    resource_url: https://www.opendata.nhs.scot/dataset/gp-practice-contact-details-and-list-sizes/resource/993422a6-c64f-4c57-ba41-9279ad5a7c89
+    download_url: https://www.opendata.nhs.scot/dataset/f23655c3-6e23-4103-a511-a80d998adb90/resource/993422a6-c64f-4c57-ba41-9279ad5a7c89/download/practice_contactdetails_jan2023-open-data.csv
+    local_filename: gp_practices.csv
+  pharmacy:
+    resource_id: f44e6a10-4f1f-4ffd-9205-956944bacf95
+    resource_name: Dispenser Details January 2023
+    dataset_url: https://www.opendata.nhs.scot/dataset/dispenser-location-contact-details
+    resource_url: https://www.opendata.nhs.scot/dataset/dispenser-location-contact-details/resource/f44e6a10-4f1f-4ffd-9205-956944bacf95
+    download_url: https://www.opendata.nhs.scot/dataset/a30fde16-1226-49b3-b13d-eb90e39c2058/resource/f44e6a10-4f1f-4ffd-9205-956944bacf95/download/dispenser_contactdetails_jan2023.csv
+    local_filename: dispenser_contactdetails_jan2023.csv
+
+geofabrik:
+  url: https://download.geofabrik.de/europe/united-kingdom/scotland-latest-free.shp.zip
+  local_extract: data/raw/roads/scotland-free.shp
+  note: Use the existing unpack. Do not overwrite data/raw.
+
+required_fields:
+  - Date
+  - IntZone
+  - CA
+  - Positive7Day
+  - Positive7DayQF
+  - Population
+  - CrudeRate7DayPositive

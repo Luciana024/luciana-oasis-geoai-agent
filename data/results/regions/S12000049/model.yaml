@@ -1,0 +1,125 @@
+config_id: L7_H7_S1
+expected_edinburgh_iz_count: 136
+temporal_target:
+  lookback_steps: 7
+  target_offset_days: 7
+  output_steps: 1
+  window_stride_days: 1
+  target_definition: residual_from_latest_report
+dynamic_channels:
+- rate
+- first_difference
+model_variant: full
+embedding_dim: 8
+context_layers: 2
+dcrnn_layers: 2
+diffusion_steps: 2
+hidden_dim: 64
+dropout: 0.1
+variance_epsilon: 1.0e-06
+raw80_z: 1.2815515655
+raw95_z: 1.9599639845
+graph_set:
+- geo
+- transport
+- mobility
+location_crs: EPSG:27700
+location_projected_crs: EPSG:27700
+context:
+  feature_columns:
+  - income_rate
+  - employment_rate
+  - university_rate
+  - overcrowded_rate
+  - crime_rate
+  - pt_gp_min
+  zero_variance_epsilon: 1.0e-08
+  scaler_ddof: 0
+covid_scaler:
+  mode: global
+  transform: log1p
+  epsilon: 1.0e-08
+  ddof: 0
+delta_scaler:
+  transform: identity
+  epsilon: 1.0e-08
+  ddof: 0
+loss:
+  probabilistic: gaussian_nll
+  mean_loss: huber
+  mean_loss_weight: 0.5
+  huber_delta: 1.0
+selection:
+  require_mae_not_worse_than_persistence: true
+  score: nll
+rolling_evaluation:
+  enabled: false
+  stage: final_test
+  retrain_frequency_days: 28
+  selection_target_dates: 28
+  calibration_target_dates: 28
+  candidate_windows_days:
+  - 180
+  - 365
+  - 730
+  - all
+  selected_window_days: 730
+  window_selection_split: validation
+  origin_split: test
+  output_dir: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/rolling
+  fixed_s1_dir: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model
+  write_geoshapley: false
+calibration:
+  method: finite-sample corrected empirical calibration
+  gamma: 0.05
+  n_min: 20
+  exchangeability_limitation: 'Rolling seven-day COVID-19 outcomes are temporally
+    overlapping and spatially dependent, so calibrated intervals are empirical uncertainty
+    intervals rather than intervals with a formal exchangeability-based coverage guarantee.
+
+    '
+uncertainty_flag:
+  enabled: true
+  quantile: 0.9
+  source_split: validation_calibration
+  require_calibration_available: true
+validation_internal_split:
+  selection_fraction: 0.5
+  order_by: target_date
+  selection_name: validation_selection
+  calibration_name: validation_calibration
+geoshapley:
+  reference: study_area_median
+  explanation_scope: target_iz_local
+  joint_location_player: true
+  include_location_feature_interactions: true
+  endpoint_constraints: exact
+  additivity_tolerance: 1.0e-06
+  dates: last
+export:
+  split: test
+  write_forecast: true
+  write_geoshapley: true
+  write_test_diagnostics: true
+operational_inference:
+  enabled: false
+  explain_latest_available_issue_date: true
+training:
+  device: cuda
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  max_epochs: 50
+  patience: 10
+  grad_clip: 5.0
+  seed: 42
+paths:
+  dataset: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/forecast
+  geo: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/graph/geo/adjacency_geo.npz
+  transport: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/graph/road/adjacency_road.npz
+  mobility: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/graph/mobility/adjacency_mobility.npz
+  geo_report: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/graph/geo/validation_report.json
+  transport_report: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/graph/road/validation_report.json
+  mobility_report: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/graph/mobility/validation_report.json
+  road_nodes: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/graph/road/nodes.csv
+  checkpoints: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model

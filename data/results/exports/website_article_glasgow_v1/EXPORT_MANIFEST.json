@@ -1,0 +1,119 @@
+{
+  "area_code": "S12000049",
+  "area_name": "Glasgow City",
+  "n_iz": 136,
+  "export_dir": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/exports/website_article_glasgow_v1",
+  "did_not_overwrite_edinburgh": true,
+  "sources": {
+    "predictions": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/rolling/final_test/W730/predictions.csv",
+    "rolling_alpha": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/rolling/final_test/W730/rolling_alpha.csv",
+    "split65": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/forecast_split65_10_25",
+    "geoshapley": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model/geo_transport_mobility/exports/geoshapley.csv"
+  },
+  "notes": {
+    "table02": "Same 65/10/25 rolling test days for Persistence and Rolling. No fixed-65 Glasgow model was scored on these days, so that row is omitted.",
+    "table06": "GeoShapley is from the live Glasgow checkpoint on 2023-03-04 (unverified). It is not a siting score and is not U10 rolling.",
+    "do_not_pool_with_edinburgh": "111 vs 136 IZs; do not merge MAE."
+  },
+  "verified_rolling_metrics_raw": {
+    "mae": 44.72907168971381,
+    "rmse": 63.31709595461751,
+    "mse": 4009.0546401262404,
+    "bias": 13.447324522593037,
+    "r2": 0.597643034282979,
+    "n": 36448,
+    "persistence": {
+      "mae": 47.96907233754728,
+      "rmse": 76.15038353537594,
+      "mse": 5798.880912584856,
+      "bias": 2.0846976217616127,
+      "r2": 0.41801238995622136,
+      "n": 36448
+    },
+    "mae_skill": 0.06754353357167997,
+    "mse_skill": 0.30865028950228934,
+    "n_unique_target_dates": 268
+  },
+  "files": [
+    {
+      "path": "article/full_precision/table01_split_summary.csv",
+      "bytes": 723,
+      "sha256": "06bdae01da978844539a8d03086e172df33538eab24afe03094230eafd756678"
+    },
+    {
+      "path": "article/full_precision/table02_overall_performance.csv",
+      "bytes": 403,
+      "sha256": "f700b8a24a984e1db3ebbd640955c8b19f9b8dca2ec359c54edfe41684440755"
+    },
+    {
+      "path": "article/full_precision/table03_performance_by_period.csv",
+      "bytes": 854,
+      "sha256": "1ba87d5bebeed39f6afe82a4f47585f86e90c5e32017901fcad57e8e207bf1f2"
+    },
+    {
+      "path": "article/full_precision/table04_uncertainty_intervals.csv",
+      "bytes": 482,
+      "sha256": "dfbb026417f0fe3862e07a15dd3d8cff85c74316aa7bf371f1a992fa7d234369"
+    },
+    {
+      "path": "article/full_precision/table04_uncertainty_sigma.csv",
+      "bytes": 223,
+      "sha256": "4471a0ae3ee23b5fc55184aa7631aead563fd559a73c2eefd11d07bda67db14b"
+    },
+    {
+      "path": "article/full_precision/table05a_alpha_by_checkpoint.csv",
+      "bytes": 949,
+      "sha256": "9185ff8674385f95104af413c6310654fe8de178883dc4cf6a97fe1f873207bf"
+    },
+    {
+      "path": "article/full_precision/table05b_alpha_descriptive_summary.csv",
+      "bytes": 368,
+      "sha256": "dba527ea759d9603fa160d1f0f1d259107b6f92dcfa1cc6e6f47f4b1bb6cdd45"
+    },
+    {
+      "path": "article/full_precision/table06_geoshapley_summary.csv",
+      "bytes": 1015,
+      "sha256": "ef9a9bc5cd04a3e6ff817e49a4d32740286c9b8ee9588bf3737e50d149b37183"
+    },
+    {
+      "path": "article/table01_split_summary.csv",
+      "bytes": 482,
+      "sha256": "41271f5fdff2ce2adeb41809e94f95eb16de2bc5378b158b8d1558d56f29cf28"
+    },
+    {
+      "path": "article/table02_overall_performance.csv",
+      "bytes": 271,
+      "sha256": "c3a17be9ac6d2b0028b0ee20528bc5f05a66a94467d7e6ed609d020e0c1e0999"
+    },
+    {
+      "path": "article/table03_performance_by_period.csv",
+      "bytes": 497,
+      "sha256": "906ece2bcfeabc0f56b76f195c0f34920c7e2a6075a5eeff4636160b46a1d848"
+    },
+    {
+      "path": "article/table04_uncertainty_intervals.csv",
+      "bytes": 334,
+      "sha256": "7ecc4a52b882cbcc6dd12cc282b0327ab6edf25ca1ba79ca6bd3eca589b3d43a"
+    },
+    {
+      "path": "article/table04_uncertainty_sigma.csv",
+      "bytes": 173,
+      "sha256": "26f33fc0f3bbd3384f966939f368f751e0fdb241afa1f779bcab65deac1c5af0"
+    },
+    {
+      "path": "article/table05a_alpha_by_checkpoint.csv",
+      "bytes": 590,
+      "sha256": "d92d306b70f5a168b9340879d5d145ca26e3cdc128190b61bfa57e070bb8e227"
+    },
+    {
+      "path": "article/table05b_alpha_descriptive_summary.csv",
+      "bytes": 218,
+      "sha256": "2d9fb12a44b12794c6e95e52b1ebb8f1ae7fe5c3d0c2ee4a29c6ebba3f6ff3d2"
+    },
+    {
+      "path": "article/table06_geoshapley_summary.csv",
+      "bytes": 610,
+      "sha256": "89c588dd61963987141ac0c4d183a1f8a58d112d8bcf78865b297055bb558d8e"
+    }
+  ]
+}

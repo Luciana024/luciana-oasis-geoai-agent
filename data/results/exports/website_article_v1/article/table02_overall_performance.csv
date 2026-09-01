@@ -1,0 +1,4 @@
+method,evaluation_type,MAE,MAE_skill,RMSE,MSE_skill,R2,bias,n_unique_target_dates,n_valid_cells
+Persistence,retrospective_test_65_10_25,50.66,0.0,81.74,0.0,0.53,3.68,264,29304
+Fixed 65/10/25 model,retrospective_test_65_10_25,51.17,-0.01,78.08,0.088,0.58,26.27,264,29304
+Rolling 65/10/25 model,retrospective_test_65_10_25,46.53,0.081,69.06,0.286,0.67,14.09,264,29304

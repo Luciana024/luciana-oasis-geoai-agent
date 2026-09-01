@@ -1,0 +1,22 @@
+{
+  "export_dir": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/exports/paper_tables_combined_v1",
+  "did_not_overwrite_edinburgh": true,
+  "paper_use": {
+    "include": [
+      "table_forecast_both_cities",
+      "table_allocation_both_cities",
+      "table_alpha_last_update"
+    ],
+    "if_space": [
+      "table_intervals_both_cities",
+      "table_period_both_cities"
+    ],
+    "omit_from_4page": [
+      "table01_split",
+      "table05a_alpha_by_update",
+      "table05b_alpha_mean",
+      "table06_geoshapley"
+    ]
+  },
+  "allocation_error": null
+}

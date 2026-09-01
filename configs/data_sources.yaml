@@ -1,0 +1,44 @@
+# PHS archived COVID-19 neighbourhood (2011 Intermediate Zone) extracts.
+ckan:
+  base_url: https://www.opendata.nhs.scot/api/3/action
+  package_id: covid-19-in-scotland
+  dataset_url: https://www.opendata.nhs.scot/dataset/covid-19-in-scotland
+  licence: Open Government Licence
+  geography: 2011 Intermediate Zones
+
+# Map each user-specified year to a CKAN resource and a local filename.
+# 2020 and 2021 share one extract and are split by calendar year after download.
+covid_iz_resources:
+  2020:
+    resource_id: 8906de12-f413-4b3f-95a0-11ed15e61773
+    resource_name: ARCHIVE - Seven Day Trends by Neighbourhood - 2020-2021
+    local_filename: 2020-2021.csv
+  2021:
+    resource_id: 8906de12-f413-4b3f-95a0-11ed15e61773
+    resource_name: ARCHIVE - Seven Day Trends by Neighbourhood - 2020-2021
+    local_filename: 2020-2021.csv
+  2022:
+    resource_id: a50eab84-396f-41e2-87a9-f09431e3be92
+    resource_name: ARCHIVE - Seven Day Trends by Neighbourhood - 2022
+    local_filename: 2022.csv
+  2023:
+    resource_id: c4b35a96-53fd-4832-915b-87e522ce6892
+    resource_name: ARCHIVE - Seven Day Trends by Neighbourhood - 2023
+    local_filename: 2023.csv
+
+# Equal user choices. silent_fallback=false means API failure does not use local files.
+data_source_choices:
+  api:
+    description: Query the PHS CKAN datastore for the user-specified year and City of Edinburgh.
+  local:
+    description: Read the registered extract in data/raw/covid for the user-specified year.
+  silent_fallback: false
+
+required_fields:
+  - Date
+  - IntZone
+  - CA
+  - Positive7Day
+  - Positive7DayQF
+  - Population
+  - CrudeRate7DayPositive

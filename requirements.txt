@@ -1,0 +1,12 @@
+pandas
+numpy
+pyyaml
+openpyxl
+geopandas
+shapely>=2.0
+scipy
+torch
+matplotlib
+streamlit
+plotly
+pytest

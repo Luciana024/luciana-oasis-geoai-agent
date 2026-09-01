@@ -1,0 +1,894 @@
+{
+  "status": "ok",
+  "n_sites_required": 6,
+  "n_sites_selected": 6,
+  "scenario": "equity",
+  "travel_mode": "drive",
+  "travel_time_threshold_min": 15.0,
+  "selected_sites": [
+    {
+      "site_id": "MS_14",
+      "site_name": "Oswald Street Car Park",
+      "site_type": "mobile_stop"
+    },
+    {
+      "site_id": "GP_52024",
+      "site_name": "Thurston Road Medical Practice",
+      "site_type": "gp"
+    },
+    {
+      "site_id": "PH_1703",
+      "site_name": "P & C PATERSON LTD",
+      "site_type": "pharmacy"
+    },
+    {
+      "site_id": "GP_40008",
+      "site_name": "Fulton Street Medical Centre",
+      "site_type": "gp"
+    },
+    {
+      "site_id": "PH_1502",
+      "site_name": "LLOYDS PHARMACY LTD",
+      "site_type": "pharmacy"
+    },
+    {
+      "site_id": "PH_1695",
+      "site_name": "EASTWOOD PHARMACY LTD",
+      "site_type": "pharmacy"
+    }
+  ],
+  "assignments": [
+    {
+      "iz_code": "S02001842",
+      "site_id": "PH_1695",
+      "travel_time_min": 11.52,
+      "served": true
+    },
+    {
+      "iz_code": "S02001843",
+      "site_id": "PH_1695",
+      "travel_time_min": 12.3,
+      "served": true
+    },
+    {
+      "iz_code": "S02001844",
+      "site_id": "GP_52024",
+      "travel_time_min": 13.89,
+      "served": true
+    },
+    {
+      "iz_code": "S02001845",
+      "site_id": "GP_52024",
+      "travel_time_min": 10.12,
+      "served": true
+    },
+    {
+      "iz_code": "S02001846",
+      "site_id": "GP_52024",
+      "travel_time_min": 8.75,
+      "served": true
+    },
+    {
+      "iz_code": "S02001847",
+      "site_id": "GP_52024",
+      "travel_time_min": 7.65,
+      "served": true
+    },
+    {
+      "iz_code": "S02001848",
+      "site_id": "GP_52024",
+      "travel_time_min": 6.17,
+      "served": true
+    },
+    {
+      "iz_code": "S02001849",
+      "site_id": "GP_52024",
+      "travel_time_min": 7.98,
+      "served": true
+    },
+    {
+      "iz_code": "S02001850",
+      "site_id": "GP_52024",
+      "travel_time_min": 3.41,
+      "served": true
+    },
+    {
+      "iz_code": "S02001851",
+      "site_id": "GP_52024",
+      "travel_time_min": 1.76,
+      "served": true
+    },
+    {
+      "iz_code": "S02001852",
+      "site_id": "GP_52024",
+      "travel_time_min": 1.57,
+      "served": true
+    },
+    {
+      "iz_code": "S02001853",
+      "site_id": "GP_52024",
+      "travel_time_min": 2.92,
+      "served": true
+    },
+    {
+      "iz_code": "S02001854",
+      "site_id": "GP_52024",
+      "travel_time_min": 0.3,
+      "served": true
+    },
+    {
+      "iz_code": "S02001855",
+      "site_id": "GP_52024",
+      "travel_time_min": 5.01,
+      "served": true
+    },
+    {
+      "iz_code": "S02001856",
+      "site_id": "GP_52024",
+      "travel_time_min": 6.59,
+      "served": true
+    },
+    {
+      "iz_code": "S02001857",
+      "site_id": "GP_52024",
+      "travel_time_min": 5.36,
+      "served": true
+    },
+    {
+      "iz_code": "S02001858",
+      "site_id": "GP_52024",
+      "travel_time_min": 6.72,
+      "served": true
+    },
+    {
+      "iz_code": "S02001859",
+      "site_id": "MS_14",
+      "travel_time_min": 6.78,
+      "served": true
+    },
+    {
+      "iz_code": "S02001860",
+      "site_id": "MS_14",
+      "travel_time_min": 6.16,
+      "served": true
+    },
+    {
+      "iz_code": "S02001861",
+      "site_id": "MS_14",
+      "travel_time_min": 5.55,
+      "served": true
+    },
+    {
+      "iz_code": "S02001862",
+      "site_id": "GP_52024",
+      "travel_time_min": 8.43,
+      "served": true
+    },
+    {
+      "iz_code": "S02001863",
+      "site_id": "PH_1695",
+      "travel_time_min": 5.69,
+      "served": true
+    },
+    {
+      "iz_code": "S02001864",
+      "site_id": "PH_1695",
+      "travel_time_min": 4.31,
+      "served": true
+    },
+    {
+      "iz_code": "S02001865",
+      "site_id": "PH_1695",
+      "travel_time_min": 3.37,
+      "served": true
+    },
+    {
+      "iz_code": "S02001866",
+      "site_id": "PH_1695",
+      "travel_time_min": 3.77,
+      "served": true
+    },
+    {
+      "iz_code": "S02001867",
+      "site_id": "PH_1695",
+      "travel_time_min": 0.87,
+      "served": true
+    },
+    {
+      "iz_code": "S02001868",
+      "site_id": "PH_1695",
+      "travel_time_min": 2.38,
+      "served": true
+    },
+    {
+      "iz_code": "S02001869",
+      "site_id": "PH_1695",
+      "travel_time_min": 3.92,
+      "served": true
+    },
+    {
+      "iz_code": "S02001870",
+      "site_id": "PH_1695",
+      "travel_time_min": 2.55,
+      "served": true
+    },
+    {
+      "iz_code": "S02001871",
+      "site_id": "PH_1695",
+      "travel_time_min": 1.95,
+      "served": true
+    },
+    {
+      "iz_code": "S02001872",
+      "site_id": "PH_1695",
+      "travel_time_min": 1.5,
+      "served": true
+    },
+    {
+      "iz_code": "S02001873",
+      "site_id": "PH_1695",
+      "travel_time_min": 4.18,
+      "served": true
+    },
+    {
+      "iz_code": "S02001874",
+      "site_id": "PH_1695",
+      "travel_time_min": 10.52,
+      "served": true
+    },
+    {
+      "iz_code": "S02001875",
+      "site_id": "PH_1695",
+      "travel_time_min": 7.38,
+      "served": true
+    },
+    {
+      "iz_code": "S02001876",
+      "site_id": "PH_1695",
+      "travel_time_min": 5.06,
+      "served": true
+    },
+    {
+      "iz_code": "S02001877",
+      "site_id": "PH_1695",
+      "travel_time_min": 3.93,
+      "served": true
+    },
+    {
+      "iz_code": "S02001878",
+      "site_id": "PH_1695",
+      "travel_time_min": 4.21,
+      "served": true
+    },
+    {
+      "iz_code": "S02001879",
+      "site_id": "PH_1695",
+      "travel_time_min": 4.4,
+      "served": true
+    },
+    {
+      "iz_code": "S02001880",
+      "site_id": "PH_1695",
+      "travel_time_min": 8.1,
+      "served": true
+    },
+    {
+      "iz_code": "S02001881",
+      "site_id": "PH_1695",
+      "travel_time_min": 9.29,
+      "served": true
+    },
+    {
+      "iz_code": "S02001882",
+      "site_id": "PH_1695",
+      "travel_time_min": 9.27,
+      "served": true
+    },
+    {
+      "iz_code": "S02001883",
+      "site_id": "PH_1695",
+      "travel_time_min": 6.39,
+      "served": true
+    },
+    {
+      "iz_code": "S02001884",
+      "site_id": "PH_1695",
+      "travel_time_min": 5.37,
+      "served": true
+    },
+    {
+      "iz_code": "S02001885",
+      "site_id": "PH_1695",
+      "travel_time_min": 3.88,
+      "served": true
+    },
+    {
+      "iz_code": "S02001886",
+      "site_id": "PH_1695",
+      "travel_time_min": 1.94,
+      "served": true
+    },
+    {
+      "iz_code": "S02001887",
+      "site_id": "PH_1695",
+      "travel_time_min": 1.52,
+      "served": true
+    },
+    {
+      "iz_code": "S02001888",
+      "site_id": "PH_1695",
+      "travel_time_min": 4.54,
+      "served": true
+    },
+    {
+      "iz_code": "S02001889",
+      "site_id": "MS_14",
+      "travel_time_min": 4.93,
+      "served": true
+    },
+    {
+      "iz_code": "S02001890",
+      "site_id": "MS_14",
+      "travel_time_min": 1.86,
+      "served": true
+    },
+    {
+      "iz_code": "S02001891",
+      "site_id": "MS_14",
+      "travel_time_min": 4.67,
+      "served": true
+    },
+    {
+      "iz_code": "S02001892",
+      "site_id": "PH_1703",
+      "travel_time_min": 5.21,
+      "served": true
+    },
+    {
+      "iz_code": "S02001893",
+      "site_id": "PH_1703",
+      "travel_time_min": 5.56,
+      "served": true
+    },
+    {
+      "iz_code": "S02001894",
+      "site_id": "PH_1703",
+      "travel_time_min": 1.25,
+      "served": true
+    },
+    {
+      "iz_code": "S02001895",
+      "site_id": "PH_1703",
+      "travel_time_min": 1.14,
+      "served": true
+    },
+    {
+      "iz_code": "S02001896",
+      "site_id": "PH_1703",
+      "travel_time_min": 3.74,
+      "served": true
+    },
+    {
+      "iz_code": "S02001897",
+      "site_id": "PH_1703",
+      "travel_time_min": 5.28,
+      "served": true
+    },
+    {
+      "iz_code": "S02001898",
+      "site_id": "PH_1703",
+      "travel_time_min": 8.76,
+      "served": true
+    },
+    {
+      "iz_code": "S02001899",
+      "site_id": "PH_1502",
+      "travel_time_min": 5.2,
+      "served": true
+    },
+    {
+      "iz_code": "S02001900",
+      "site_id": "PH_1502",
+      "travel_time_min": 4.95,
+      "served": true
+    },
+    {
+      "iz_code": "S02001901",
+      "site_id": "PH_1502",
+      "travel_time_min": 4.54,
+      "served": true
+    },
+    {
+      "iz_code": "S02001902",
+      "site_id": "PH_1502",
+      "travel_time_min": 3.03,
+      "served": true
+    },
+    {
+      "iz_code": "S02001903",
+      "site_id": "PH_1502",
+      "travel_time_min": 4.81,
+      "served": true
+    },
+    {
+      "iz_code": "S02001904",
+      "site_id": "PH_1502",
+      "travel_time_min": 6.4,
+      "served": true
+    },
+    {
+      "iz_code": "S02001905",
+      "site_id": "PH_1502",
+      "travel_time_min": 4.24,
+      "served": true
+    },
+    {
+      "iz_code": "S02001906",
+      "site_id": "PH_1502",
+      "travel_time_min": 4.23,
+      "served": true
+    },
+    {
+      "iz_code": "S02001907",
+      "site_id": "PH_1502",
+      "travel_time_min": 2.74,
+      "served": true
+    },
+    {
+      "iz_code": "S02001908",
+      "site_id": "PH_1502",
+      "travel_time_min": 1.51,
+      "served": true
+    },
+    {
+      "iz_code": "S02001909",
+      "site_id": "PH_1502",
+      "travel_time_min": 4.06,
+      "served": true
+    },
+    {
+      "iz_code": "S02001910",
+      "site_id": "PH_1502",
+      "travel_time_min": 4.47,
+      "served": true
+    },
+    {
+      "iz_code": "S02001911",
+      "site_id": "PH_1703",
+      "travel_time_min": 3.44,
+      "served": true
+    },
+    {
+      "iz_code": "S02001912",
+      "site_id": "PH_1703",
+      "travel_time_min": 4.02,
+      "served": true
+    },
+    {
+      "iz_code": "S02001913",
+      "site_id": "PH_1703",
+      "travel_time_min": 5.1,
+      "served": true
+    },
+    {
+      "iz_code": "S02001914",
+      "site_id": "PH_1703",
+      "travel_time_min": 5.72,
+      "served": true
+    },
+    {
+      "iz_code": "S02001915",
+      "site_id": "PH_1502",
+      "travel_time_min": 8.04,
+      "served": true
+    },
+    {
+      "iz_code": "S02001916",
+      "site_id": "PH_1703",
+      "travel_time_min": 5.83,
+      "served": true
+    },
+    {
+      "iz_code": "S02001917",
+      "site_id": "PH_1703",
+      "travel_time_min": 7.55,
+      "served": true
+    },
+    {
+      "iz_code": "S02001918",
+      "site_id": "PH_1703",
+      "travel_time_min": 11.91,
+      "served": true
+    },
+    {
+      "iz_code": "S02001919",
+      "site_id": "PH_1703",
+      "travel_time_min": 13.86,
+      "served": true
+    },
+    {
+      "iz_code": "S02001920",
+      "site_id": "PH_1703",
+      "travel_time_min": 10.69,
+      "served": true
+    },
+    {
+      "iz_code": "S02001921",
+      "site_id": "PH_1703",
+      "travel_time_min": 10.4,
+      "served": true
+    },
+    {
+      "iz_code": "S02001922",
+      "site_id": "MS_14",
+      "travel_time_min": 10.85,
+      "served": true
+    },
+    {
+      "iz_code": "S02001923",
+      "site_id": "MS_14",
+      "travel_time_min": 10.85,
+      "served": true
+    },
+    {
+      "iz_code": "S02001924",
+      "site_id": "MS_14",
+      "travel_time_min": 8.68,
+      "served": true
+    },
+    {
+      "iz_code": "S02001925",
+      "site_id": "MS_14",
+      "travel_time_min": 7.95,
+      "served": true
+    },
+    {
+      "iz_code": "S02001926",
+      "site_id": "MS_14",
+      "travel_time_min": 7.29,
+      "served": true
+    },
+    {
+      "iz_code": "S02001927",
+      "site_id": "PH_1703",
+      "travel_time_min": 5.15,
+      "served": true
+    },
+    {
+      "iz_code": "S02001928",
+      "site_id": "PH_1703",
+      "travel_time_min": 4.49,
+      "served": true
+    },
+    {
+      "iz_code": "S02001929",
+      "site_id": "PH_1703",
+      "travel_time_min": 3.41,
+      "served": true
+    },
+    {
+      "iz_code": "S02001930",
+      "site_id": "PH_1703",
+      "travel_time_min": 3.63,
+      "served": true
+    },
+    {
+      "iz_code": "S02001931",
+      "site_id": "PH_1703",
+      "travel_time_min": 4.08,
+      "served": true
+    },
+    {
+      "iz_code": "S02001932",
+      "site_id": "MS_14",
+      "travel_time_min": 3.27,
+      "served": true
+    },
+    {
+      "iz_code": "S02001933",
+      "site_id": "MS_14",
+      "travel_time_min": 4.06,
+      "served": true
+    },
+    {
+      "iz_code": "S02001934",
+      "site_id": "MS_14",
+      "travel_time_min": 1.02,
+      "served": true
+    },
+    {
+      "iz_code": "S02001935",
+      "site_id": "MS_14",
+      "travel_time_min": 3.46,
+      "served": true
+    },
+    {
+      "iz_code": "S02001936",
+      "site_id": "MS_14",
+      "travel_time_min": 5.3,
+      "served": true
+    },
+    {
+      "iz_code": "S02001937",
+      "site_id": "MS_14",
+      "travel_time_min": 4.56,
+      "served": true
+    },
+    {
+      "iz_code": "S02001938",
+      "site_id": "MS_14",
+      "travel_time_min": 4.82,
+      "served": true
+    },
+    {
+      "iz_code": "S02001939",
+      "site_id": "MS_14",
+      "travel_time_min": 6.67,
+      "served": true
+    },
+    {
+      "iz_code": "S02001940",
+      "site_id": "MS_14",
+      "travel_time_min": 8.86,
+      "served": true
+    },
+    {
+      "iz_code": "S02001941",
+      "site_id": "GP_40008",
+      "travel_time_min": 7.3,
+      "served": true
+    },
+    {
+      "iz_code": "S02001942",
+      "site_id": "MS_14",
+      "travel_time_min": 10.72,
+      "served": true
+    },
+    {
+      "iz_code": "S02001943",
+      "site_id": "MS_14",
+      "travel_time_min": 10.51,
+      "served": true
+    },
+    {
+      "iz_code": "S02001944",
+      "site_id": "MS_14",
+      "travel_time_min": 13.64,
+      "served": true
+    },
+    {
+      "iz_code": "S02001945",
+      "site_id": "GP_40008",
+      "travel_time_min": 7.95,
+      "served": true
+    },
+    {
+      "iz_code": "S02001946",
+      "site_id": "GP_40008",
+      "travel_time_min": 6.88,
+      "served": true
+    },
+    {
+      "iz_code": "S02001947",
+      "site_id": "GP_40008",
+      "travel_time_min": 7.13,
+      "served": true
+    },
+    {
+      "iz_code": "S02001948",
+      "site_id": "GP_40008",
+      "travel_time_min": 5.96,
+      "served": true
+    },
+    {
+      "iz_code": "S02001949",
+      "site_id": "GP_40008",
+      "travel_time_min": 6.51,
+      "served": true
+    },
+    {
+      "iz_code": "S02001950",
+      "site_id": "GP_40008",
+      "travel_time_min": 4.69,
+      "served": true
+    },
+    {
+      "iz_code": "S02001951",
+      "site_id": "MS_14",
+      "travel_time_min": 7.3,
+      "served": true
+    },
+    {
+      "iz_code": "S02001952",
+      "site_id": "GP_40008",
+      "travel_time_min": 7.41,
+      "served": true
+    },
+    {
+      "iz_code": "S02001953",
+      "site_id": "GP_40008",
+      "travel_time_min": 7.36,
+      "served": true
+    },
+    {
+      "iz_code": "S02001954",
+      "site_id": "GP_40008",
+      "travel_time_min": 6.24,
+      "served": true
+    },
+    {
+      "iz_code": "S02001955",
+      "site_id": "GP_40008",
+      "travel_time_min": 6.15,
+      "served": true
+    },
+    {
+      "iz_code": "S02001956",
+      "site_id": "GP_40008",
+      "travel_time_min": 6.61,
+      "served": true
+    },
+    {
+      "iz_code": "S02001957",
+      "site_id": "GP_40008",
+      "travel_time_min": 5.84,
+      "served": true
+    },
+    {
+      "iz_code": "S02001958",
+      "site_id": "GP_40008",
+      "travel_time_min": 2.94,
+      "served": true
+    },
+    {
+      "iz_code": "S02001959",
+      "site_id": "GP_40008",
+      "travel_time_min": 5.81,
+      "served": true
+    },
+    {
+      "iz_code": "S02001960",
+      "site_id": "GP_40008",
+      "travel_time_min": 4.55,
+      "served": true
+    },
+    {
+      "iz_code": "S02001961",
+      "site_id": "GP_40008",
+      "travel_time_min": 6.6,
+      "served": true
+    },
+    {
+      "iz_code": "S02001962",
+      "site_id": "GP_40008",
+      "travel_time_min": 5.79,
+      "served": true
+    },
+    {
+      "iz_code": "S02001963",
+      "site_id": "GP_40008",
+      "travel_time_min": 6.87,
+      "served": true
+    },
+    {
+      "iz_code": "S02001964",
+      "site_id": "GP_40008",
+      "travel_time_min": 8.21,
+      "served": true
+    },
+    {
+      "iz_code": "S02001965",
+      "site_id": "GP_40008",
+      "travel_time_min": 7.22,
+      "served": true
+    },
+    {
+      "iz_code": "S02001966",
+      "site_id": "GP_40008",
+      "travel_time_min": 6.8,
+      "served": true
+    },
+    {
+      "iz_code": "S02001967",
+      "site_id": "GP_40008",
+      "travel_time_min": 5.85,
+      "served": true
+    },
+    {
+      "iz_code": "S02001968",
+      "site_id": "GP_40008",
+      "travel_time_min": 4.69,
+      "served": true
+    },
+    {
+      "iz_code": "S02001969",
+      "site_id": "GP_40008",
+      "travel_time_min": 2.75,
+      "served": true
+    },
+    {
+      "iz_code": "S02001970",
+      "site_id": "GP_40008",
+      "travel_time_min": 2.93,
+      "served": true
+    },
+    {
+      "iz_code": "S02001971",
+      "site_id": "GP_40008",
+      "travel_time_min": 0.77,
+      "served": true
+    },
+    {
+      "iz_code": "S02001972",
+      "site_id": "GP_40008",
+      "travel_time_min": 2.96,
+      "served": true
+    },
+    {
+      "iz_code": "S02001973",
+      "site_id": "GP_40008",
+      "travel_time_min": 6.09,
+      "served": true
+    },
+    {
+      "iz_code": "S02001974",
+      "site_id": "GP_40008",
+      "travel_time_min": 6.25,
+      "served": true
+    },
+    {
+      "iz_code": "S02001975",
+      "site_id": "GP_40008",
+      "travel_time_min": 8.59,
+      "served": true
+    },
+    {
+      "iz_code": "S02001976",
+      "site_id": "GP_40008",
+      "travel_time_min": 8.94,
+      "served": true
+    },
+    {
+      "iz_code": "S02001977",
+      "site_id": "GP_40008",
+      "travel_time_min": 9.77,
+      "served": true
+    }
+  ],
+  "metrics": {
+    "population_covered": 635640.0,
+    "iz_covered": 136,
+    "mean_travel_time_min": 5.804044117647059,
+    "max_travel_time_min": 13.89,
+    "unserved_population": 0.0,
+    "unserved_iz": 0,
+    "n_iz": 136,
+    "population_total": 635640.0
+  },
+  "diagnostics": {
+    "method": "greedy_pmedian",
+    "n_steps": 6,
+    "step_gains": [
+      427010163925.93256,
+      79699457605.23668,
+      77755261366.32672,
+      26053484999.800827,
+      5954979253.973477,
+      496904.33940796833
+    ],
+    "weight_note": "Greedy p-median on equity weights: nearer sites to income-deprived and GP-underserved IZs, including mobile_stop car parks.",
+    "scenario": "equity",
+    "message": "Selected 6 sites by greedy_pmedian under equity weights. 136 IZs and 635640.0 people are within the travel-time threshold.",
+    "warnings": []
+  },
+  "selection_reasons": {
+    "MS_14": "Step 1 (access): covering gain 427014.4254, travel-time reduction 427010163925.9326; 101 IZs within threshold of this site.",
+    "GP_52024": "Step 2 (access): covering gain 79700.0425, travel-time reduction 79699457605.2367; 56 IZs within threshold of this site.",
+    "PH_1703": "Step 3 (access): covering gain 77755.5232, travel-time reduction 77755261366.3267; 74 IZs within threshold of this site.",
+    "GP_40008": "Step 4 (access): covering gain 26053.1054, travel-time reduction 26053484999.8008; 57 IZs within threshold of this site.",
+    "PH_1502": "Step 5 (access): covering gain 5954.5987, travel-time reduction 5954979253.9735; 35 IZs within threshold of this site.",
+    "PH_1695": "Step 6 (access): covering gain 0.0000, travel-time reduction 496904.3394; 69 IZs within threshold of this site."
+  },
+  "invented": false,
+  "forecast_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/forecast_for_allocation.csv"
+}

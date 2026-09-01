@@ -1,0 +1,4 @@
+graph_name,prediction_weighted_mean_alpha,between_update_standard_deviation,minimum_alpha,maximum_alpha
+geographic,0.2945,0.0342,0.2266,0.3425
+transport,0.3249,0.0219,0.2786,0.3506
+mobility,0.3805,0.0549,0.3112,0.4948

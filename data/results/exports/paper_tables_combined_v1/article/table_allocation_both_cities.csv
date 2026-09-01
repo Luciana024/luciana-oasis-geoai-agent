@@ -1,0 +1,9 @@
+city,policy,n_sites,population_covered,iz_covered,n_iz,coverage_pct,mean_travel_min,max_travel_min,unserved_iz,status
+Edinburgh,Coverage-priority,6,513210.0,111,111,100.0,5.362522522522522,19.41,0,ok
+Edinburgh,Equity-priority,6,513210.0,111,111,100.0,5.35144144144144,19.41,0,ok
+Edinburgh,Preventive-priority,6,496856.0,108,111,97.29729729729729,5.5797222222222205,15.77,3,ok
+Edinburgh,Balanced,6,513210.0,111,111,100.0,5.313603603603602,19.41,0,ok
+Glasgow,Coverage-priority,6,621020.0,136,136,100.0,5.812720588235294,13.89,0,ok
+Glasgow,Equity-priority,6,621020.0,136,136,100.0,5.804044117647059,13.89,0,ok
+Glasgow,Preventive-priority,6,577968.0,125,136,91.91176470588235,6.90304,14.8,11,ok
+Glasgow,Balanced,6,621020.0,136,136,100.0,6.257279411764706,14.82,0,ok

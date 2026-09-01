@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oasis-geoai-agent"
+version = "0.1.0"
+description = "Human-centred GeoAI agent for OASIS 2026 Track B."
+requires-python = ">=3.10"
+dependencies = [
+  "pandas",
+  "numpy",
+  "pyyaml",
+  "openpyxl",
+  "geopandas",
+  "shapely>=2.0",
+  "scipy",
+  "torch",
+  "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+travel = ["osmnx", "networkx"]
+web = ["streamlit", "plotly"]
+
+[project.scripts]
+oasis-agent = "agent.agent:main"
+oasis-covid-prepare = "agent.agent:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-m 'not external_data'"
+markers = [
+  "external_data: requires the separately distributed research data/checkpoint archive",
+]

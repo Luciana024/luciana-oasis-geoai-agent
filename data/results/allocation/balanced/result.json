@@ -1,0 +1,744 @@
+{
+  "status": "ok",
+  "n_sites_required": 6,
+  "n_sites_selected": 6,
+  "scenario": "balanced",
+  "travel_mode": "drive",
+  "travel_time_threshold_min": 20.0,
+  "selected_sites": [
+    {
+      "site_id": "PH_2026",
+      "site_name": "BOOTS UK LTD",
+      "site_type": "pharmacy"
+    },
+    {
+      "site_id": "PH_2516",
+      "site_name": "MBM SHELFCO (57) LTD",
+      "site_type": "pharmacy"
+    },
+    {
+      "site_id": "MS_14",
+      "site_name": "Car Park 1B",
+      "site_type": "mobile_stop"
+    },
+    {
+      "site_id": "PH_2027",
+      "site_name": "BOOTS UK LTD",
+      "site_type": "pharmacy"
+    },
+    {
+      "site_id": "PH_2368",
+      "site_name": "LLOYDS PHARMACY LTD",
+      "site_type": "pharmacy"
+    },
+    {
+      "site_id": "GP_70662",
+      "site_name": "Muirhouse Medical Group",
+      "site_type": "gp"
+    }
+  ],
+  "assignments": [
+    {
+      "iz_code": "S02001576",
+      "site_id": "PH_2368",
+      "travel_time_min": 14.91,
+      "served": true
+    },
+    {
+      "iz_code": "S02001577",
+      "site_id": "PH_2368",
+      "travel_time_min": 10.01,
+      "served": true
+    },
+    {
+      "iz_code": "S02001578",
+      "site_id": "PH_2368",
+      "travel_time_min": 7.94,
+      "served": true
+    },
+    {
+      "iz_code": "S02001579",
+      "site_id": "PH_2368",
+      "travel_time_min": 3.02,
+      "served": true
+    },
+    {
+      "iz_code": "S02001580",
+      "site_id": "PH_2368",
+      "travel_time_min": 7.7,
+      "served": true
+    },
+    {
+      "iz_code": "S02001581",
+      "site_id": "PH_2368",
+      "travel_time_min": 7.69,
+      "served": true
+    },
+    {
+      "iz_code": "S02001582",
+      "site_id": "PH_2368",
+      "travel_time_min": 2.87,
+      "served": true
+    },
+    {
+      "iz_code": "S02001583",
+      "site_id": "PH_2368",
+      "travel_time_min": 2.73,
+      "served": true
+    },
+    {
+      "iz_code": "S02001584",
+      "site_id": "PH_2368",
+      "travel_time_min": 1.72,
+      "served": true
+    },
+    {
+      "iz_code": "S02001585",
+      "site_id": "PH_2368",
+      "travel_time_min": 3.02,
+      "served": true
+    },
+    {
+      "iz_code": "S02001586",
+      "site_id": "PH_2368",
+      "travel_time_min": 4.97,
+      "served": true
+    },
+    {
+      "iz_code": "S02001587",
+      "site_id": "PH_2026",
+      "travel_time_min": 4.37,
+      "served": true
+    },
+    {
+      "iz_code": "S02001588",
+      "site_id": "PH_2368",
+      "travel_time_min": 4.0,
+      "served": true
+    },
+    {
+      "iz_code": "S02001589",
+      "site_id": "PH_2026",
+      "travel_time_min": 2.18,
+      "served": true
+    },
+    {
+      "iz_code": "S02001590",
+      "site_id": "PH_2026",
+      "travel_time_min": 0.79,
+      "served": true
+    },
+    {
+      "iz_code": "S02001591",
+      "site_id": "PH_2026",
+      "travel_time_min": 2.28,
+      "served": true
+    },
+    {
+      "iz_code": "S02001592",
+      "site_id": "PH_2026",
+      "travel_time_min": 1.6,
+      "served": true
+    },
+    {
+      "iz_code": "S02001593",
+      "site_id": "PH_2026",
+      "travel_time_min": 4.89,
+      "served": true
+    },
+    {
+      "iz_code": "S02001594",
+      "site_id": "PH_2026",
+      "travel_time_min": 4.66,
+      "served": true
+    },
+    {
+      "iz_code": "S02001595",
+      "site_id": "PH_2026",
+      "travel_time_min": 6.36,
+      "served": true
+    },
+    {
+      "iz_code": "S02001596",
+      "site_id": "PH_2026",
+      "travel_time_min": 8.03,
+      "served": true
+    },
+    {
+      "iz_code": "S02001597",
+      "site_id": "PH_2026",
+      "travel_time_min": 8.77,
+      "served": true
+    },
+    {
+      "iz_code": "S02001598",
+      "site_id": "PH_2026",
+      "travel_time_min": 10.01,
+      "served": true
+    },
+    {
+      "iz_code": "S02001599",
+      "site_id": "PH_2026",
+      "travel_time_min": 10.24,
+      "served": true
+    },
+    {
+      "iz_code": "S02001600",
+      "site_id": "MS_14",
+      "travel_time_min": 6.34,
+      "served": true
+    },
+    {
+      "iz_code": "S02001601",
+      "site_id": "MS_14",
+      "travel_time_min": 5.98,
+      "served": true
+    },
+    {
+      "iz_code": "S02001602",
+      "site_id": "MS_14",
+      "travel_time_min": 5.79,
+      "served": true
+    },
+    {
+      "iz_code": "S02001603",
+      "site_id": "MS_14",
+      "travel_time_min": 4.96,
+      "served": true
+    },
+    {
+      "iz_code": "S02001604",
+      "site_id": "MS_14",
+      "travel_time_min": 3.66,
+      "served": true
+    },
+    {
+      "iz_code": "S02001605",
+      "site_id": "MS_14",
+      "travel_time_min": 2.87,
+      "served": true
+    },
+    {
+      "iz_code": "S02001606",
+      "site_id": "MS_14",
+      "travel_time_min": 4.58,
+      "served": true
+    },
+    {
+      "iz_code": "S02001607",
+      "site_id": "MS_14",
+      "travel_time_min": 3.71,
+      "served": true
+    },
+    {
+      "iz_code": "S02001608",
+      "site_id": "MS_14",
+      "travel_time_min": 1.95,
+      "served": true
+    },
+    {
+      "iz_code": "S02001609",
+      "site_id": "MS_14",
+      "travel_time_min": 5.56,
+      "served": true
+    },
+    {
+      "iz_code": "S02001610",
+      "site_id": "MS_14",
+      "travel_time_min": 4.3,
+      "served": true
+    },
+    {
+      "iz_code": "S02001611",
+      "site_id": "MS_14",
+      "travel_time_min": 6.31,
+      "served": true
+    },
+    {
+      "iz_code": "S02001612",
+      "site_id": "MS_14",
+      "travel_time_min": 6.74,
+      "served": true
+    },
+    {
+      "iz_code": "S02001613",
+      "site_id": "PH_2026",
+      "travel_time_min": 7.17,
+      "served": true
+    },
+    {
+      "iz_code": "S02001614",
+      "site_id": "PH_2026",
+      "travel_time_min": 6.06,
+      "served": true
+    },
+    {
+      "iz_code": "S02001615",
+      "site_id": "PH_2026",
+      "travel_time_min": 5.85,
+      "served": true
+    },
+    {
+      "iz_code": "S02001616",
+      "site_id": "PH_2026",
+      "travel_time_min": 3.61,
+      "served": true
+    },
+    {
+      "iz_code": "S02001617",
+      "site_id": "PH_2026",
+      "travel_time_min": 3.56,
+      "served": true
+    },
+    {
+      "iz_code": "S02001618",
+      "site_id": "PH_2026",
+      "travel_time_min": 2.24,
+      "served": true
+    },
+    {
+      "iz_code": "S02001619",
+      "site_id": "PH_2026",
+      "travel_time_min": 2.58,
+      "served": true
+    },
+    {
+      "iz_code": "S02001620",
+      "site_id": "PH_2026",
+      "travel_time_min": 4.42,
+      "served": true
+    },
+    {
+      "iz_code": "S02001621",
+      "site_id": "MS_14",
+      "travel_time_min": 7.19,
+      "served": true
+    },
+    {
+      "iz_code": "S02001622",
+      "site_id": "PH_2027",
+      "travel_time_min": 6.23,
+      "served": true
+    },
+    {
+      "iz_code": "S02001623",
+      "site_id": "PH_2027",
+      "travel_time_min": 6.86,
+      "served": true
+    },
+    {
+      "iz_code": "S02001624",
+      "site_id": "PH_2027",
+      "travel_time_min": 4.6,
+      "served": true
+    },
+    {
+      "iz_code": "S02001625",
+      "site_id": "PH_2027",
+      "travel_time_min": 4.31,
+      "served": true
+    },
+    {
+      "iz_code": "S02001626",
+      "site_id": "PH_2027",
+      "travel_time_min": 5.95,
+      "served": true
+    },
+    {
+      "iz_code": "S02001627",
+      "site_id": "MS_14",
+      "travel_time_min": 4.03,
+      "served": true
+    },
+    {
+      "iz_code": "S02001628",
+      "site_id": "MS_14",
+      "travel_time_min": 5.76,
+      "served": true
+    },
+    {
+      "iz_code": "S02001629",
+      "site_id": "MS_14",
+      "travel_time_min": 8.53,
+      "served": true
+    },
+    {
+      "iz_code": "S02001630",
+      "site_id": "MS_14",
+      "travel_time_min": 8.79,
+      "served": true
+    },
+    {
+      "iz_code": "S02001631",
+      "site_id": "MS_14",
+      "travel_time_min": 11.2,
+      "served": true
+    },
+    {
+      "iz_code": "S02001632",
+      "site_id": "PH_2027",
+      "travel_time_min": 9.39,
+      "served": true
+    },
+    {
+      "iz_code": "S02001633",
+      "site_id": "MS_14",
+      "travel_time_min": 9.17,
+      "served": true
+    },
+    {
+      "iz_code": "S02001634",
+      "site_id": "PH_2027",
+      "travel_time_min": 7.5,
+      "served": true
+    },
+    {
+      "iz_code": "S02001635",
+      "site_id": "PH_2027",
+      "travel_time_min": 6.91,
+      "served": true
+    },
+    {
+      "iz_code": "S02001636",
+      "site_id": "PH_2027",
+      "travel_time_min": 6.79,
+      "served": true
+    },
+    {
+      "iz_code": "S02001637",
+      "site_id": "PH_2027",
+      "travel_time_min": 4.37,
+      "served": true
+    },
+    {
+      "iz_code": "S02001638",
+      "site_id": "PH_2027",
+      "travel_time_min": 3.49,
+      "served": true
+    },
+    {
+      "iz_code": "S02001639",
+      "site_id": "PH_2027",
+      "travel_time_min": 1.76,
+      "served": true
+    },
+    {
+      "iz_code": "S02001640",
+      "site_id": "PH_2027",
+      "travel_time_min": 5.48,
+      "served": true
+    },
+    {
+      "iz_code": "S02001641",
+      "site_id": "PH_2027",
+      "travel_time_min": 2.91,
+      "served": true
+    },
+    {
+      "iz_code": "S02001642",
+      "site_id": "PH_2027",
+      "travel_time_min": 2.03,
+      "served": true
+    },
+    {
+      "iz_code": "S02001643",
+      "site_id": "PH_2027",
+      "travel_time_min": 0.47,
+      "served": true
+    },
+    {
+      "iz_code": "S02001644",
+      "site_id": "PH_2027",
+      "travel_time_min": 1.46,
+      "served": true
+    },
+    {
+      "iz_code": "S02001645",
+      "site_id": "PH_2027",
+      "travel_time_min": 3.09,
+      "served": true
+    },
+    {
+      "iz_code": "S02001646",
+      "site_id": "PH_2027",
+      "travel_time_min": 2.33,
+      "served": true
+    },
+    {
+      "iz_code": "S02001647",
+      "site_id": "PH_2027",
+      "travel_time_min": 3.19,
+      "served": true
+    },
+    {
+      "iz_code": "S02001648",
+      "site_id": "PH_2027",
+      "travel_time_min": 1.52,
+      "served": true
+    },
+    {
+      "iz_code": "S02001649",
+      "site_id": "PH_2027",
+      "travel_time_min": 3.58,
+      "served": true
+    },
+    {
+      "iz_code": "S02001650",
+      "site_id": "PH_2027",
+      "travel_time_min": 3.19,
+      "served": true
+    },
+    {
+      "iz_code": "S02001651",
+      "site_id": "PH_2027",
+      "travel_time_min": 5.49,
+      "served": true
+    },
+    {
+      "iz_code": "S02001652",
+      "site_id": "PH_2027",
+      "travel_time_min": 5.48,
+      "served": true
+    },
+    {
+      "iz_code": "S02001653",
+      "site_id": "PH_2027",
+      "travel_time_min": 3.62,
+      "served": true
+    },
+    {
+      "iz_code": "S02001654",
+      "site_id": "PH_2027",
+      "travel_time_min": 3.31,
+      "served": true
+    },
+    {
+      "iz_code": "S02001655",
+      "site_id": "PH_2027",
+      "travel_time_min": 3.8,
+      "served": true
+    },
+    {
+      "iz_code": "S02001656",
+      "site_id": "PH_2027",
+      "travel_time_min": 5.71,
+      "served": true
+    },
+    {
+      "iz_code": "S02001657",
+      "site_id": "PH_2027",
+      "travel_time_min": 4.87,
+      "served": true
+    },
+    {
+      "iz_code": "S02001658",
+      "site_id": "PH_2027",
+      "travel_time_min": 6.61,
+      "served": true
+    },
+    {
+      "iz_code": "S02001659",
+      "site_id": "GP_70662",
+      "travel_time_min": 6.37,
+      "served": true
+    },
+    {
+      "iz_code": "S02001660",
+      "site_id": "PH_2026",
+      "travel_time_min": 4.04,
+      "served": true
+    },
+    {
+      "iz_code": "S02001661",
+      "site_id": "PH_2026",
+      "travel_time_min": 3.74,
+      "served": true
+    },
+    {
+      "iz_code": "S02001662",
+      "site_id": "PH_2026",
+      "travel_time_min": 4.97,
+      "served": true
+    },
+    {
+      "iz_code": "S02001663",
+      "site_id": "GP_70662",
+      "travel_time_min": 5.27,
+      "served": true
+    },
+    {
+      "iz_code": "S02001664",
+      "site_id": "GP_70662",
+      "travel_time_min": 4.46,
+      "served": true
+    },
+    {
+      "iz_code": "S02001665",
+      "site_id": "GP_70662",
+      "travel_time_min": 2.64,
+      "served": true
+    },
+    {
+      "iz_code": "S02001666",
+      "site_id": "GP_70662",
+      "travel_time_min": 1.37,
+      "served": true
+    },
+    {
+      "iz_code": "S02001667",
+      "site_id": "GP_70662",
+      "travel_time_min": 5.04,
+      "served": true
+    },
+    {
+      "iz_code": "S02001668",
+      "site_id": "GP_70662",
+      "travel_time_min": 4.47,
+      "served": true
+    },
+    {
+      "iz_code": "S02001669",
+      "site_id": "GP_70662",
+      "travel_time_min": 3.71,
+      "served": true
+    },
+    {
+      "iz_code": "S02001670",
+      "site_id": "GP_70662",
+      "travel_time_min": 1.53,
+      "served": true
+    },
+    {
+      "iz_code": "S02001671",
+      "site_id": "GP_70662",
+      "travel_time_min": 1.42,
+      "served": true
+    },
+    {
+      "iz_code": "S02001672",
+      "site_id": "GP_70662",
+      "travel_time_min": 4.03,
+      "served": true
+    },
+    {
+      "iz_code": "S02001673",
+      "site_id": "PH_2516",
+      "travel_time_min": 3.09,
+      "served": true
+    },
+    {
+      "iz_code": "S02001674",
+      "site_id": "PH_2516",
+      "travel_time_min": 0.59,
+      "served": true
+    },
+    {
+      "iz_code": "S02001675",
+      "site_id": "PH_2516",
+      "travel_time_min": 3.03,
+      "served": true
+    },
+    {
+      "iz_code": "S02001676",
+      "site_id": "PH_2516",
+      "travel_time_min": 5.46,
+      "served": true
+    },
+    {
+      "iz_code": "S02001677",
+      "site_id": "PH_2516",
+      "travel_time_min": 5.9,
+      "served": true
+    },
+    {
+      "iz_code": "S02001678",
+      "site_id": "PH_2516",
+      "travel_time_min": 5.27,
+      "served": true
+    },
+    {
+      "iz_code": "S02001679",
+      "site_id": "PH_2516",
+      "travel_time_min": 6.3,
+      "served": true
+    },
+    {
+      "iz_code": "S02001680",
+      "site_id": "PH_2368",
+      "travel_time_min": 6.56,
+      "served": true
+    },
+    {
+      "iz_code": "S02001681",
+      "site_id": "PH_2368",
+      "travel_time_min": 6.35,
+      "served": true
+    },
+    {
+      "iz_code": "S02001682",
+      "site_id": "PH_2368",
+      "travel_time_min": 5.54,
+      "served": true
+    },
+    {
+      "iz_code": "S02001683",
+      "site_id": "PH_2368",
+      "travel_time_min": 15.77,
+      "served": true
+    },
+    {
+      "iz_code": "S02001684",
+      "site_id": "PH_2516",
+      "travel_time_min": 19.41,
+      "served": true
+    },
+    {
+      "iz_code": "S02001685",
+      "site_id": "PH_2516",
+      "travel_time_min": 13.71,
+      "served": true
+    },
+    {
+      "iz_code": "S02001686",
+      "site_id": "PH_2516",
+      "travel_time_min": 15.8,
+      "served": true
+    }
+  ],
+  "metrics": {
+    "population_covered": 527620.0,
+    "iz_covered": 111,
+    "mean_travel_time_min": 5.313603603603602,
+    "max_travel_time_min": 19.41,
+    "unserved_population": 0.0,
+    "unserved_iz": 0,
+    "n_iz": 111,
+    "population_total": 527620.0
+  },
+  "diagnostics": {
+    "method": "greedy_pmedian",
+    "n_steps": 6,
+    "step_gains": [
+      2903729.505744361,
+      80975.47815315978,
+      15270.007623742324,
+      4.0143376199809975,
+      3.00619745382349,
+      2.4281163095403633
+    ],
+    "weight_note": "Equal mix of unit(coverage), unit(equity) and unit(preventive hot spots).",
+    "scenario": "balanced",
+    "message": "Selected 6 sites by greedy_pmedian under balanced weights. 111 IZs and 527620.0 people are within the travel-time threshold.",
+    "warnings": []
+  },
+  "selection_reasons": {
+    "PH_2026": "Step 1 (access): covering gain 2.9038, travel-time reduction 2903729.5057; 106 IZs within threshold of this site.",
+    "PH_2516": "Step 2 (access): covering gain 0.0810, travel-time reduction 80975.4782; 83 IZs within threshold of this site.",
+    "MS_14": "Step 3 (access): covering gain 0.0153, travel-time reduction 15270.0076; 85 IZs within threshold of this site.",
+    "PH_2027": "Step 4 (access): covering gain 0.0000, travel-time reduction 4.0143; 96 IZs within threshold of this site.",
+    "PH_2368": "Step 5 (access): covering gain 0.0000, travel-time reduction 3.0062; 76 IZs within threshold of this site.",
+    "GP_70662": "Step 6 (access): covering gain 0.0000, travel-time reduction 2.4281; 90 IZs within threshold of this site."
+  },
+  "invented": false,
+  "forecast_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/exports/website_article_v1/website/future_forecast_20230304.csv"
+}

@@ -1,0 +1,13 @@
+{
+  "graph_set": [
+    "geo",
+    "transport",
+    "mobility"
+  ],
+  "alpha": [
+    0.29948917031288147,
+    0.32955485582351685,
+    0.3709559440612793
+  ],
+  "canonical_node_order_hash": "3e44e848ac57c8c218038fa723aa89b2bcb84fcb5b8b900a0d4269ff60296ca3"
+}

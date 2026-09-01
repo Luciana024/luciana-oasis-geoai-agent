@@ -1,0 +1,7 @@
+city,graph_name,prediction_weighted_mean_alpha,between_update_standard_deviation,minimum_alpha,maximum_alpha
+Edinburgh,geographic,0.3135,0.0123,0.2941,0.326
+Edinburgh,transport,0.3139,0.0111,0.2932,0.3271
+Edinburgh,mobility,0.3726,0.0225,0.3473,0.4127
+Glasgow,geographic,0.2945,0.0342,0.2266,0.3425
+Glasgow,transport,0.3249,0.0219,0.2786,0.3506
+Glasgow,mobility,0.3805,0.0549,0.3112,0.4948

@@ -1,0 +1,93 @@
+# Canonical four-scenario allocation spec. Solver must follow this file.
+# English definition: docs/allocation_scenarios.md
+# The language model does not choose sites.
+
+status: defined
+method: greedy_maximal_covering
+n_sites: 6
+n_sites_is_fixed: true
+join_key: iz_code
+geography: 2011 Intermediate Zones, CA=S12000036, 111 nodes
+forecast_date: "2023-03-04"
+forecast_status: unverified_extrapolation
+checkpoint: U10
+
+decision:
+  select: exactly 6 site_id values from the candidate table
+  assign: each IZ to the nearest selected site if travel_time_min <= threshold
+  unserved: IZ with no selected site within threshold; travel time stays missing
+  do_not_invent_sites: true
+  do_not_use:
+    - GeoShapley
+    - graph alpha
+    - official SIMD "20% most deprived" Data Zone ranks
+    - age-band population (panel has none)
+
+inputs:
+  population:
+    field: Population
+    source: data/results/panel.csv
+    rule: last panel Date, one row per IntZone
+    note: Infection-rate denominator. Not SIMD 2020 total_population.
+  deprived:
+    field: income_rate
+    source: data/results/simd_iz.csv
+    meaning: SIMD 2020v2 share of people who are income-deprived (IZ mean of Data Zones)
+    not_a_class: continuous; city-median flag is display only
+  underserved:
+    field: pt_gp_min
+    source: data/results/simd_iz.csv
+    meaning: SIMD public-transport minutes to a GP (current access, not our OSM matrix)
+    not_a_class: continuous; city-median flag is display only
+  predicted_risk:
+    field: predicted_rate
+    source: data/results/exports/website_article_v1/website/future_forecast_20230304.csv
+    unit: rolling 7-day rate per 100,000
+  uncertainty:
+    field: predicted_sigma
+    source: same forecast table
+  candidates:
+    source: data/results/candidate_sites/S12000036/merged_candidate_sites.csv
+    types: [gp, pharmacy, mobile_stop]
+  travel_time:
+    source: data/results/travel_time/S12000036/travel_time_matrix.csv
+    default_mode: drive
+    threshold_min: 20.0
+    speeds:
+      drive_kmh: 30.0
+      walk_kmh: 4.5
+    note: Assumed urban averages, not official TTW or GTFS.
+
+# unit(x) = x / sum(x) over 111 IZs; if sum is 0, all zeros.
+# mean(x) is the unweighted mean over 111 IZs.
+
+scenarios:
+  coverage:
+    label: Coverage-priority
+    objective: maximise population covered within the travel-time threshold
+    demand: w_i = Population_i
+    pick: covering gain, then population-weighted travel-time reduction
+  equity:
+    label: Equity-priority
+    objective: prioritise income-deprived and currently underserved IZs
+    demand: population × (income_rate / mean) × (pt_gp_min / mean)
+    pick: greedy p-median (travel-time reduction)
+  preventive:
+    label: Preventive-priority
+    objective: prioritise high predicted risk and/or high uncertainty
+    demand: unit(risk_hot) + unit(unc_hot); zero on other IZs
+    high_risk: predicted_rate >= p75
+    high_uncertainty: uncertainty_flag=high
+    pick: greedy covering of hotspot demand
+  balanced:
+    label: Balanced
+    objective: jointly consider coverage, equity, and preventive hotspots
+    demand: unit(coverage) + unit(equity) + unit(preventive)
+    pick: greedy p-median
+
+solver:
+  algorithm: greedy_cover_then_pmedian_or_pmedian
+  steps: 6
+  eligible_types: [gp, pharmacy, mobile_stop]
+  do_not_pad_by_site_id_when_gain_is_zero: true
+  assignment_after_selection: nearest selected site within 20 min (binary), all scenarios

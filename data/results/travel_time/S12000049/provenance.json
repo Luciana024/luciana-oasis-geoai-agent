@@ -1,0 +1,34 @@
+{
+  "recorded_at": "2026-08-30T13:05:35.923248+00:00",
+  "area_code": "S12000049",
+  "source": "osm",
+  "osm_method": "polygon",
+  "osm_place": null,
+  "buffer_m": 2000.0,
+  "n_iz": 136,
+  "n_sites": 363,
+  "n_rows": 98736,
+  "n_unreachable": 0,
+  "dropped_site_ids": [
+    "PH_1060",
+    "PH_1072"
+  ],
+  "modes": {
+    "drive": {
+      "network_type": "drive",
+      "speed_kmh": 30.0,
+      "speed_is_assumed_urban_average": true
+    },
+    "walk": {
+      "network_type": "walk",
+      "speed_kmh": 4.5,
+      "speed_is_assumed_urban_average": true
+    }
+  },
+  "join_key": "iz_code",
+  "crs_origins": "EPSG:27700",
+  "not_official_ttw": true,
+  "not_road_graph_km": true,
+  "not_gtfs": true,
+  "raw_not_modified": true
+}

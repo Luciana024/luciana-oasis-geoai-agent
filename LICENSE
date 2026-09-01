@@ -1,0 +1,30 @@
+Copyright (c) 2026 The Luciana project authors. All rights reserved.
+
+EVALUATION-ONLY LICENCE
+
+This repository and its original software, documentation, model artefacts,
+and other original materials are made available solely for evaluation and
+reproducibility assessment in connection with the OASIS 2026 submission.
+
+Subject to the terms below, authorised OASIS reviewers may access, download,
+execute, and internally reproduce the software and results for that evaluation
+purpose only.
+
+No permission is granted to publish, redistribute, sublicense, sell,
+commercially exploit, or publicly disclose this repository or its contents.
+No permission is granted to distribute modified versions or derivative works.
+Any use beyond the evaluation purpose requires prior written permission from
+the applicable copyright holder(s).
+
+This licence does not override rights or obligations applying to third-party
+software, data, models, assets, or other materials. Those materials remain
+subject to their respective licences and terms. Relevant software
+attributions are identified in THIRD_PARTY_NOTICES. Inclusion in this
+repository does not imply permission to redistribute externally sourced data.
+
+THE SOFTWARE AND MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. TO THE MAXIMUM EXTENT
+PERMITTED BY LAW, THE COPYRIGHT HOLDERS SHALL NOT BE LIABLE FOR ANY CLAIM,
+DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE
+SOFTWARE, MATERIALS, OR THEIR USE.

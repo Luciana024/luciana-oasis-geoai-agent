@@ -1,0 +1,61 @@
+{
+  "update_id": "U10",
+  "window": "W730",
+  "audit": {
+    "update_date": "2023-02-07",
+    "passed": true,
+    "max_input_date_rule": "issue_date",
+    "labelled_cutoff": "2023-02-07",
+    "n_fitting": 730,
+    "n_selection": 28,
+    "n_calibration": 28,
+    "n_predict": 12,
+    "fitting_target_start": "2020-12-14",
+    "fitting_target_end": "2022-12-13",
+    "selection_target_start": "2022-12-14",
+    "selection_target_end": "2023-01-10",
+    "calibration_target_start": "2023-01-11",
+    "calibration_target_end": "2023-02-07",
+    "predict_issue_start": "2023-02-07",
+    "predict_issue_end": "2023-02-18",
+    "lookback_days": 7,
+    "target_offset_days": 7
+  },
+  "selected_epoch": 15,
+  "persistence_gate_passed": true,
+  "selection_metrics": {
+    "mae": 30.93706904252585,
+    "persistence_mae": 34.72941275432447,
+    "mae_skill": 0.10919688560891094,
+    "r2": -0.04524037117191981,
+    "beats_persistence": true
+  },
+  "refit": {
+    "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/checkpoint.pt",
+    "checkpoint_sha256": "79d4d6c0cb55599546517aef60598e330b7dd07f31538b6995d964aeedaa5c64",
+    "selected_epoch": 15,
+    "refit_on": "fitting_plus_selection"
+  },
+  "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/residual_scalers.json",
+  "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/calibration.json",
+  "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/predictions.csv",
+  "metrics": {
+    "n_valid_cells": 1332,
+    "model_mae": 18.203552195604942,
+    "model_rmse": 25.515641345481978,
+    "model_bias": -7.338307841122649,
+    "model_r2": -0.23188221755226324,
+    "persistence_mae": 15.638356278914806,
+    "persistence_rmse": 32.4508333353071,
+    "persistence_bias": -3.1917853910380267,
+    "persistence_r2": -0.9925439801781224,
+    "mae_skill": -0.16403232353446184,
+    "gaussian_nll_original": 4.9285569190979
+  },
+  "graph_hashes": {
+    "geo": "54248f29efaad492640a83e895a6bfceda1953fa1669d04bd4deecd4cdf40dec",
+    "transport": "0eb01892b82b4a518e0694f6aab0daf7e7f3863403b8306fc3c9a04325e7aab1",
+    "mobility": "ed60eaa5323c19e010cbb54926a16542b3db13281406d6fba2e582ee42a253cd"
+  },
+  "canonical_node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+}

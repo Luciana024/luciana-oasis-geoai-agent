@@ -1,0 +1,32 @@
+Third-party method references for src/model/
+
+The approved architecture is docs/model.md. Original repositories are
+methodological references for individual equations, not the end-to-end model.
+
+1. DCRNN diffusion convolution and DCGRU gates
+   Source: https://github.com/liyaguang/DCRNN
+   Commit: 602afd9d767d3aa1c9b3eac51710d6aeee12c227
+   File: model/dcrnn_cell.py (DCGRUCell._gconv, dual_random_walk supports)
+   Licence: MIT, Copyright (c) 2017 Yaguang Li
+   Adapted: encoder-only; fused directed supports; no decoder or teacher forcing
+   Destination: src/model/dcrnn_encoder.py
+
+2. UQGNN probabilistic interpretation
+   Source: https://github.com/UFOdestiny/UQGNN
+   Paper: https://arxiv.org/abs/2508.08551
+   Commit: 52ccc80df20409680b2476a0cbd4b4de29da829c
+   Licence: MIT
+   Adapted: univariate Gaussian head (1x1 covariance); not the full UQGNN
+   Destination: src/model/heads.py
+   Label: UQGNN-inspired univariate probabilistic prediction head
+
+3. GeoShapley Kernel-SHAP design
+   Source: https://github.com/Ziqi-Li/geoshapley
+   Paper: Li (2024), Annals of the AAG, https://doi.org/10.1080/24694452.2024.2350982
+   Commit: 0d542fc40849267eb3e9f6cb498808fee4cc4a61
+   File: geoshapley/geoshapley.py
+   Licence: MIT
+   Adapted: 128 coalitions and Shapley-kernel weights; exact empty/full
+   equality constraints instead of 1e8 kernel weights; target-IZ-local
+   graph wrapper instead of tabular predict_f
+   Destination: src/model/geoshapley.py

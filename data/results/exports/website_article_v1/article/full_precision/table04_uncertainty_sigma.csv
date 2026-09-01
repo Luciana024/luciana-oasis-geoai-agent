@@ -1,0 +1,2 @@
+mean_predicted_sigma,median_predicted_sigma,corr_sigma_absolute_error,gaussian_nll,n_valid_cells,evaluation_set
+75.8744382611917,56.88063430786133,0.6250436630194475,5.400017403872789,29304,rolling_retrospective_test_only

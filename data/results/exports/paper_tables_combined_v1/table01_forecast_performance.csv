@@ -1,0 +1,5 @@
+city,n_iz,method,MAE,RMSE,R2,MAE_skill,n_target_dates,n_valid_cells,source,evaluation,excludes_2023-03-04
+Edinburgh,111,Persistence,50.66,81.74,0.53,,264,29304,data/results/exports/website_article_v1/article/table02_overall_performance.csv,retrospective_test_65_10_25,True
+Edinburgh,111,Rolling DCRNN,46.53,69.06,0.67,0.081,264,29304,data/results/exports/website_article_v1/article/table02_overall_performance.csv,retrospective_test_65_10_25,True
+Glasgow,136,Persistence,47.97,76.15,0.42,,268,36448,data/results/exports/website_article_glasgow_v1/article/table02_overall_performance.csv,retrospective_test_65_10_25,True
+Glasgow,136,Rolling DCRNN,44.73,63.32,0.6,0.068,268,36448,data/results/exports/website_article_glasgow_v1/article/table02_overall_performance.csv,retrospective_test_65_10_25,True

@@ -1,0 +1,19 @@
+{
+  "n_valid_cells": 21896,
+  "mae": 30.351941292835498,
+  "rmse": 37.99172662046674,
+  "bias": -8.490817960950887,
+  "r2": -0.0522015810889378,
+  "gaussian_nll_original": 5.074773788452148,
+  "raw80_coverage": 0.9501735476799416,
+  "raw80_mean_width": 134.24758284118954,
+  "raw95_coverage": 0.9833759590792839,
+  "raw95_mean_width": 205.31396035308336,
+  "calibration_status": "available",
+  "coverage_uses_unclipped_intervals": true,
+  "not_a_coverage_guarantee": true,
+  "persistence_mae": 28.90692194717675,
+  "mae_skill": -0.04998869642016235,
+  "calibrated95_coverage": 0.9611801242236024,
+  "calibrated95_mean_width": 149.78387162978953
+}

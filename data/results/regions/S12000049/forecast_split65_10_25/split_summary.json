@@ -1,0 +1,43 @@
+{
+  "n_valid_samples": 1070,
+  "lookback_days": 7,
+  "forecast_horizon_days": 7,
+  "config_id": "L7_H7_S1",
+  "n_iz": 136,
+  "source_dataset": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/forecast",
+  "split_rule": "chronological by target_date; floor(0.65) / floor(0.1) / remainder",
+  "requested_proportions": {
+    "train": 0.65,
+    "validation": 0.1,
+    "test": 0.24999999999999997
+  },
+  "actual_proportions": {
+    "train": 0.6495327102803738,
+    "validation": 0.1,
+    "test": 0.2504672897196262
+  },
+  "splits": {
+    "train": {
+      "n_samples": 695,
+      "first_forecast_origin_date": "2020-03-16",
+      "last_forecast_origin_date": "2022-02-08",
+      "first_target_date": "2020-03-23",
+      "last_target_date": "2022-02-15"
+    },
+    "validation": {
+      "n_samples": 107,
+      "first_forecast_origin_date": "2022-02-09",
+      "last_forecast_origin_date": "2022-05-26",
+      "first_target_date": "2022-02-16",
+      "last_target_date": "2022-06-02"
+    },
+    "test": {
+      "n_samples": 268,
+      "first_forecast_origin_date": "2022-05-27",
+      "last_forecast_origin_date": "2023-02-18",
+      "first_target_date": "2022-06-03",
+      "last_target_date": "2023-02-25"
+    }
+  },
+  "windows_not_rebuilt": true
+}

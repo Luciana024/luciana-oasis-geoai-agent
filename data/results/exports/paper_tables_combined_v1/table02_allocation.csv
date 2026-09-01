@@ -1,0 +1,9 @@
+city,policy,n_sites,travel_mode,threshold_min,population_covered,iz_covered,n_iz,unserved_iz,mean_travel_min,max_travel_min,target_date,forecast_status,source_assignments
+Edinburgh,Coverage-priority,6,drive,15.0,513210,111,111,0,5.88,14.92,2023-03-04,unverified_extrapolation,data/results/allocation/coverage/assignments.csv
+Edinburgh,Equity-priority,6,drive,15.0,513210,111,111,0,6.08,14.91,2023-03-04,unverified_extrapolation,data/results/allocation/equity/assignments.csv
+Edinburgh,Preventive-priority,6,drive,15.0,493363,107,111,4,5.54,13.74,2023-03-04,unverified_extrapolation,data/results/allocation/preventive/assignments.csv
+Edinburgh,Balanced,6,drive,15.0,513210,111,111,0,5.24,14.92,2023-03-04,unverified_extrapolation,data/results/allocation/balanced/assignments.csv
+Glasgow,Coverage-priority,6,drive,15.0,621020,136,136,0,5.81,13.89,2023-03-04,unverified_extrapolation,data/results/regions/S12000049/allocation/coverage/assignments.csv
+Glasgow,Equity-priority,6,drive,15.0,621020,136,136,0,5.8,13.89,2023-03-04,unverified_extrapolation,data/results/regions/S12000049/allocation/equity/assignments.csv
+Glasgow,Preventive-priority,6,drive,15.0,577968,125,136,11,6.9,14.8,2023-03-04,unverified_extrapolation,data/results/regions/S12000049/allocation/preventive/assignments.csv
+Glasgow,Balanced,6,drive,15.0,621020,136,136,0,6.26,14.82,2023-03-04,unverified_extrapolation,data/results/regions/S12000049/allocation/balanced/assignments.csv

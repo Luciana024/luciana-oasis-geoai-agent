@@ -1,0 +1,20 @@
+{
+  "path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/selection/checkpoint.pt",
+  "sha256": "add07797260094f45b8b204ae9c5b990686791a4bb51f31267c9e33389366c29",
+  "graph_set": [
+    "geo",
+    "transport",
+    "mobility"
+  ],
+  "alpha_dim": 3,
+  "selected_epoch": 15,
+  "selection_nll": -0.22753199934959412,
+  "selection_metrics": {
+    "mae": 30.93706904252585,
+    "persistence_mae": 34.72941275432447,
+    "mae_skill": 0.10919688560891094,
+    "r2": -0.04524037117191981,
+    "beats_persistence": true
+  },
+  "canonical_node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+}

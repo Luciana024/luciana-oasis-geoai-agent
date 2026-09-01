@@ -1,0 +1,5 @@
+city,interval_type,nominal_coverage,observed_coverage,mean_interval_width,median_interval_width,n_valid_cells,calibration_status
+Edinburgh,calibrated_80,0.8,0.817,144.35,106.4,29304,available
+Edinburgh,calibrated_95,0.95,0.949,228.4,177.47,29304,available
+Glasgow,calibrated_80,0.8,0.822,146.03,110.27,36448,available
+Glasgow,calibrated_95,0.95,0.952,223.28,178.09,36448,available

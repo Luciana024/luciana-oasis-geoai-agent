@@ -1,0 +1,27 @@
+{
+  "recorded_at": "2026-08-30T12:58:36.052004+00:00",
+  "area_code": "S12000049",
+  "source": "api",
+  "osm_place": null,
+  "gp_list_source": "api",
+  "geofabrik_url": "https://download.geofabrik.de/europe/united-kingdom/scotland-latest-free.shp.zip",
+  "parking_source": "overpass",
+  "parking_filters": "oasis-v4 access/parking-type/capacity; drop airport lots",
+  "gp_ckan": "https://www.opendata.nhs.scot/dataset/gp-practice-contact-details-and-list-sizes/resource/993422a6-c64f-4c57-ba41-9279ad5a7c89",
+  "pharmacy_ckan": "https://www.opendata.nhs.scot/dataset/dispenser-location-contact-details/resource/f44e6a10-4f1f-4ffd-9205-956944bacf95",
+  "n_gp": 142,
+  "n_pharmacy": 162,
+  "n_mobile": 63,
+  "n_merged": 363,
+  "join_key": "iz_code",
+  "geography": "2011 Intermediate Zones via DataZone\u2192CA",
+  "not_2024_lad_clip": true,
+  "mobile_sites_are_provisional": true,
+  "raw_not_modified": true,
+  "dropped_site_ids": [
+    "GP_1",
+    "PH_1060",
+    "PH_1072"
+  ],
+  "dropped_reason": "unreachable from all IZ origins on the OSM graph; not filled"
+}

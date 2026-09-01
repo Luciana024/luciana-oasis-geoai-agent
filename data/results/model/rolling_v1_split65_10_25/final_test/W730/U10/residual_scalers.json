@@ -1,0 +1,20 @@
+{
+  "rate": {
+    "mean": 5.044906289524392,
+    "scale": 1.360215174049257,
+    "epsilon": 1e-08,
+    "transform": "log1p"
+  },
+  "first_difference": {
+    "mean": -0.03793809629143479,
+    "scale": 61.04468501645754,
+    "epsilon": 1e-08,
+    "transform": "identity"
+  },
+  "delta": {
+    "mean": -0.5547557360700832,
+    "scale": 227.8367350196287,
+    "epsilon": 1e-08,
+    "transform": "identity"
+  }
+}

@@ -1,0 +1,17 @@
+# Raw extracts are never modified. Outputs go to data/results.
+project_root: .
+
+raw:
+  covid: data/raw/covid
+  population: data/raw/population
+  deprivation: data/raw/deprivation
+  housing: data/raw/housing
+  gp: data/raw/gp
+  boundaries: data/raw/boundaries
+  roads: data/raw/roads
+  mobility: data/raw/mobility
+  candidate_sites: data/raw/candidate_sites
+  travel_time: data/raw/travel_time
+
+results: data/results
+logs: logs

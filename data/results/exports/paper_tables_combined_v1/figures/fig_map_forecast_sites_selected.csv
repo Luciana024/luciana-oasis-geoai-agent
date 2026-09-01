@@ -1,0 +1,13 @@
+city,scenario,map_index,site_id,site_name,site_type,easting,northing
+Edinburgh,balanced,1,GP_71011,Polwarth Medical Practice,gp,324749.0,672986.0
+Edinburgh,balanced,2,PH_2573,M&D GREEN DISPENSING CHEMIST LTD,pharmacy,319734.0,670791.0
+Edinburgh,balanced,3,GP_78359,Almond Group Practice,gp,312350.0,674467.0
+Edinburgh,balanced,4,MS_14,Car Park 1B,mobile_stop,328772.46,670375.5
+Edinburgh,balanced,5,PH_2531,BARRIE DEAR LTD,pharmacy,322424.49,675631.07
+Edinburgh,balanced,6,PH_2473,BESTWAY NATIONAL CHEMISTS LTD,pharmacy,327877.0,674697.0
+Glasgow,balanced,1,MS_14,Oswald Street Car Park,mobile_stop,258678.76,664974.61
+Glasgow,balanced,2,PH_1703,P & C PATERSON LTD,pharmacy,262525.0,664168.0
+Glasgow,balanced,3,GP_52024,Thurston Road Medical Practice,gp,252476.78,664472.07
+Glasgow,balanced,4,PH_1721,J & P INNES LTD,pharmacy,255794.0,668573.0
+Glasgow,balanced,5,PH_1502,LLOYDS PHARMACY LTD,pharmacy,266519.0,664873.0
+Glasgow,balanced,6,PH_1621,BESTWAY NATIONAL CHEMISTS LTD,pharmacy,259491.0,659722.0

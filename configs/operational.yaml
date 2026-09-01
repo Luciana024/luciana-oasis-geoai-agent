@@ -1,0 +1,14 @@
+# Unlabelled next-report-day inference. Not a retrospective test export.
+# Uses the last rolling update whose 28-day live window contains the issue date.
+
+enabled: false
+issue_date: "2023-02-25"
+target_report_date: "2023-03-04"
+lead_days: 7
+checkpoint: data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/checkpoint.pt
+calibration: data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/calibration.json
+u10_manifest: data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/manifest.json
+output_dir: data/results/model/rolling_v1_split65_10_25/operational_20230225
+forecast_status: unverified_extrapolation
+run_geoshapley: true
+do_not_score_metrics: true

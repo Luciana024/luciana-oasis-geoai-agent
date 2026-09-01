@@ -1,0 +1,614 @@
+{
+  "updates": [
+    {
+      "update_id": "U01",
+      "window": "W730",
+      "audit": {
+        "update_date": "2022-05-31",
+        "passed": true,
+        "max_input_date_rule": "issue_date",
+        "labelled_cutoff": "2022-05-31",
+        "n_fitting": 712,
+        "n_selection": 28,
+        "n_calibration": 28,
+        "n_predict": 28,
+        "fitting_target_start": "2020-04-06",
+        "fitting_target_end": "2022-04-05",
+        "selection_target_start": "2022-04-06",
+        "selection_target_end": "2022-05-03",
+        "calibration_target_start": "2022-05-04",
+        "calibration_target_end": "2022-05-31",
+        "predict_issue_start": "2022-05-31",
+        "predict_issue_end": "2022-06-27",
+        "lookback_days": 7,
+        "target_offset_days": 7
+      },
+      "selected_epoch": 28,
+      "persistence_gate_passed": true,
+      "selection_metrics": {
+        "mae": 115.75535185514994,
+        "persistence_mae": 209.51428226493115,
+        "mae_skill": 0.44750615278448125,
+        "r2": 0.5819191233599704,
+        "beats_persistence": true
+      },
+      "refit": {
+        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U01/checkpoint.pt",
+        "checkpoint_sha256": "e5ea291056067b0da66f3769ef94969a256674c2d4f77a7bcb397ade53a6fe9a",
+        "selected_epoch": 28,
+        "refit_on": "fitting_plus_selection"
+      },
+      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U01/residual_scalers.json",
+      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U01/calibration.json",
+      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U01/predictions.csv",
+      "metrics": {
+        "n_valid_cells": 3108,
+        "model_mae": 105.68125774874183,
+        "model_rmse": 132.00537660608026,
+        "model_bias": -45.683493436636745,
+        "model_r2": -0.12162328668366484,
+        "persistence_mae": 115.90057360831963,
+        "persistence_rmse": 148.93272278136934,
+        "persistence_bias": 55.556183064011094,
+        "persistence_r2": -0.42772326040563113,
+        "mae_skill": 0.08817312582173653,
+        "gaussian_nll_original": 6.348751068115234
+      },
+      "graph_hashes": {
+        "geo": "54248f29efaad492640a83e895a6bfceda1953fa1669d04bd4deecd4cdf40dec",
+        "transport": "0eb01892b82b4a518e0694f6aab0daf7e7f3863403b8306fc3c9a04325e7aab1",
+        "mobility": "ed60eaa5323c19e010cbb54926a16542b3db13281406d6fba2e582ee42a253cd"
+      },
+      "canonical_node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+    },
+    {
+      "update_id": "U02",
+      "window": "W730",
+      "audit": {
+        "update_date": "2022-06-28",
+        "passed": true,
+        "max_input_date_rule": "issue_date",
+        "labelled_cutoff": "2022-06-28",
+        "n_fitting": 712,
+        "n_selection": 28,
+        "n_calibration": 28,
+        "n_predict": 28,
+        "fitting_target_start": "2020-05-04",
+        "fitting_target_end": "2022-05-03",
+        "selection_target_start": "2022-05-04",
+        "selection_target_end": "2022-05-31",
+        "calibration_target_start": "2022-06-01",
+        "calibration_target_end": "2022-06-28",
+        "predict_issue_start": "2022-06-28",
+        "predict_issue_end": "2022-07-25",
+        "lookback_days": 7,
+        "target_offset_days": 7
+      },
+      "selected_epoch": 19,
+      "persistence_gate_passed": true,
+      "selection_metrics": {
+        "mae": 65.68578722783452,
+        "persistence_mae": 92.86754440178109,
+        "mae_skill": 0.2926938291417259,
+        "r2": -0.22182029185180951,
+        "beats_persistence": true
+      },
+      "refit": {
+        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U02/checkpoint.pt",
+        "checkpoint_sha256": "4026f42c3f87e7c3144034ab7166946970d882f419b34374d22c82dc67f5bbba",
+        "selected_epoch": 19,
+        "refit_on": "fitting_plus_selection"
+      },
+      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U02/residual_scalers.json",
+      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U02/calibration.json",
+      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U02/predictions.csv",
+      "metrics": {
+        "n_valid_cells": 3108,
+        "model_mae": 91.44859033229602,
+        "model_rmse": 117.49664346226402,
+        "model_bias": -54.03811513192752,
+        "model_r2": 0.07622553606070537,
+        "persistence_mae": 106.46870219189087,
+        "persistence_rmse": 136.4368805632425,
+        "persistence_bias": -64.17106492373784,
+        "persistence_r2": -0.24559998671272654,
+        "mae_skill": 0.14107537285956362,
+        "gaussian_nll_original": 6.104025840759277
+      },
+      "graph_hashes": {
+        "geo": "54248f29efaad492640a83e895a6bfceda1953fa1669d04bd4deecd4cdf40dec",
+        "transport": "0eb01892b82b4a518e0694f6aab0daf7e7f3863403b8306fc3c9a04325e7aab1",
+        "mobility": "ed60eaa5323c19e010cbb54926a16542b3db13281406d6fba2e582ee42a253cd"
+      },
+      "canonical_node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+    },
+    {
+      "update_id": "U03",
+      "window": "W730",
+      "audit": {
+        "update_date": "2022-07-26",
+        "passed": true,
+        "max_input_date_rule": "issue_date",
+        "labelled_cutoff": "2022-07-26",
+        "n_fitting": 712,
+        "n_selection": 28,
+        "n_calibration": 28,
+        "n_predict": 28,
+        "fitting_target_start": "2020-06-01",
+        "fitting_target_end": "2022-05-31",
+        "selection_target_start": "2022-06-01",
+        "selection_target_end": "2022-06-28",
+        "calibration_target_start": "2022-06-29",
+        "calibration_target_end": "2022-07-26",
+        "predict_issue_start": "2022-07-26",
+        "predict_issue_end": "2022-08-22",
+        "lookback_days": 7,
+        "target_offset_days": 7
+      },
+      "selected_epoch": 22,
+      "persistence_gate_passed": true,
+      "selection_metrics": {
+        "mae": 84.65599231194685,
+        "persistence_mae": 106.1887429970076,
+        "mae_skill": 0.20277809188934026,
+        "r2": 0.26140877886532454,
+        "beats_persistence": true
+      },
+      "refit": {
+        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U03/checkpoint.pt",
+        "checkpoint_sha256": "8d51d73c11fa83811fb8e53fe95b90899e45e28fa6a9c4ae9a3cdd37cc8a783b",
+        "selected_epoch": 22,
+        "refit_on": "fitting_plus_selection"
+      },
+      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U03/residual_scalers.json",
+      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U03/calibration.json",
+      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U03/predictions.csv",
+      "metrics": {
+        "n_valid_cells": 3108,
+        "model_mae": 49.1571958640664,
+        "model_rmse": 60.485325931477284,
+        "model_bias": -7.732648121571354,
+        "model_r2": -0.1379291871088859,
+        "persistence_mae": 59.234294270304716,
+        "persistence_rmse": 76.98645972877277,
+        "persistence_bias": -11.35584029662431,
+        "persistence_r2": -0.8435031499924652,
+        "mae_skill": 0.17012270561126874,
+        "gaussian_nll_original": 5.53585958480835
+      },
+      "graph_hashes": {
+        "geo": "54248f29efaad492640a83e895a6bfceda1953fa1669d04bd4deecd4cdf40dec",
+        "transport": "0eb01892b82b4a518e0694f6aab0daf7e7f3863403b8306fc3c9a04325e7aab1",
+        "mobility": "ed60eaa5323c19e010cbb54926a16542b3db13281406d6fba2e582ee42a253cd"
+      },
+      "canonical_node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+    },
+    {
+      "update_id": "U04",
+      "window": "W730",
+      "audit": {
+        "update_date": "2022-08-23",
+        "passed": true,
+        "max_input_date_rule": "issue_date",
+        "labelled_cutoff": "2022-08-23",
+        "n_fitting": 712,
+        "n_selection": 28,
+        "n_calibration": 28,
+        "n_predict": 28,
+        "fitting_target_start": "2020-06-29",
+        "fitting_target_end": "2022-06-28",
+        "selection_target_start": "2022-06-29",
+        "selection_target_end": "2022-07-26",
+        "calibration_target_start": "2022-07-27",
+        "calibration_target_end": "2022-08-23",
+        "predict_issue_start": "2022-08-23",
+        "predict_issue_end": "2022-09-19",
+        "lookback_days": 7,
+        "target_offset_days": 7
+      },
+      "selected_epoch": 21,
+      "persistence_gate_passed": true,
+      "selection_metrics": {
+        "mae": 81.38191823761089,
+        "persistence_mae": 114.02608268734946,
+        "mae_skill": 0.28628681859786675,
+        "r2": 0.36019323355279464,
+        "beats_persistence": true
+      },
+      "refit": {
+        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U04/checkpoint.pt",
+        "checkpoint_sha256": "4169fb70938548c5422e258e4daf036b68f8f294323361e1c7a444e9000092e1",
+        "selected_epoch": 21,
+        "refit_on": "fitting_plus_selection"
+      },
+      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U04/residual_scalers.json",
+      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U04/calibration.json",
+      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U04/predictions.csv",
+      "metrics": {
+        "n_valid_cells": 3108,
+        "model_mae": 38.35221410624671,
+        "model_rmse": 49.65256955937209,
+        "model_bias": 4.366863553949454,
+        "model_r2": -0.13415822023304003,
+        "persistence_mae": 48.656835874691474,
+        "persistence_rmse": 66.2555424920951,
+        "persistence_bias": -8.442405951532773,
+        "persistence_r2": -1.0194570287069697,
+        "mae_skill": 0.21178158388644097,
+        "gaussian_nll_original": 5.395784378051758
+      },
+      "graph_hashes": {
+        "geo": "54248f29efaad492640a83e895a6bfceda1953fa1669d04bd4deecd4cdf40dec",
+        "transport": "0eb01892b82b4a518e0694f6aab0daf7e7f3863403b8306fc3c9a04325e7aab1",
+        "mobility": "ed60eaa5323c19e010cbb54926a16542b3db13281406d6fba2e582ee42a253cd"
+      },
+      "canonical_node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+    },
+    {
+      "update_id": "U05",
+      "window": "W730",
+      "audit": {
+        "update_date": "2022-09-20",
+        "passed": true,
+        "max_input_date_rule": "issue_date",
+        "labelled_cutoff": "2022-09-20",
+        "n_fitting": 722,
+        "n_selection": 28,
+        "n_calibration": 28,
+        "n_predict": 28,
+        "fitting_target_start": "2020-07-27",
+        "fitting_target_end": "2022-07-26",
+        "selection_target_start": "2022-07-27",
+        "selection_target_end": "2022-08-23",
+        "calibration_target_start": "2022-08-24",
+        "calibration_target_end": "2022-09-20",
+        "predict_issue_start": "2022-09-20",
+        "predict_issue_end": "2022-10-17",
+        "lookback_days": 7,
+        "target_offset_days": 7
+      },
+      "selected_epoch": 32,
+      "persistence_gate_passed": true,
+      "selection_metrics": {
+        "mae": 49.87465640515927,
+        "persistence_mae": 64.61636909247187,
+        "mae_skill": 0.22814207753171456,
+        "r2": -0.01112769141631631,
+        "beats_persistence": true
+      },
+      "refit": {
+        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U05/checkpoint.pt",
+        "checkpoint_sha256": "46ee3954de20c6bdde2bbe6fc89605aa920045ef4670fcf79ce86553c419bc7b",
+        "selected_epoch": 32,
+        "refit_on": "fitting_plus_selection"
+      },
+      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U05/residual_scalers.json",
+      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U05/calibration.json",
+      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U05/predictions.csv",
+      "metrics": {
+        "n_valid_cells": 3108,
+        "model_mae": 38.664905585781874,
+        "model_rmse": 46.97849160598066,
+        "model_bias": 0.5007790348462805,
+        "model_r2": -0.18975007109960185,
+        "persistence_mae": 43.087882317772596,
+        "persistence_rmse": 59.42540681139447,
+        "persistence_bias": 1.0938436973996033,
+        "persistence_r2": -0.9037149912401716,
+        "mae_skill": 0.1026501302470918,
+        "gaussian_nll_original": 5.37816047668457
+      },
+      "graph_hashes": {
+        "geo": "54248f29efaad492640a83e895a6bfceda1953fa1669d04bd4deecd4cdf40dec",
+        "transport": "0eb01892b82b4a518e0694f6aab0daf7e7f3863403b8306fc3c9a04325e7aab1",
+        "mobility": "ed60eaa5323c19e010cbb54926a16542b3db13281406d6fba2e582ee42a253cd"
+      },
+      "canonical_node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+    },
+    {
+      "update_id": "U06",
+      "window": "W730",
+      "audit": {
+        "update_date": "2022-10-18",
+        "passed": true,
+        "max_input_date_rule": "issue_date",
+        "labelled_cutoff": "2022-10-18",
+        "n_fitting": 730,
+        "n_selection": 28,
+        "n_calibration": 28,
+        "n_predict": 28,
+        "fitting_target_start": "2020-08-24",
+        "fitting_target_end": "2022-08-23",
+        "selection_target_start": "2022-08-24",
+        "selection_target_end": "2022-09-20",
+        "calibration_target_start": "2022-09-21",
+        "calibration_target_end": "2022-10-18",
+        "predict_issue_start": "2022-10-18",
+        "predict_issue_end": "2022-11-14",
+        "lookback_days": 7,
+        "target_offset_days": 7
+      },
+      "selected_epoch": 35,
+      "persistence_gate_passed": true,
+      "selection_metrics": {
+        "mae": 40.36293183132222,
+        "persistence_mae": 53.25837289780011,
+        "mae_skill": 0.24212983545748812,
+        "r2": 0.007064582794181096,
+        "beats_persistence": true
+      },
+      "refit": {
+        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U06/checkpoint.pt",
+        "checkpoint_sha256": "94fdf51757b76941a5d17d751534935cced150f6ac66946582a792e2faa513ba",
+        "selected_epoch": 35,
+        "refit_on": "fitting_plus_selection"
+      },
+      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U06/residual_scalers.json",
+      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U06/calibration.json",
+      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U06/predictions.csv",
+      "metrics": {
+        "n_valid_cells": 3108,
+        "model_mae": 26.258355993819304,
+        "model_rmse": 34.13683457397574,
+        "model_bias": -3.822628929286011,
+        "model_r2": -0.09939207749652246,
+        "persistence_mae": 29.109477019584862,
+        "persistence_rmse": 46.62626196091165,
+        "persistence_bias": -6.78355812937039,
+        "persistence_r2": -1.0510077743632875,
+        "mae_skill": 0.09794476980288325,
+        "gaussian_nll_original": 4.993580341339111
+      },
+      "graph_hashes": {
+        "geo": "54248f29efaad492640a83e895a6bfceda1953fa1669d04bd4deecd4cdf40dec",
+        "transport": "0eb01892b82b4a518e0694f6aab0daf7e7f3863403b8306fc3c9a04325e7aab1",
+        "mobility": "ed60eaa5323c19e010cbb54926a16542b3db13281406d6fba2e582ee42a253cd"
+      },
+      "canonical_node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+    },
+    {
+      "update_id": "U07",
+      "window": "W730",
+      "audit": {
+        "update_date": "2022-11-15",
+        "passed": true,
+        "max_input_date_rule": "issue_date",
+        "labelled_cutoff": "2022-11-15",
+        "n_fitting": 730,
+        "n_selection": 28,
+        "n_calibration": 28,
+        "n_predict": 28,
+        "fitting_target_start": "2020-09-21",
+        "fitting_target_end": "2022-09-20",
+        "selection_target_start": "2022-09-21",
+        "selection_target_end": "2022-10-18",
+        "calibration_target_start": "2022-10-19",
+        "calibration_target_end": "2022-11-15",
+        "predict_issue_start": "2022-11-15",
+        "predict_issue_end": "2022-12-12",
+        "lookback_days": 7,
+        "target_offset_days": 7
+      },
+      "selected_epoch": 14,
+      "persistence_gate_passed": true,
+      "selection_metrics": {
+        "mae": 36.688471138728204,
+        "persistence_mae": 42.014629644751096,
+        "mae_skill": 0.12676914091728264,
+        "r2": -0.14508374602364515,
+        "beats_persistence": true
+      },
+      "refit": {
+        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U07/checkpoint.pt",
+        "checkpoint_sha256": "475dc11e901e0fad96f826de816cf9a92d4b4f7947966b0c59b5e2f6ba554424",
+        "selected_epoch": 14,
+        "refit_on": "fitting_plus_selection"
+      },
+      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U07/residual_scalers.json",
+      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U07/calibration.json",
+      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U07/predictions.csv",
+      "metrics": {
+        "n_valid_cells": 3108,
+        "model_mae": 26.769766133050265,
+        "model_rmse": 40.66093888678946,
+        "model_bias": 2.551333534695708,
+        "model_r2": -0.06151463438692839,
+        "persistence_mae": 27.12096262072545,
+        "persistence_rmse": 48.247232099086204,
+        "persistence_bias": 4.998753217728758,
+        "persistence_r2": -0.49456905986580346,
+        "mae_skill": 0.012949263364524066,
+        "gaussian_nll_original": 5.134488105773926
+      },
+      "graph_hashes": {
+        "geo": "54248f29efaad492640a83e895a6bfceda1953fa1669d04bd4deecd4cdf40dec",
+        "transport": "0eb01892b82b4a518e0694f6aab0daf7e7f3863403b8306fc3c9a04325e7aab1",
+        "mobility": "ed60eaa5323c19e010cbb54926a16542b3db13281406d6fba2e582ee42a253cd"
+      },
+      "canonical_node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+    },
+    {
+      "update_id": "U08",
+      "window": "W730",
+      "audit": {
+        "update_date": "2022-12-13",
+        "passed": true,
+        "max_input_date_rule": "issue_date",
+        "labelled_cutoff": "2022-12-13",
+        "n_fitting": 730,
+        "n_selection": 28,
+        "n_calibration": 28,
+        "n_predict": 28,
+        "fitting_target_start": "2020-10-19",
+        "fitting_target_end": "2022-10-18",
+        "selection_target_start": "2022-10-19",
+        "selection_target_end": "2022-11-15",
+        "calibration_target_start": "2022-11-16",
+        "calibration_target_end": "2022-12-13",
+        "predict_issue_start": "2022-12-13",
+        "predict_issue_end": "2023-01-09",
+        "lookback_days": 7,
+        "target_offset_days": 7
+      },
+      "selected_epoch": 23,
+      "persistence_gate_passed": true,
+      "selection_metrics": {
+        "mae": 29.40893424265556,
+        "persistence_mae": 33.58863578881108,
+        "mae_skill": 0.12443796683007435,
+        "r2": -0.001974756477311379,
+        "beats_persistence": true
+      },
+      "refit": {
+        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U08/checkpoint.pt",
+        "checkpoint_sha256": "a40c30461f49ff7f6dfe8e5f9c27887c3bc6deb5935db8dece6d2273ae63f403",
+        "selected_epoch": 23,
+        "refit_on": "fitting_plus_selection"
+      },
+      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U08/residual_scalers.json",
+      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U08/calibration.json",
+      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U08/predictions.csv",
+      "metrics": {
+        "n_valid_cells": 3108,
+        "model_mae": 29.331421241018155,
+        "model_rmse": 39.15040645823018,
+        "model_bias": -7.63304799882196,
+        "model_r2": -0.08787901160253253,
+        "persistence_mae": 30.363483711326342,
+        "persistence_rmse": 52.4468811089048,
+        "persistence_bias": -5.179234428676715,
+        "persistence_r2": -0.9523037172640527,
+        "mae_skill": 0.03399025224247243,
+        "gaussian_nll_original": 5.08014440536499
+      },
+      "graph_hashes": {
+        "geo": "54248f29efaad492640a83e895a6bfceda1953fa1669d04bd4deecd4cdf40dec",
+        "transport": "0eb01892b82b4a518e0694f6aab0daf7e7f3863403b8306fc3c9a04325e7aab1",
+        "mobility": "ed60eaa5323c19e010cbb54926a16542b3db13281406d6fba2e582ee42a253cd"
+      },
+      "canonical_node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+    },
+    {
+      "update_id": "U09",
+      "window": "W730",
+      "audit": {
+        "update_date": "2023-01-10",
+        "passed": true,
+        "max_input_date_rule": "issue_date",
+        "labelled_cutoff": "2023-01-10",
+        "n_fitting": 730,
+        "n_selection": 28,
+        "n_calibration": 28,
+        "n_predict": 28,
+        "fitting_target_start": "2020-11-16",
+        "fitting_target_end": "2022-11-15",
+        "selection_target_start": "2022-11-16",
+        "selection_target_end": "2022-12-13",
+        "calibration_target_start": "2022-12-14",
+        "calibration_target_end": "2023-01-10",
+        "predict_issue_start": "2023-01-10",
+        "predict_issue_end": "2023-02-06",
+        "lookback_days": 7,
+        "target_offset_days": 7
+      },
+      "selected_epoch": 16,
+      "persistence_gate_passed": true,
+      "selection_metrics": {
+        "mae": 22.410740325623006,
+        "persistence_mae": 23.046623055201803,
+        "mae_skill": 0.02759114548173569,
+        "r2": -0.09256756175727765,
+        "beats_persistence": true
+      },
+      "refit": {
+        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U09/checkpoint.pt",
+        "checkpoint_sha256": "5c04365e1163c93bbfed48446d2b10770fdd850da6f60d9f6d23e2cfb0e8a798",
+        "selected_epoch": 16,
+        "refit_on": "fitting_plus_selection"
+      },
+      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U09/residual_scalers.json",
+      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U09/calibration.json",
+      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U09/predictions.csv",
+      "metrics": {
+        "n_valid_cells": 3108,
+        "model_mae": 25.27331673210112,
+        "model_rmse": 27.87260147317695,
+        "model_bias": -18.198973728042418,
+        "model_r2": -0.9331550984503885,
+        "persistence_mae": 11.010332421831315,
+        "persistence_rmse": 25.502901618805886,
+        "persistence_bias": 0.9591694463306676,
+        "persistence_r2": -0.6184186701126755,
+        "mae_skill": -1.2954181366939586,
+        "gaussian_nll_original": 4.831418037414551
+      },
+      "graph_hashes": {
+        "geo": "54248f29efaad492640a83e895a6bfceda1953fa1669d04bd4deecd4cdf40dec",
+        "transport": "0eb01892b82b4a518e0694f6aab0daf7e7f3863403b8306fc3c9a04325e7aab1",
+        "mobility": "ed60eaa5323c19e010cbb54926a16542b3db13281406d6fba2e582ee42a253cd"
+      },
+      "canonical_node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+    },
+    {
+      "update_id": "U10",
+      "window": "W730",
+      "audit": {
+        "update_date": "2023-02-07",
+        "passed": true,
+        "max_input_date_rule": "issue_date",
+        "labelled_cutoff": "2023-02-07",
+        "n_fitting": 730,
+        "n_selection": 28,
+        "n_calibration": 28,
+        "n_predict": 12,
+        "fitting_target_start": "2020-12-14",
+        "fitting_target_end": "2022-12-13",
+        "selection_target_start": "2022-12-14",
+        "selection_target_end": "2023-01-10",
+        "calibration_target_start": "2023-01-11",
+        "calibration_target_end": "2023-02-07",
+        "predict_issue_start": "2023-02-07",
+        "predict_issue_end": "2023-02-18",
+        "lookback_days": 7,
+        "target_offset_days": 7
+      },
+      "selected_epoch": 15,
+      "persistence_gate_passed": true,
+      "selection_metrics": {
+        "mae": 30.93706904252585,
+        "persistence_mae": 34.72941275432447,
+        "mae_skill": 0.10919688560891094,
+        "r2": -0.04524037117191981,
+        "beats_persistence": true
+      },
+      "refit": {
+        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/checkpoint.pt",
+        "checkpoint_sha256": "79d4d6c0cb55599546517aef60598e330b7dd07f31538b6995d964aeedaa5c64",
+        "selected_epoch": 15,
+        "refit_on": "fitting_plus_selection"
+      },
+      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/residual_scalers.json",
+      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/calibration.json",
+      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/predictions.csv",
+      "metrics": {
+        "n_valid_cells": 1332,
+        "model_mae": 18.203552195604942,
+        "model_rmse": 25.515641345481978,
+        "model_bias": -7.338307841122649,
+        "model_r2": -0.23188221755226324,
+        "persistence_mae": 15.638356278914806,
+        "persistence_rmse": 32.4508333353071,
+        "persistence_bias": -3.1917853910380267,
+        "persistence_r2": -0.9925439801781224,
+        "mae_skill": -0.16403232353446184,
+        "gaussian_nll_original": 4.9285569190979
+      },
+      "graph_hashes": {
+        "geo": "54248f29efaad492640a83e895a6bfceda1953fa1669d04bd4deecd4cdf40dec",
+        "transport": "0eb01892b82b4a518e0694f6aab0daf7e7f3863403b8306fc3c9a04325e7aab1",
+        "mobility": "ed60eaa5323c19e010cbb54926a16542b3db13281406d6fba2e582ee42a253cd"
+      },
+      "canonical_node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+    }
+  ]
+}

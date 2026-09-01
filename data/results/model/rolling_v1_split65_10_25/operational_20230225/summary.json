@@ -1,0 +1,75 @@
+{
+  "n_iz": 111,
+  "predicted_mean_min": 11.697730503714252,
+  "predicted_mean_max": 54.50313504358657,
+  "predicted_mean_avg": 34.02792155470253,
+  "n_high_uncertainty": 14,
+  "highest_uncertainty_iz": [
+    "S02001607",
+    "S02001629",
+    "S02001668",
+    "S02001670",
+    "S02001601",
+    "S02001605",
+    "S02001582",
+    "S02001636",
+    "S02001576",
+    "S02001584"
+  ],
+  "leading_geoshapley_factors": [
+    {
+      "player_name": "income_deprivation",
+      "component": "main",
+      "mean_phi": 1.0678686127085828,
+      "mean_abs_phi": 2.1506994938732866
+    },
+    {
+      "player_name": "location",
+      "component": "location",
+      "mean_phi": -0.21262791249589502,
+      "mean_abs_phi": 1.6809358256382843
+    },
+    {
+      "player_name": "higher_education",
+      "component": "main",
+      "mean_phi": -0.47955506531044917,
+      "mean_abs_phi": 1.0584912914145128
+    },
+    {
+      "player_name": "location_x_income_deprivation",
+      "component": "interaction",
+      "mean_phi": 0.1730072016344684,
+      "mean_abs_phi": 1.0270677774211279
+    },
+    {
+      "player_name": "public_transport_time_to_gp",
+      "component": "main",
+      "mean_phi": 0.3432014786688274,
+      "mean_abs_phi": 0.912698829983349
+    },
+    {
+      "player_name": "location_x_public_transport_time_to_gp",
+      "component": "interaction",
+      "mean_phi": 0.3583136965166277,
+      "mean_abs_phi": 0.6467541734492606
+    },
+    {
+      "player_name": "location_x_overcrowding",
+      "component": "interaction",
+      "mean_phi": -0.015527053266213335,
+      "mean_abs_phi": 0.6021570720305931
+    },
+    {
+      "player_name": "employment_deprivation",
+      "component": "main",
+      "mean_phi": -0.35957575534634006,
+      "mean_abs_phi": 0.4685023623275355
+    }
+  ],
+  "alpha": {
+    "label": "Learned relative graph-fusion weights",
+    "alpha_geographic": 0.3181084990501404,
+    "alpha_transport": 0.32340142130851746,
+    "alpha_mobility": 0.35849013924598694
+  }
+}

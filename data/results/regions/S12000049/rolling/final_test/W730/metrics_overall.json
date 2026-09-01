@@ -1,0 +1,12 @@
+{
+  "n_valid_cells": 36448,
+  "model_mae": 44.72907168971381,
+  "model_rmse": 63.31709595461751,
+  "model_bias": -13.447324522593037,
+  "model_r2": 0.597643034282979,
+  "persistence_mae": 47.96907233754728,
+  "persistence_rmse": 76.15038353537594,
+  "persistence_bias": -2.0846976217616127,
+  "persistence_r2": 0.41801238995622136,
+  "mae_skill": 0.06754353357167997
+}

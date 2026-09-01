@@ -1,0 +1,72 @@
+{
+  "model_name": "Probabilistic Adaptive Multi-Graph DCRNN Encoder with Contextual Node Embedding",
+  "prediction_definition": "[Y_{t-6}, ..., Y_t] -> Y_{t+7}; residual mu = Y_t + predicted_delta",
+  "rolling_seven_day_rate_definition": "Daily-reported rolling seven-day COVID-19 infection rate per 100,000, not daily new cases.",
+  "lookback": 7,
+  "lead": 7,
+  "output_steps": 1,
+  "graph_definitions": {
+    "geo": "2011 IZ Queen adjacency, undirected/symmetric allowed",
+    "transport": "directed road/public-transport graph, not symmetrised",
+    "mobility": "pre-averaged 2019-2023 OD matrix, directed, not real-time flow",
+    "fusion": "One global softmax alpha mixes directed diffusion supports. Label: learned relative graph-fusion weights, not COVID risk shares."
+  },
+  "context_variable_definitions": {
+    "income_rate": "income deprivation",
+    "employment_rate": "employment deprivation",
+    "university_rate": "higher education / university entry",
+    "overcrowded_rate": "overcrowding",
+    "crime_rate": "selected neighbourhood crime",
+    "pt_gp_min": "public transport time to GP, minutes",
+    "location": "joint Easting/Northing player in GeoShapley"
+  },
+  "uncertainty_interpretation": {
+    "sigma": "Predicted standard deviation of the residual-reconstructed rate. Maps should colour by sigma.",
+    "intervals": "Calibrated 80/95 are empirical intervals from frozen calibration scores; not an exchangeability coverage guarantee.",
+    "uncertainty_flag": "Optional binary overlay: sigma > calibration P90. Not required if the map uses continuous sigma.",
+    "exchangeability_limitation": "Rolling seven-day COVID-19 outcomes are temporally overlapping and spatially dependent, so calibrated intervals are empirical uncertainty intervals rather than intervals with a formal exchangeability-based coverage guarantee.",
+    "calibration_method": "finite-sample corrected empirical calibration"
+  },
+  "checkpoint_information": {
+    "rolling_updates": "U01-U10, window W730, 28-day updates",
+    "future_forecast_checkpoint": "U10",
+    "fixed_65_10_25_not_used_for_website_maps": true,
+    "geoshapley_available_for": [
+      {
+        "checkpoint_id": "U10",
+        "issue_date": "2023-02-25",
+        "target_report_date": "2023-03-04",
+        "note": "Only GeoShapley computed with the same rolling checkpoint as the displayed forecast."
+      }
+    ],
+    "retrospective_geoshapley": "Not computed per rolling update. Do not attach the fixed-split GeoShapley file to rolling maps."
+  },
+  "calibration_method": "finite-sample corrected empirical calibration",
+  "data_date_ranges": {
+    "panel": "2020-03-08 to 2023-02-25",
+    "retrospective_issue_dates": "2022-05-31 to 2023-02-18",
+    "retrospective_target_dates": "2022-06-07 to 2023-02-25",
+    "future_issue_date": "2023-02-25",
+    "future_target_date": "2023-03-04"
+  },
+  "split_design": "Chronological 65/10/25 by target_date on 1054 frozen S1 windows. Validation internally 50/50 selection then calibration.",
+  "leakage_check_status": {
+    "passed": true,
+    "source": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/leakage_audit.json"
+  },
+  "warning_definitions": {
+    "retrospective_evaluation": "Labelled test forecasts; observations exist.",
+    "unverified_extrapolation": "No observed target on 2023-03-04; exclude from metrics.",
+    "alpha_mean": "Descriptive only; do not substitute for a date-specific checkpoint."
+  },
+  "explanation_limitations": {
+    "geoshapley_scope": "target_iz_local",
+    "does_not_explain_embeddings": true,
+    "not_causal": true,
+    "alpha_is_not_risk_share": true,
+    "no_geoshapley_on_other_test_dates": true
+  },
+  "bias_definition": "mean(prediction - observation)",
+  "website_date_selector": "Use website/date_selector.csv only (test issue dates). Do not add train or validation dates.",
+  "canonical_node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+}

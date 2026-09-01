@@ -1,0 +1,8 @@
+feature_name,mean_absolute_main_effect,mean_signed_main_effect,mean_absolute_location_interaction,positive_effect_iz_fraction,negative_effect_iz_fraction,checkpoint_id,target_report_date
+income_deprivation,1.307,-0.206,0.433,0.5,0.5,live,2023-03-04
+employment_deprivation,0.275,0.1,0.37,0.64,0.36,live,2023-03-04
+higher_education,0.449,0.223,0.318,0.581,0.419,live,2023-03-04
+overcrowding,0.498,0.294,0.39,0.632,0.368,live,2023-03-04
+crime,0.153,0.084,0.154,0.625,0.375,live,2023-03-04
+public_transport_time_to_gp,0.346,0.247,0.388,0.706,0.294,live,2023-03-04
+location,0.526,0.204,,0.588,0.412,live,2023-03-04

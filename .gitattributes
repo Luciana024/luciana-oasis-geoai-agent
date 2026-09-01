@@ -1,0 +1,16 @@
+*.pt binary
+*.npz binary
+*.npy binary
+*.png binary
+*.pdf binary
+*.shp binary
+*.shx binary
+*.dbf binary
+*.sbn binary
+*.sbx binary
+*.xlsx binary
+*.csv text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf

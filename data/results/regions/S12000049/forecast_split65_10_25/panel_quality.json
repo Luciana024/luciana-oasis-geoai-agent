@@ -1,0 +1,24 @@
+{
+  "analysis_start_date": "2020-03-10",
+  "analysis_end_date": "2023-02-25",
+  "n_calendar_dates": 1083,
+  "n_iz": 136,
+  "expected_date_iz_observations": 147288,
+  "observed_date_iz_observations": 147288,
+  "n_absent_date_iz_rows": 0,
+  "n_missing_infection_rate": 0,
+  "n_zero_infection_rate": 0,
+  "zero_is_not_used_as_missing_fill": true,
+  "dates_missing_for_every_iz": [],
+  "dates_with_partial_iz_coverage": [],
+  "affected_iz_codes": [],
+  "study_area": "City of Edinburgh",
+  "local_authority_code": "S12000036",
+  "geography_type": "2011 Intermediate Zone",
+  "geography_vintage": "2011",
+  "area_filter_repeated": false,
+  "warnings": [
+    "IZ count is 136, not the Edinburgh expected 111."
+  ],
+  "validation_status": "ok_with_warnings"
+}

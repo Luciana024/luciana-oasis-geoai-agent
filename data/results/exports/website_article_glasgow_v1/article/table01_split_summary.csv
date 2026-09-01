@@ -1,0 +1,5 @@
+split_name,fraction,target_start_date,target_end_date,n_unique_target_dates,n_valid_iz_date_cells,mean_infection_rate,std_infection_rate,mean_target_delta,std_target_delta
+Train,0.6495,2020-03-23,2022-02-15,695,94520,289.92,430.03,7.77,258.84
+Validation selection,0.0495,2022-02-16,2022-04-09,53,7208,1000.64,339.19,-9.6,329.27
+Validation calibration,0.0505,2022-04-10,2022-06-02,54,7344,248.47,192.8,-79.15,150.29
+Test,0.2505,2022-06-03,2023-02-25,268,36448,91.0,99.82,-2.08,76.12

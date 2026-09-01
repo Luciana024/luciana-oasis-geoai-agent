@@ -1,0 +1,164 @@
+{
+  "passed": true,
+  "u10_valid_for_issue_date": true,
+  "issue_date": "2023-02-25",
+  "target_report_date": "2023-03-04",
+  "information_cutoff": "2023-02-25",
+  "input_start_date": "2023-02-19",
+  "input_end_date": "2023-02-25",
+  "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/checkpoint.pt",
+  "checkpoint_sha256": "79d4d6c0cb55599546517aef60598e330b7dd07f31538b6995d964aeedaa5c64",
+  "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/calibration.json",
+  "operational_period_rule": "scheduled_live_window = [update_date, update_date + retrain_frequency_days - 1]; not the truncated labelled predict_issue_end",
+  "checks": [
+    {
+      "name": "u10_identity",
+      "passed": true,
+      "detail": "U10"
+    },
+    {
+      "name": "not_fixed_split_checkpoint",
+      "passed": true,
+      "detail": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/checkpoint.pt"
+    },
+    {
+      "name": "w730_training_window",
+      "passed": true,
+      "detail": {
+        "window": "W730",
+        "n_fitting": 730
+      }
+    },
+    {
+      "name": "graph_set",
+      "passed": true,
+      "detail": [
+        "geo",
+        "transport",
+        "mobility"
+      ]
+    },
+    {
+      "name": "node_order_hash",
+      "passed": true,
+      "detail": {
+        "checkpoint": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34",
+        "runtime": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+      }
+    },
+    {
+      "name": "model_configuration",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "covid_residual_scaler",
+      "passed": true,
+      "detail": {
+        "json_present": true,
+        "match": true
+      }
+    },
+    {
+      "name": "contextual_feature_scaler",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "coordinate_scaler",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "uncertainty_calibration_artefact",
+      "passed": true,
+      "detail": {
+        "status": "available",
+        "sha256_match": true
+      }
+    },
+    {
+      "name": "graph_file_hashes",
+      "passed": true,
+      "detail": {
+        "checkpoint": {
+          "geo": "54248f29efaad492640a83e895a6bfceda1953fa1669d04bd4deecd4cdf40dec",
+          "transport": "0eb01892b82b4a518e0694f6aab0daf7e7f3863403b8306fc3c9a04325e7aab1",
+          "mobility": "ed60eaa5323c19e010cbb54926a16542b3db13281406d6fba2e582ee42a253cd"
+        },
+        "loaded": {
+          "geo": "54248f29efaad492640a83e895a6bfceda1953fa1669d04bd4deecd4cdf40dec",
+          "transport": "0eb01892b82b4a518e0694f6aab0daf7e7f3863403b8306fc3c9a04325e7aab1",
+          "mobility": "ed60eaa5323c19e010cbb54926a16542b3db13281406d6fba2e582ee42a253cd"
+        }
+      }
+    },
+    {
+      "name": "alpha_positive_sum_to_one",
+      "passed": true,
+      "detail": {
+        "geo": 0.3181084990501404,
+        "transport": 0.32340142130851746,
+        "mobility": 0.35849013924598694
+      }
+    },
+    {
+      "name": "scheduled_live_window_includes_issue_date",
+      "passed": true,
+      "detail": {
+        "issue_date": "2023-02-25",
+        "update_date": "2023-02-07",
+        "scheduled_live_start": "2023-02-07",
+        "scheduled_live_end": "2023-03-06",
+        "retrain_frequency_days": 28,
+        "labelled_predict_issue_start": "2023-02-07",
+        "labelled_predict_issue_end": "2023-02-18",
+        "in_labelled_retrospective_window": false
+      }
+    },
+    {
+      "name": "requested_dates",
+      "passed": true,
+      "detail": {
+        "issue": "2023-02-25",
+        "target": "2023-03-04",
+        "lead_days": 7
+      }
+    },
+    {
+      "name": "all_111_iz_inputs_through_issue_date",
+      "passed": true,
+      "detail": {
+        "n_complete_lookback_days": 7,
+        "missing_by_day": {
+          "2023-02-19": 0,
+          "2023-02-20": 0,
+          "2023-02-21": 0,
+          "2023-02-22": 0,
+          "2023-02-23": 0,
+          "2023-02-24": 0,
+          "2023-02-25": 0
+        }
+      }
+    },
+    {
+      "name": "no_post_issue_date_data_used",
+      "passed": true,
+      "detail": {
+        "max_input_date": "2023-02-25",
+        "issue_date": "2023-02-25"
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "code": "beyond_labelled_predict_window",
+      "level": "accepted_limitation",
+      "message": "U10's labelled retrospective predict window ends 2023-02-18 because S1 targets end. Issue 2023-02-25 is still inside the scheduled 28-day live window 2023-02-07 to 2023-03-06, so U10 remains the un-updated operational checkpoint. No U11 exists."
+    }
+  ],
+  "alpha_label": "Learned relative graph-fusion weights",
+  "forecast_status_if_run": "unverified_extrapolation",
+  "observed_target_available": false,
+  "include_in_test_metrics": false
+}

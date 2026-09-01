@@ -1,0 +1,21 @@
+{
+  "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/checkpoint.pt",
+  "checkpoint_sha256": "79d4d6c0cb55599546517aef60598e330b7dd07f31538b6995d964aeedaa5c64",
+  "method": "finite-sample corrected empirical calibration",
+  "exchangeability_limitation": "Rolling seven-day COVID-19 outcomes are temporally overlapping and spatially dependent, so calibrated intervals are empirical uncertainty intervals rather than intervals with a formal exchangeability-based coverage guarantee.",
+  "calibration_status": "available",
+  "n_calibration": 3108,
+  "n_min": 20,
+  "gamma_95": 0.05,
+  "gamma_80": 0.2,
+  "k95": 2954,
+  "q95": 0.8213303442857522,
+  "k80": 2488,
+  "q80": 0.47607915897367714,
+  "sigma_p90_threshold": 56.19824981689453,
+  "sigma_flag_quantile": 0.9,
+  "sigma_flag_source_split": "rolling_calibration",
+  "warnings": [],
+  "update_id": "U10",
+  "information_cutoff": "2023-02-07"
+}

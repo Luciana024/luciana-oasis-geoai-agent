@@ -1,0 +1,31 @@
+{
+  "recorded_at": "2026-08-28T17:13:45.153917+00:00",
+  "area_code": "S12000036",
+  "source": "osm",
+  "osm_method": "place",
+  "osm_place": "City of Edinburgh, UK",
+  "buffer_m": null,
+  "n_iz": 111,
+  "n_sites": 232,
+  "n_rows": 51504,
+  "n_unreachable": 0,
+  "dropped_site_ids": [],
+  "modes": {
+    "drive": {
+      "network_type": "drive",
+      "speed_kmh": 30.0,
+      "speed_is_assumed_urban_average": true
+    },
+    "walk": {
+      "network_type": "walk",
+      "speed_kmh": 4.5,
+      "speed_is_assumed_urban_average": true
+    }
+  },
+  "join_key": "iz_code",
+  "crs_origins": "EPSG:27700",
+  "not_official_ttw": true,
+  "not_road_graph_km": true,
+  "not_gtfs": true,
+  "raw_not_modified": true
+}

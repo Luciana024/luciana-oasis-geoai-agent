@@ -1,0 +1,29 @@
+{
+  "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model/geo_transport_mobility/checkpoint.pt",
+  "checkpoint_sha256": "4a1e18442400d472e5eb0066072e578cba3abbc7b3125c24d66dfec69d19a4b2",
+  "method": "finite-sample corrected empirical calibration",
+  "exchangeability_limitation": "Rolling seven-day COVID-19 outcomes are temporally overlapping and spatially dependent, so calibrated intervals are empirical uncertainty intervals rather than intervals with a formal exchangeability-based coverage guarantee.",
+  "calibration_status": "available",
+  "n_calibration": 10880,
+  "n_min": 20,
+  "gamma": 0.05,
+  "k": 10337,
+  "q95": 1.4298638223680886,
+  "sigma_p90_threshold": 149.2183380126953,
+  "sigma_flag_quantile": 0.9,
+  "sigma_flag_source_split": "validation_calibration",
+  "uncertainty_flag_enabled": true,
+  "require_calibration_available": true,
+  "validation_calibration": {
+    "order_by": "target_date",
+    "selection_fraction": 0.5,
+    "n_validation": 160,
+    "n_validation_selection": 80,
+    "n_validation_calibration": 80,
+    "selection_target_date_start": "2022-04-11",
+    "selection_target_date_end": "2022-06-29",
+    "calibration_target_date_start": "2022-06-30",
+    "calibration_target_date_end": "2022-09-17"
+  },
+  "warnings": []
+}

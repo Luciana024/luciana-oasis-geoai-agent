@@ -1,0 +1,156 @@
+# Main experiment: chronological 65/10/25 recut of frozen S1 windows.
+# Architecture: docs/model.md. Do not put these values in layer code.
+# Archived 70/15/15: data/results/forecast/L7_H7_S1_20200308_20230225
+#   and data/results/model/geo_transport_mobility (do not overwrite).
+
+config_id: L7_H7_S1
+expected_edinburgh_iz_count: 111
+
+temporal_target:
+  lookback_steps: 7
+  target_offset_days: 7
+  output_steps: 1
+  window_stride_days: 1
+  target_definition: residual_from_latest_report
+
+dynamic_channels:
+  - rate
+  - first_difference
+
+model_variant: full
+
+embedding_dim: 8
+context_layers: 2
+dcrnn_layers: 2
+diffusion_steps: 2
+hidden_dim: 64
+dropout: 0.1
+variance_epsilon: 1.0e-6
+
+raw80_z: 1.2815515655
+raw95_z: 1.9599639845
+
+graph_set:
+  - geo
+  - transport
+  - mobility
+
+location_crs: EPSG:27700
+location_projected_crs: EPSG:27700
+
+context:
+  feature_columns:
+    - income_rate
+    - employment_rate
+    - university_rate
+    - overcrowded_rate
+    - crime_rate
+    - pt_gp_min
+  zero_variance_epsilon: 1.0e-8
+  scaler_ddof: 0
+
+covid_scaler:
+  mode: global
+  transform: log1p
+  epsilon: 1.0e-8
+  ddof: 0
+
+delta_scaler:
+  transform: identity
+  epsilon: 1.0e-8
+  ddof: 0
+
+loss:
+  probabilistic: gaussian_nll
+  mean_loss: huber
+  mean_loss_weight: 0.5
+  huber_delta: 1.0
+
+selection:
+  require_mae_not_worse_than_persistence: true
+  score: nll
+
+rolling_evaluation:
+  enabled: true
+  stage: final_test
+  retrain_frequency_days: 28
+  selection_target_dates: 28
+  calibration_target_dates: 28
+  candidate_windows_days: [180, 365, 730, "all"]
+  selected_window_days: 730
+  window_selection_split: validation
+  origin_split: test
+  output_dir: data/results/model/rolling_v1_split65_10_25
+  fixed_s1_dir: data/results/model/split65_10_25/geo_transport_mobility
+  write_geoshapley: false
+
+calibration:
+  method: finite-sample corrected empirical calibration
+  gamma: 0.05
+  n_min: 20
+  exchangeability_limitation: >
+    Rolling seven-day COVID-19 outcomes are temporally overlapping and
+    spatially dependent, so calibrated intervals are empirical uncertainty
+    intervals rather than intervals with a formal exchangeability-based
+    coverage guarantee.
+
+uncertainty_flag:
+  enabled: true
+  quantile: 0.90
+  source_split: validation_calibration
+  require_calibration_available: true
+
+validation_internal_split:
+  selection_fraction: 0.5
+  order_by: target_date
+  selection_name: validation_selection
+  calibration_name: validation_calibration
+
+geoshapley:
+  reference: study_area_median
+  explanation_scope: target_iz_local
+  joint_location_player: true
+  include_location_feature_interactions: true
+  endpoint_constraints: exact
+  additivity_tolerance: 1.0e-6
+  # Indicator player count = n context features + 1 joint location (if enabled).
+  dates: last
+  # GeoShapley explains each selected date-specific prediction.
+  # Static feature values remain unchanged across dates, but their contributions
+  # may change because the historical COVID input changes.
+  # "last" explains every IZ for the final selected test issue date.
+  # "last" means the final retrospective test issue date.
+  # Operational future inference must be exported separately.
+
+export:
+  split: test
+  write_forecast: true
+  write_geoshapley: true
+  write_test_diagnostics: true
+
+operational_inference:
+  enabled: false
+  explain_latest_available_issue_date: true
+
+training:
+  device: cuda
+  # cuda/auto: pick the CUDA GPU with the most free memory (do not use a busy card).
+  # cuda:1 pins GPU 1. cpu forces CPU.
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 1.0e-4
+  max_epochs: 50
+  patience: 10
+  grad_clip: 5.0
+  seed: 42
+
+paths:
+  dataset: data/results/forecast/L7_H7_S1_20200308_20230225_split65_10_25
+  geo: data/results/graph/geo/adjacency_geo.npz
+  transport: data/results/graph/road/adjacency_road.npz
+  mobility: data/results/graph/mobility/adjacency_mobility.npz
+  geo_report: data/results/graph/geo/validation_report.json
+  transport_report: data/results/graph/road/validation_report.json
+  mobility_report: data/results/graph/mobility/validation_report.json
+  road_nodes: data/results/graph/road/nodes.csv
+  checkpoints: data/results/model/split65_10_25

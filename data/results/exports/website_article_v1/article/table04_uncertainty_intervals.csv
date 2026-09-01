@@ -1,0 +1,5 @@
+interval_type,nominal_coverage,observed_coverage,mean_interval_width,median_interval_width,n_valid_cells,calibration_status
+raw_80,0.8,0.922,194.47,145.79,29304,raw_gaussian
+calibrated_80,0.8,0.817,144.35,106.4,29304,available
+raw_95,0.95,0.979,297.42,222.97,29304,raw_gaussian
+calibrated_95,0.95,0.949,228.4,177.47,29304,available

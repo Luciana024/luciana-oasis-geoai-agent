@@ -1,0 +1,6 @@
+Date,IntZone,IntZoneName,CA,CAName,Positive7Day,Positive7DayQF,Population,CrudeRate7DayPositive,CrudeRate7DayPositiveQF
+20220101,S02001576,Balerno and Bonnington Village,S12000036,City of Edinburgh,10,,5000,200 to 399,
+20220101,S02001577,Currie West,S12000036,City of Edinburgh,,c,6000,,c
+20220102,S02001576,Balerno and Bonnington Village,S12000036,City of Edinburgh,12,,5000,200 to 399,
+20220102,S02001577,Currie West,S12000036,City of Edinburgh,,,6000,,
+20220101,S02001236,Culter,S12000033,Aberdeen City,90,,4763,800+,

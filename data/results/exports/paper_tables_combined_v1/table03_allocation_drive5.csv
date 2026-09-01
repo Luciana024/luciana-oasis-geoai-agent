@@ -1,0 +1,9 @@
+city,policy,n_sites,travel_mode,threshold_min,population_covered,iz_covered,n_iz,unserved_iz,mean_travel_min,max_travel_min,site_ids,target_date
+Edinburgh,Coverage-priority,6,drive,5.0,383258,80,111,31,3.25,5.0,GP_71011|PH_2361|PH_2531|PH_2574|PH_2444|MS_30,2023-03-04
+Edinburgh,Equity-priority,6,drive,5.0,362813,78,111,33,3.28,4.99,PH_2571|PH_2361|PH_2531|MS_14|PH_2444|PH_2509,2023-03-04
+Edinburgh,Preventive-priority,6,drive,5.0,183979,42,111,69,2.99,4.99,PH_2526|PH_2368|GP_70662|PH_2444|MS_29|PH_2533,2023-03-04
+Edinburgh,Balanced,6,drive,5.0,373361,78,111,33,3.24,4.97,PH_2526|PH_2503|PH_2361|PH_2531|PH_2444|GP_71011,2023-03-04
+Glasgow,Coverage-priority,6,drive,5.0,371273,74,136,62,3.41,5.0,PH_1050|PH_1214|PH_1587|PH_1502|MS_43|PH_1683,2023-03-04
+Glasgow,Equity-priority,6,drive,5.0,326559,68,136,68,3.36,4.95,GP_46081|PH_1620|PH_1394|MS_34|PH_1695|MS_42,2023-03-04
+Glasgow,Preventive-priority,6,drive,5.0,249672,52,136,84,3.48,4.97,PH_1683|MS_10|PH_1621|MS_34|PH_1627|MS_61,2023-03-04
+Glasgow,Balanced,6,drive,5.0,300795,62,136,74,3.46,4.95,MS_10|PH_1683|PH_1621|PH_1528|GP_46081|MS_34,2023-03-04

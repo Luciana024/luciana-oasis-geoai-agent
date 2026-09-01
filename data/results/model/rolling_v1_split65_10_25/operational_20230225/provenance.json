@@ -1,0 +1,103 @@
+{
+  "user_request": "Using all COVID-19 observations available through 25 February 2023, forecast the rolling seven-day COVID-19 infection rate for 4 March 2023 across Edinburgh IZs, and provide uncertainty, graph-fusion weights and GeoShapley explanations.",
+  "information_cutoff": "2023-02-25",
+  "input_date_range": [
+    "2023-02-19",
+    "2023-02-25"
+  ],
+  "target_date": "2023-03-04",
+  "lead_days": 7,
+  "data_source": {
+    "panel": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/panel.csv",
+    "panel_sha256": "3f85674957f3e3e327c6a064cd359600bf82cd6dab29425b2ec97c25ed21248f",
+    "study_area": "City of Edinburgh",
+    "geography": "2011 Intermediate Zones",
+    "n_iz": 111
+  },
+  "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/checkpoint.pt",
+  "checkpoint_sha256": "79d4d6c0cb55599546517aef60598e330b7dd07f31538b6995d964aeedaa5c64",
+  "selected_epoch": 15,
+  "update_id": "U10",
+  "window": "W730",
+  "scaler_identifiers": {
+    "residual_scalers": {
+      "rate": {
+        "mean": 5.044906289524392,
+        "scale": 1.360215174049257,
+        "epsilon": 1e-08,
+        "transform": "log1p"
+      },
+      "first_difference": {
+        "mean": -0.03793809629143479,
+        "scale": 61.04468501645754,
+        "epsilon": 1e-08,
+        "transform": "identity"
+      },
+      "delta": {
+        "mean": -0.5547557360700832,
+        "scale": 227.8367350196287,
+        "epsilon": 1e-08,
+        "transform": "identity"
+      }
+    },
+    "context_scaler_keys": [
+      "ddof",
+      "epsilon",
+      "mean",
+      "names",
+      "std",
+      "zero_variance_columns"
+    ],
+    "coord_scaler_keys": [
+      "ddof",
+      "epsilon",
+      "mean",
+      "names",
+      "std",
+      "zero_variance_columns"
+    ]
+  },
+  "calibration_artefact": {
+    "path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/calibration.json",
+    "checkpoint_sha256": "79d4d6c0cb55599546517aef60598e330b7dd07f31538b6995d964aeedaa5c64",
+    "q80": 0.47607915897367714,
+    "q95": 0.8213303442857522,
+    "sigma_p90_threshold": 56.19824981689453
+  },
+  "graph_files": {
+    "geo": {
+      "path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/graph/geo/adjacency_geo.npz",
+      "sha256": "54248f29efaad492640a83e895a6bfceda1953fa1669d04bd4deecd4cdf40dec"
+    },
+    "transport": {
+      "path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/graph/road/adjacency_road.npz",
+      "sha256": "0eb01892b82b4a518e0694f6aab0daf7e7f3863403b8306fc3c9a04325e7aab1"
+    },
+    "mobility": {
+      "path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/graph/mobility/adjacency_mobility.npz",
+      "sha256": "ed60eaa5323c19e010cbb54926a16542b3db13281406d6fba2e582ee42a253cd"
+    }
+  },
+  "alpha": {
+    "label": "Learned relative graph-fusion weights",
+    "alpha_geographic": 0.3181084990501404,
+    "alpha_transport": 0.32340142130851746,
+    "alpha_mobility": 0.35849013924598694
+  },
+  "geoshapley_configuration": {
+    "reference": "study_area_median",
+    "explanation_scope": "target_iz_local",
+    "joint_location_player": true,
+    "include_location_feature_interactions": true,
+    "endpoint_constraints": "exact",
+    "additivity_tolerance": 1e-06,
+    "dates": "last",
+    "n_indicator_players": 7,
+    "n_feature_players": 6
+  },
+  "forecast_status": "unverified_extrapolation",
+  "observed_target_available": false,
+  "include_in_test_metrics": false,
+  "no_test_metrics_computed": true,
+  "canonical_node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
+}

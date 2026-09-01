@@ -1,0 +1,464 @@
+{
+  "export_dir": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/exports/website_article_v1",
+  "sources_not_overwritten": [
+    "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730",
+    "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/split65_10_25/geo_transport_mobility"
+  ],
+  "source_checkpoints": {
+    "U01": "e5ea291056067b0da66f3769ef94969a256674c2d4f77a7bcb397ade53a6fe9a",
+    "U02": "4026f42c3f87e7c3144034ab7166946970d882f419b34374d22c82dc67f5bbba",
+    "U03": "8d51d73c11fa83811fb8e53fe95b90899e45e28fa6a9c4ae9a3cdd37cc8a783b",
+    "U04": "4169fb70938548c5422e258e4daf036b68f8f294323361e1c7a444e9000092e1",
+    "U05": "46ee3954de20c6bdde2bbe6fc89605aa920045ef4670fcf79ce86553c419bc7b",
+    "U06": "94fdf51757b76941a5d17d751534935cced150f6ac66946582a792e2faa513ba",
+    "U07": "475dc11e901e0fad96f826de816cf9a92d4b4f7947966b0c59b5e2f6ba554424",
+    "U08": "a40c30461f49ff7f6dfe8e5f9c27887c3bc6deb5935db8dece6d2273ae63f403",
+    "U09": "5c04365e1163c93bbfed48446d2b10770fdd850da6f60d9f6d23e2cfb0e8a798",
+    "U10": "79d4d6c0cb55599546517aef60598e330b7dd07f31538b6995d964aeedaa5c64"
+  },
+  "quality_checks": {
+    "duplicate_target_iz": false,
+    "alpha_positive_sum_to_one": true,
+    "target_equals_issue_plus_7": true,
+    "rolling_metrics_match_verified_rounded_values": true,
+    "future_excluded_from_metrics": true,
+    "boundary_join_111": true,
+    "geoshapley_checkpoint": "U10"
+  },
+  "verified_rolling_metrics_raw": {
+    "mae": 46.53287610222222,
+    "rmse": 69.06113093418796,
+    "mse": 4769.439805909053,
+    "bias": 14.088552152771667,
+    "r2": 0.6679675702109668,
+    "n": 29304,
+    "persistence": {
+      "mae": 50.66034662260418,
+      "rmse": 81.74125781669144,
+      "mse": 6681.633229454821,
+      "bias": 3.6794611561275365,
+      "r2": 0.5348470666541558,
+      "n": 29304
+    },
+    "mae_skill": 0.08147339675998833,
+    "mse_skill": 0.2861865292330318
+  },
+  "files": [
+    {
+      "path": "EXPORT_MANIFEST.json",
+      "bytes": 14023,
+      "sha256": "2b8fff6aefb91f12ad621e7be78e9385857f73d725f0a521738cf460191f69c1",
+      "n_rows": null,
+      "n_columns": null
+    },
+    {
+      "path": "article/full_precision/table01_split_summary.csv",
+      "bytes": 727,
+      "sha256": "8cbf8fc5260700f4e4d1642fb647da5804bf625b282b16fa9680cd79b46f2542",
+      "n_rows": 4,
+      "n_columns": [
+        "split_name",
+        "fraction",
+        "target_start_date",
+        "target_end_date",
+        "n_unique_target_dates",
+        "n_valid_iz_date_cells",
+        "mean_infection_rate",
+        "std_infection_rate",
+        "mean_target_delta",
+        "std_target_delta"
+      ]
+    },
+    {
+      "path": "article/full_precision/table02_overall_performance.csv",
+      "bytes": 577,
+      "sha256": "caef3d09111fdf751f6c37e0cb6d581bd273aeb31a4674826efd4825fa7f8da9",
+      "n_rows": 3,
+      "n_columns": [
+        "method",
+        "evaluation_type",
+        "MAE",
+        "MAE_skill",
+        "RMSE",
+        "MSE_skill",
+        "R2",
+        "bias",
+        "n_unique_target_dates",
+        "n_valid_cells"
+      ]
+    },
+    {
+      "path": "article/full_precision/table03_performance_by_period.csv",
+      "bytes": 848,
+      "sha256": "87b8460a21cf44d4ae9670a9cc371238460ab6d5e35ae8b319366513607c9ea2",
+      "n_rows": 3,
+      "n_columns": [
+        "period_name",
+        "period_start",
+        "period_end",
+        "model_MAE",
+        "persistence_MAE",
+        "MAE_skill",
+        "model_RMSE",
+        "persistence_RMSE",
+        "MSE_skill",
+        "model_R2",
+        "persistence_R2",
+        "model_bias",
+        "n_unique_target_dates",
+        "n_valid_cells"
+      ]
+    },
+    {
+      "path": "article/full_precision/table04_uncertainty_intervals.csv",
+      "bytes": 482,
+      "sha256": "265db358410e4d1684b07745464224c1536d3a13e63275956d7e25d75fff14f5",
+      "n_rows": 4,
+      "n_columns": [
+        "interval_type",
+        "nominal_coverage",
+        "observed_coverage",
+        "mean_interval_width",
+        "median_interval_width",
+        "n_valid_cells",
+        "calibration_status"
+      ]
+    },
+    {
+      "path": "article/full_precision/table04_uncertainty_sigma.csv",
+      "bytes": 222,
+      "sha256": "ae6bba1ff3e9a48b211b19a506410556b664638cb412a5f254aaf5724744b318",
+      "n_rows": 1,
+      "n_columns": [
+        "mean_predicted_sigma",
+        "median_predicted_sigma",
+        "corr_sigma_absolute_error",
+        "gaussian_nll",
+        "n_valid_cells",
+        "evaluation_set"
+      ]
+    },
+    {
+      "path": "article/full_precision/table05a_alpha_by_checkpoint.csv",
+      "bytes": 967,
+      "sha256": "741571f5a536b2b60f84df9122ca43df306493a94013c445c61fd3c56300d4c5",
+      "n_rows": 10,
+      "n_columns": [
+        "update_id",
+        "alpha_geo",
+        "alpha_transport",
+        "alpha_mobility",
+        "selected_epoch",
+        "forecast_start",
+        "forecast_end"
+      ]
+    },
+    {
+      "path": "article/full_precision/table05b_alpha_descriptive_summary.csv",
+      "bytes": 370,
+      "sha256": "15a296a7fe7dc8a8f52c35b59bcdb448504deb9fb0998f61322ad0e4974fd599",
+      "n_rows": 3,
+      "n_columns": [
+        "graph_name",
+        "prediction_weighted_mean_alpha",
+        "between_update_standard_deviation",
+        "minimum_alpha",
+        "maximum_alpha"
+      ]
+    },
+    {
+      "path": "article/full_precision/table06_geoshapley_summary.csv",
+      "bytes": 1065,
+      "sha256": "e85672b36fa49836aa1fe75bc75fbdbf04ace895fc9ee9682292e1638d4adbce",
+      "n_rows": 7,
+      "n_columns": [
+        "feature_name",
+        "mean_absolute_main_effect",
+        "mean_signed_main_effect",
+        "mean_absolute_location_interaction",
+        "positive_effect_iz_fraction",
+        "negative_effect_iz_fraction",
+        "checkpoint_id",
+        "target_report_date"
+      ]
+    },
+    {
+      "path": "article/table01_split_summary.csv",
+      "bytes": 487,
+      "sha256": "08f3fa3d527484bb5dafd397c6f6fa805d451de095ea935fe22c4c61f7368a49",
+      "n_rows": 4,
+      "n_columns": [
+        "split_name",
+        "fraction",
+        "target_start_date",
+        "target_end_date",
+        "n_unique_target_dates",
+        "n_valid_iz_date_cells",
+        "mean_infection_rate",
+        "std_infection_rate",
+        "mean_target_delta",
+        "std_target_delta"
+      ]
+    },
+    {
+      "path": "article/table02_overall_performance.csv",
+      "bytes": 366,
+      "sha256": "31a3e28f2f4a3bb7e5ee3ffb1f68f10eb298290253dec3b5474f81c47d2e98d9",
+      "n_rows": 3,
+      "n_columns": [
+        "method",
+        "evaluation_type",
+        "MAE",
+        "MAE_skill",
+        "RMSE",
+        "MSE_skill",
+        "R2",
+        "bias",
+        "n_unique_target_dates",
+        "n_valid_cells"
+      ]
+    },
+    {
+      "path": "article/table03_performance_by_period.csv",
+      "bytes": 498,
+      "sha256": "0c3f805a5fb00bbe9231c15b243d82fe6bffe51023d55942bb1ef295d5f2b138",
+      "n_rows": 3,
+      "n_columns": [
+        "period_name",
+        "period_start",
+        "period_end",
+        "model_MAE",
+        "persistence_MAE",
+        "MAE_skill",
+        "model_RMSE",
+        "persistence_RMSE",
+        "MSE_skill",
+        "model_R2",
+        "persistence_R2",
+        "model_bias",
+        "n_unique_target_dates",
+        "n_valid_cells"
+      ]
+    },
+    {
+      "path": "article/table04_uncertainty_intervals.csv",
+      "bytes": 332,
+      "sha256": "976f65844145176ffaff1a0e582f680ff0077dc27fc230c96b3e7868779f32aa",
+      "n_rows": 4,
+      "n_columns": [
+        "interval_type",
+        "nominal_coverage",
+        "observed_coverage",
+        "mean_interval_width",
+        "median_interval_width",
+        "n_valid_cells",
+        "calibration_status"
+      ]
+    },
+    {
+      "path": "article/table04_uncertainty_sigma.csv",
+      "bytes": 172,
+      "sha256": "77478c72bc1e5c71743024cb062c3f788113ee4751d2970220be81a17e2aa930",
+      "n_rows": 1,
+      "n_columns": [
+        "mean_predicted_sigma",
+        "median_predicted_sigma",
+        "corr_sigma_absolute_error",
+        "gaussian_nll",
+        "n_valid_cells",
+        "evaluation_set"
+      ]
+    },
+    {
+      "path": "article/table05a_alpha_by_checkpoint.csv",
+      "bytes": 591,
+      "sha256": "e4889eb851f85015de6f1617e098b6b6507be996769488296f78cc32cdc47221",
+      "n_rows": 10,
+      "n_columns": [
+        "update_id",
+        "alpha_geo",
+        "alpha_transport",
+        "alpha_mobility",
+        "selected_epoch",
+        "forecast_start",
+        "forecast_end"
+      ]
+    },
+    {
+      "path": "article/table05b_alpha_descriptive_summary.csv",
+      "bytes": 217,
+      "sha256": "1dd092ff9edf50e4b01ae76c7c56c6e41ca52b59a877f411d97c82901b4b0ae7",
+      "n_rows": 3,
+      "n_columns": [
+        "graph_name",
+        "prediction_weighted_mean_alpha",
+        "between_update_standard_deviation",
+        "minimum_alpha",
+        "maximum_alpha"
+      ]
+    },
+    {
+      "path": "article/table06_geoshapley_summary.csv",
+      "bytes": 611,
+      "sha256": "5ecd669ff972cce9dfaf46416fe80272a0dc296b7940df0e002c845adb5835f1",
+      "n_rows": 7,
+      "n_columns": [
+        "feature_name",
+        "mean_absolute_main_effect",
+        "mean_signed_main_effect",
+        "mean_absolute_location_interaction",
+        "positive_effect_iz_fraction",
+        "negative_effect_iz_fraction",
+        "checkpoint_id",
+        "target_report_date"
+      ]
+    },
+    {
+      "path": "website/date_selector.csv",
+      "bytes": 7974,
+      "sha256": "6ddca558e736d009c6417b3959a0524fed3631fd3578458a8e81528b5d799f81",
+      "n_rows": 264,
+      "n_columns": [
+        "issue_date",
+        "target_report_date",
+        "update_id",
+        "checkpoint_id"
+      ]
+    },
+    {
+      "path": "website/edinburgh_iz_boundaries.geojson",
+      "bytes": 1208171,
+      "sha256": "845dd222504e06b9f37fa39ca02d7b9d974421cc11bf64651238819065eff906",
+      "n_rows": null,
+      "n_columns": null
+    },
+    {
+      "path": "website/future_forecast_20230304.csv",
+      "bytes": 42405,
+      "sha256": "590f6ff0a2edf34fe2abb5baa8e4e24d2d26c227f7fd743b2fda0316cad7d8bf",
+      "n_rows": 111,
+      "n_columns": [
+        "issue_date",
+        "target_report_date",
+        "update_id",
+        "checkpoint_id",
+        "iz_code",
+        "node_index",
+        "anchor_rate_y_t",
+        "predicted_delta",
+        "predicted_rate",
+        "predicted_variance",
+        "predicted_sigma",
+        "calibrated80_lower",
+        "calibrated80_upper",
+        "calibrated95_lower",
+        "calibrated95_upper",
+        "uncertainty_flag",
+        "alpha_geo",
+        "alpha_transport",
+        "alpha_mobility",
+        "node_order_hash",
+        "forecast_status",
+        "observed_target_available",
+        "include_in_metrics",
+        "observed_rate",
+        "model_error",
+        "model_absolute_error",
+        "persistence_prediction",
+        "persistence_absolute_error"
+      ]
+    },
+    {
+      "path": "website/geoshapley.csv",
+      "bytes": 330537,
+      "sha256": "a3d232b40ae41e61b26fceabf513c7ab57b3d38b65a181eb2ef8ed0ffe1c0874",
+      "n_rows": 1554,
+      "n_columns": [
+        "issue_date",
+        "target_report_date",
+        "update_id",
+        "checkpoint_id",
+        "iz_code",
+        "component",
+        "feature_name",
+        "shapley_value",
+        "predicted_rate",
+        "reconstructed_prediction",
+        "additivity_error",
+        "alpha_geo",
+        "alpha_transport",
+        "alpha_mobility",
+        "explanation_scope"
+      ]
+    },
+    {
+      "path": "website/model_metadata.json",
+      "bytes": 4021,
+      "sha256": "8621ba37bd64a300bc09a73c10de0cd7ec05dff0a34571058786dd9ee5216b85",
+      "n_rows": null,
+      "n_columns": null
+    },
+    {
+      "path": "website/retrospective_predictions.csv",
+      "bytes": 12800035,
+      "sha256": "26bdcf11a18e1fd2b7a9d069e31572e1e737fc25b620e4b697a2ed2186620272",
+      "n_rows": 29304,
+      "n_columns": [
+        "issue_date",
+        "target_report_date",
+        "update_id",
+        "checkpoint_id",
+        "iz_code",
+        "node_index",
+        "observed_rate",
+        "anchor_rate_y_t",
+        "predicted_delta",
+        "predicted_rate",
+        "predicted_sigma",
+        "calibrated80_lower",
+        "calibrated80_upper",
+        "calibrated95_lower",
+        "calibrated95_upper",
+        "uncertainty_flag",
+        "persistence_prediction",
+        "model_error",
+        "model_absolute_error",
+        "persistence_absolute_error",
+        "alpha_geo",
+        "alpha_transport",
+        "alpha_mobility",
+        "node_order_hash",
+        "forecast_status",
+        "observed_target_available"
+      ]
+    },
+    {
+      "path": "website/rolling_alpha.csv",
+      "bytes": 2540,
+      "sha256": "ce37b4dc05ecc6b19bac12b852a52dde531de250d96ccc5f384f4fc133fc9d1a",
+      "n_rows": 10,
+      "n_columns": [
+        "update_id",
+        "checkpoint_id",
+        "update_date",
+        "forecast_start",
+        "forecast_end",
+        "alpha_geo",
+        "alpha_transport",
+        "alpha_mobility",
+        "selected_epoch",
+        "training_window_days",
+        "checkpoint_checksum",
+        "node_order_hash"
+      ]
+    }
+  ],
+  "column_notes": {
+    "website/retrospective_predictions.csv": "One row per test target date \u00d7 IZ. forecast_status=retrospective_evaluation.",
+    "website/future_forecast_20230304.csv": "Unverified U10 extrapolation. Accuracy fields are null.",
+    "website/geoshapley.csv": "U10 only, target 2023-03-04. Not for other rolling dates.",
+    "website/rolling_alpha.csv": "U01-U10 trajectory.",
+    "website/edinburgh_iz_boundaries.geojson": "Join key iz_code, EPSG:4326.",
+    "website/date_selector.csv": "Test dates only."
+  }
+}

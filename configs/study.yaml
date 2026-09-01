@@ -1,0 +1,26 @@
+# Study configuration. The agent must obtain year and data source from the user.
+study:
+  name: edinburgh_covid_intervention_allocation
+  area:
+    name: City of Edinburgh
+    local_authority_code: S12000036
+  geography:
+    model_units: 2011 Intermediate Zones
+    node_key: IntZone
+    expected_iz_count: 111
+  response:
+    name: rolling_seven_day_positive_case_rate_per_100000
+    source_count_field: Positive7Day
+    source_qf_field: Positive7DayQF
+    suppression_flag: c
+    suppression_fill_values: [0, 1, 2]
+    observed_count_field: ObservedCount
+    observed_rate_field: ObservedRate
+    observed_rate_definition: round(ObservedCount / Population * 1e5, 2)
+    not_daily_new_cases: true
+  agent:
+    year_must_be_provided_by_user: true
+    data_source_must_be_provided_by_user: true
+    allowed_data_sources: [api, local]
+    do_not_invent_year: true
+    do_not_switch_source_silently: true

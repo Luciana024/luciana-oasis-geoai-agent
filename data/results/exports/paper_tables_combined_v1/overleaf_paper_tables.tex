@@ -1,0 +1,91 @@
+% Paste into an ACM acmart paper (Overleaf: acmart + booktabs).
+% Requires: \usepackage{booktabs}
+% Do not pool Edinburgh and Glasgow into one MAE.
+
+\begin{table}[t]
+  \caption{Retrospective 7-day-ahead rate forecasts on the 65/10/25 test window. Persistence assumes no change from the issue-day rate. Cities are not pooled (111 vs 136 Intermediate Zones). 4 March 2023 is excluded.}
+  \label{tab:forecast}
+  \small
+  \centering
+  \begin{tabular}{llrrrrr}
+    \toprule
+    City & Method & MAE & Skill & RMSE & $R^2$ & Days \\
+    \midrule
+    Edinburgh & Persistence & 50.66 & 0.000 & 81.74 & 0.53 & 264 \\
+    Edinburgh & Rolling DCRNN & 46.53 & 0.081 & 69.06 & 0.67 & 264 \\
+    Glasgow & Persistence & 47.97 & 0.000 & 76.15 & 0.42 & 268 \\
+    Glasgow & Rolling DCRNN & 44.73 & 0.068 & 63.32 & 0.60 & 268 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[t]
+  \caption{Empirical coverage of calibrated prediction intervals on the same retrospective cells. These are not exchangeability guarantees.}
+  \label{tab:intervals}
+  \small
+  \centering
+  \begin{tabular}{llrrr}
+    \toprule
+    City & Interval & Nominal & Observed & Mean width \\
+    \midrule
+    Edinburgh & Calibrated 80\% & 0.80 & 0.817 & 144.3 \\
+    Edinburgh & Calibrated 95\% & 0.95 & 0.949 & 228.4 \\
+    Glasgow & Calibrated 80\% & 0.80 & 0.822 & 146.0 \\
+    Glasgow & Calibrated 95\% & 0.95 & 0.952 & 223.3 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% Optional if space remains. Late-period MAE skill is near zero or negative.
+\begin{table}[t]
+  \caption{Rolling-model MAE by period versus persistence. The late window is more stable and the skill gain shrinks.}
+  \label{tab:period}
+  \small
+  \centering
+  \begin{tabular}{llrrrr}
+    \toprule
+    City & Period & Model MAE & Persist.\ MAE & Skill & Days \\
+    \midrule
+    Edinburgh & Decline/wave & 73.56 & 85.61 & 0.141 & 105 \\
+    Edinburgh & Late stable & 28.69 & 27.58 & -0.040 & 159 \\
+    Glasgow & Decline/wave & 67.90 & 75.90 & 0.105 & 109 \\
+    Glasgow & Late stable & 28.84 & 28.82 & -0.001 & 159 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[t]
+  \caption{Last rolling-update graph-fusion weights (U10). The same checkpoint is used for the last retrospective days and the 4 March 2023 map. $\alpha>0$, $\sum\alpha=1$. Not a risk share and not a siting score.}
+  \label{tab:alpha}
+  \small
+  \centering
+  \begin{tabular}{llrrr}
+    \toprule
+    City & Update & $\alpha_{\mathrm{geo}}$ & $\alpha_{\mathrm{transport}}$ & $\alpha_{\mathrm{mobility}}$ \\
+    \midrule
+    Edinburgh & U10 & 0.318 & 0.323 & 0.358 \\
+    Glasgow & U10 & 0.287 & 0.304 & 0.409 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table*}[t]
+  \caption{Six-site vaccination allocation on 4 March 2023 (unverified forecast), drive, 20-minute threshold. Coverage and equity can both reach 100\% IZ cover while selecting different sites. Numbers are solver outputs, not a unique moral optimum.}
+  \label{tab:allocation}
+  \small
+  \centering
+  \begin{tabular}{llrrrrrrr}
+    \toprule
+    City & Policy & Sites & Pop.\ covered & IZs covered & Cov. (\%) & Mean min & Max min & Unserved IZs \\
+    \midrule
+    Edinburgh & Coverage-priority & 6 & 513,210 & 111/111 & 100.0 & 5.4 & 19.4 & 0 \\
+Edinburgh & Equity-priority & 6 & 513,210 & 111/111 & 100.0 & 5.4 & 19.4 & 0 \\
+Edinburgh & Preventive-priority & 6 & 496,856 & 108/111 & 97.3 & 5.6 & 15.8 & 3 \\
+Edinburgh & Balanced & 6 & 513,210 & 111/111 & 100.0 & 5.3 & 19.4 & 0 \\
+Glasgow & Coverage-priority & 6 & 621,020 & 136/136 & 100.0 & 5.8 & 13.9 & 0 \\
+Glasgow & Equity-priority & 6 & 621,020 & 136/136 & 100.0 & 5.8 & 13.9 & 0 \\
+Glasgow & Preventive-priority & 6 & 577,968 & 125/136 & 91.9 & 6.9 & 14.8 & 11 \\
+Glasgow & Balanced & 6 & 621,020 & 136/136 & 100.0 & 6.3 & 14.8 & 0 \\
+    \bottomrule
+  \end{tabular}
+\end{table*}

@@ -1,0 +1,14 @@
+# Exact versions in the final source verification environment (Python 3.13.9).
+# Install the platform-appropriate CPU/CUDA build of torch when necessary.
+numpy==2.5.2
+pandas==3.0.5
+PyYAML==6.0.3
+openpyxl==3.1.5
+geopandas==1.1.4
+shapely==2.1.2
+scipy==1.18.0
+torch==2.13.0
+matplotlib==3.11.1
+streamlit==1.62.0
+plotly==7.0.0
+pytest==9.1.1
