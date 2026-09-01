@@ -130,6 +130,7 @@ export:
 
 operational_inference:
   enabled: false
+  device: cpu
   explain_latest_available_issue_date: true
 
 training:

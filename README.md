@@ -84,6 +84,9 @@ python scripts/start_dashboard.py
 
 Configuration `configs/model.yaml` is the main 65/10/25 rolling experiment.
 `docs/model.md` is the authoritative model specification.
+Training requests CUDA as recorded in the experiment configuration. Frozen
+operational inference defaults to CPU so reviewers can reload U10 without a
+GPU; this does not change checkpoint parameters or retrospective metrics.
 
 ## Reproducibility boundaries
 

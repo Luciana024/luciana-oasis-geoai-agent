@@ -650,7 +650,11 @@ def _restore_runtime(cfg: dict[str, Any], checkpoint_path: Path):
     simd_scaled = simd_scaler.transform(dataset.x_static_raw)
     coords_scaled = None if coord_scaler is None else coord_scaler.transform(coords)
     fwd, bwd, _ = _supports_from_graphs(graphs, graph_set)
-    device = resolve_torch_device(cfg=cfg)
+    # Frozen inference must remain runnable on reviewer machines without CUDA.
+    # Training keeps its explicit CUDA policy; only operational restoration
+    # uses the separately configured inference device.
+    inference_device = (cfg.get("operational_inference") or {}).get("device", "cpu")
+    device = resolve_torch_device(name=inference_device, cfg=cfg)
     model = build_model_from_config(cfg, n_graphs=len(graph_set), has_location=coord_scaler is not None)
     model.load_state_dict(payload["model_state_dict"])
     model.to(device)
