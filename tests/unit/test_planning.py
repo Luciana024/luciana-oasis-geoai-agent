@@ -119,6 +119,15 @@ def test_regional_allocation_uses_frozen_simd_population_without_panel(tmp_path,
     }
 
 
+def test_packaged_glasgow_population_matches_original_planning_total():
+    from common.utils import project_root
+
+    path = project_root() / "data/results/regions/S12000049/planning_population.csv"
+    population = pd.read_csv(path)
+    assert population["iz_code"].nunique() == 136
+    assert float(population["population"].sum()) == 635640.0
+
+
 def test_confirmed_new_region_calls_training_pipeline(monkeypatch):
     monkeypatch.setattr(
         "agent.region_training.run_new_region_training",

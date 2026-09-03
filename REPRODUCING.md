@@ -39,7 +39,7 @@ PYTHONPATH=src python -m graph --help
 
 These checks require no private or large research data.
 
-The expected source-only result is `184 passed, 9 deselected`. After staging
+The expected source-only result is `185 passed, 9 deselected`. After staging
 the external archive, run `pytest -q -m external_data` to execute the remaining
 nine data/checkpoint integration checks.
 

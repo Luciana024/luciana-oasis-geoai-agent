@@ -111,14 +111,25 @@ def _load_iz_table(payload: dict[str, Any]) -> pd.DataFrame:
         region = project_root() / "data" / "results" / "regions" / area
         simd_path = region / "simd_iz.csv"
         panel_path = region / "covid" / "fill1.csv"
+        planning_population_path = region / "planning_population.csv"
     else:
         simd_path = project_root() / SIMD_PATH
         panel_path = project_root() / PANEL_PATH
+        planning_population_path = None
     if not simd_path.exists():
         raise ModelError(f"SIMD IZ table missing: {simd_path}", code="missing_dataset")
     simd = pd.read_csv(simd_path)
     simd = simd.rename(columns={"IntZone": "iz_code"})
-    if panel_path.exists():
+    if planning_population_path is not None and planning_population_path.exists():
+        pop = pd.read_csv(planning_population_path)
+        required = {"iz_code", "population"}
+        if not required.issubset(pop.columns):
+            raise ModelError(
+                f"Planning population table must contain {sorted(required)}: {planning_population_path}",
+                code="missing_dataset",
+            )
+        pop = pop[["iz_code", "population"]].drop_duplicates("iz_code")
+    elif panel_path.exists():
         panel = pd.read_csv(panel_path)
         last_date = panel["Date"].max()
         pop_cols = [col for col in ("IntZone", "iz_code") if col in panel.columns]

@@ -748,9 +748,23 @@ def _population_by_iz(area_code: str | None = None) -> dict[str, float]:
     if code not in {EDINBURGH_CA, "", "UNKNOWN"}:
         path = project_root() / "data" / "results" / "regions" / code / "covid" / "fill1.csv"
         simd_path = project_root() / "data" / "results" / "regions" / code / "simd_iz.csv"
+        planning_population_path = (
+            project_root() / "data" / "results" / "regions" / code / "planning_population.csv"
+        )
     else:
         path = project_root() / "data" / "results" / PANEL_CSV
         simd_path = project_root() / "data" / "results" / "simd_iz.csv"
+        planning_population_path = None
+    if planning_population_path is not None and planning_population_path.exists():
+        population = pd.read_csv(planning_population_path)
+        if {"iz_code", "population"}.issubset(population.columns):
+            return {
+                str(row[0]): float(row[1])
+                for row in population[["iz_code", "population"]]
+                .drop_duplicates("iz_code")
+                .itertuples(index=False)
+                if pd.notna(row[1])
+            }
     if not path.exists():
         if not simd_path.exists():
             return {}
