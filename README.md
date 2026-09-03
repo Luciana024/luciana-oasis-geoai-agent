@@ -69,6 +69,20 @@ The curated inference bundle in this repository supplies checkpoints and
 published outputs, but intentionally omits the multi-gigabyte raw OSM and OD
 sources required by some `external_data` graph-rebuild tests.
 
+### Restricted raw data
+
+Some source public-health and origin-destination (OD) mobility data cannot be
+published directly in this repository because of access permissions,
+copyright, licensing and privacy constraints. A permitted subset is available
+from the [controlled competition reproduction data folder](https://drive.google.com/drive/folders/1_b6JuLO_Rd1fRhxewm0QJjb-Rbn23EW7?usp=drive_link).
+It is provided solely for reproducing the competition results and remains
+subject to the original data owners' access conditions and usage restrictions.
+
+The external raw-data bundle is needed only to rebuild and train the models
+from the beginning. It is not required to run the dashboard or reproduce the
+displayed results, because the trained checkpoints, frozen predictions,
+explanations and site-allocation outputs are included in this repository.
+
 ## Main commands
 
 ```bash

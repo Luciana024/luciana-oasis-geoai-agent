@@ -27,3 +27,9 @@ date, licence/redistribution status and any preprocessing already applied.
 
 Do not upload caches, Python bytecode, local logs, `.pytest_cache`, temporary
 public-URL scripts, or the historical `old_code` research prototype.
+
+## Controlled raw-data access
+
+Some source public-health and origin-destination (OD) mobility data cannot be published directly in the GitHub repository because of access permissions, copyright, licensing, and privacy constraints. A permitted subset of the raw inputs is available from the [controlled competition reproduction data folder](https://drive.google.com/drive/folders/1_b6JuLO_Rd1fRhxewm0QJjb-Rbn23EW7?usp=drive_link).
+
+This material is supplied solely for reproducing the competition results and remains subject to the original data owners' conditions and usage restrictions. It is required only for rebuilding and training the models from the beginning. The standard dashboard and frozen-result review workflow uses the trained checkpoints and processed outputs already stored in this repository and does not require the external raw-data bundle.

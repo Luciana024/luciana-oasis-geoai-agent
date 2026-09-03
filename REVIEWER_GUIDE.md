@@ -16,7 +16,7 @@ Python 3.13.9 was used for the final verification. The commands below use an iso
 ```bash
 git clone https://github.com/Luciana024/luciana-oasis-geoai-agent.git
 cd luciana-oasis-geoai-agent
-git checkout oasis-2026-submission-v3
+git checkout oasis-2026-submission-v4
 ```
 
 The tag identifies the exact reviewed version. Reviewers who want the newest development version may remain on the `main` branch instead.
@@ -107,3 +107,13 @@ The agent is rule-based and tool-using; it is not a large language model. The DC
 - **The page shows stale content:** stop the server with `Ctrl+C`, restart it, and refresh the browser without cache.
 
 Full raw-data retraining artefacts are maintained in a separate controlled archive because redistribution rights and file sizes differ from the codebase. See [REPRODUCING.md](REPRODUCING.md), [ARTIFACTS.md](ARTIFACTS.md), and [INFERENCE_ARTIFACTS.md](INFERENCE_ARTIFACTS.md) for the technical reproduction boundaries.
+
+## 9. Restricted raw data for training from scratch
+
+Some source public-health and origin-destination (OD) mobility data cannot be published directly in this GitHub repository because of access permissions, copyright, licensing, and privacy constraints. The permitted subset of raw reproduction data is available through the following controlled link:
+
+[Download the competition reproduction data from Google Drive](https://drive.google.com/drive/folders/1_b6JuLO_Rd1fRhxewm0QJjb-Rbn23EW7?usp=drive_link)
+
+These raw files are provided solely to reproduce the competition results and remain subject to the original data owners' access conditions, licences, and usage restrictions. They must not be redistributed or used for unrelated purposes without the appropriate permission.
+
+The external raw-data bundle is needed only when rebuilding and training the models from the beginning. It is not required to install the application, run the dashboard, inspect the uploaded frozen predictions and explanations, or reproduce the displayed site-allocation results. Those trained checkpoints and processed outputs are already included in this repository.
