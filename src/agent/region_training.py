@@ -118,6 +118,43 @@ def run_new_region_training(request: dict[str, Any]) -> dict[str, Any]:
             "message": "This training step is only for a new city, not Edinburgh.",
         }
 
+    # A packaged city checkpoint must be reusable without any restricted raw
+    # inputs. Check this before resolving OD, COVID, SIMD, or road sources.
+    out = region_output_dir(area_code)
+    model_dir = out / "model"
+    existing_ckpt = model_dir / "geo_transport_mobility" / "checkpoint.pt"
+    existing_forecast = out / "forecast_for_allocation.csv"
+    existing_geoshapley = model_dir / "geo_transport_mobility" / "exports" / "geoshapley.csv"
+    if (
+        existing_ckpt.is_file()
+        and existing_ckpt.stat().st_size > 0
+        and existing_forecast.is_file()
+        and existing_forecast.stat().st_size > 0
+        and not request.get("force_retrain")
+    ):
+        import pandas as pd
+
+        forecast = pd.read_csv(existing_forecast, usecols=["iz_code"])
+        n_iz = int(forecast["iz_code"].astype(str).nunique())
+        return {
+            "status": "ok",
+            "mode": "new_region_training",
+            "executed": False,
+            "retrained": False,
+            "area_code": area_code,
+            "area_name": area_name,
+            "n_iz": n_iz,
+            "od_path": None,
+            "output_dir": str(out),
+            "checkpoint_id": f"{area_code}-trained",
+            "checkpoint_path": str(existing_ckpt),
+            "forecast_path": str(existing_forecast),
+            "geoshapley_path": str(existing_geoshapley) if existing_geoshapley.is_file() else None,
+            "config_path": str(out / "model.yaml") if (out / "model.yaml").is_file() else None,
+            "steps": [{"step": "load_frozen_region", "reused": True}],
+            "message": f"Reused the saved model for {area_name}.",
+        }
+
     try:
         od_path = default_od_path(area_code)
     except Exception as exc:
@@ -128,7 +165,6 @@ def run_new_region_training(request: dict[str, Any]) -> dict[str, Any]:
             "message": str(exc),
         }
 
-    out = region_output_dir(area_code)
     _assert_not_protected(out)
     out.mkdir(parents=True, exist_ok=True)
     covid_dir = out / "covid"

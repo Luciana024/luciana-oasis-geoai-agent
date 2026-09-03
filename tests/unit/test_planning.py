@@ -64,6 +64,33 @@ def test_existing_region_checkpoint_reuses_without_confirm(monkeypatch):
     assert result["retrained"] is False
 
 
+def test_saved_region_reuse_does_not_require_raw_od(tmp_path, monkeypatch):
+    from agent.region_training import run_new_region_training
+
+    region = tmp_path / "S12000049"
+    checkpoint = region / "model" / "geo_transport_mobility" / "checkpoint.pt"
+    checkpoint.parent.mkdir(parents=True)
+    checkpoint.write_bytes(b"saved-checkpoint")
+    forecast = region / "forecast_for_allocation.csv"
+    forecast.write_text("iz_code,predicted_rate\nIZ1,10.0\nIZ2,20.0\n", encoding="utf-8")
+
+    monkeypatch.setattr("agent.region_training.region_output_dir", lambda _code: region)
+    monkeypatch.setattr(
+        "agent.region_training.default_od_path",
+        lambda _code: (_ for _ in ()).throw(AssertionError("OD must not be accessed")),
+    )
+
+    result = run_new_region_training(
+        {"area_code": "S12000049", "area_name": "Glasgow City", "force_retrain": False}
+    )
+
+    assert result["status"] == "ok"
+    assert result["retrained"] is False
+    assert result["executed"] is False
+    assert result["n_iz"] == 2
+    assert result["od_path"] is None
+
+
 def test_confirmed_new_region_calls_training_pipeline(monkeypatch):
     monkeypatch.setattr(
         "agent.region_training.run_new_region_training",
