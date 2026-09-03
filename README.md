@@ -47,6 +47,11 @@ outputs without downloading the full raw-data archive.
 Python 3.10 or newer is required. Python 3.13.9 was used for the final source
 verification.
 
+Reviewers should follow the complete, platform-specific instructions in
+[REVIEWER_GUIDE.md](REVIEWER_GUIDE.md). The guide explains how to clone the
+exact tagged version, install dependencies, verify the tests, start an
+independent local dashboard and reproduce each of the three user tasks.
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate

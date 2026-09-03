@@ -15,8 +15,8 @@ STRINGS: dict[str, dict[str, str]] = {
             "The latest forecast date is on this page.\n\n"
             "Which **city** should I use? Type the name, or wait for the buttons I show.\n"
             "Every choice I offer as a button can also be typed: city, date, "
-            "whole-region or one Intermediate Zone, and the task.\n"
-            "Example: \"I want the Glasgow forecast for 2022-06-15, whole region\"."
+            "Whole region or one Intermediate Zone, and the task.\n"
+            "Example: \"I want the Glasgow forecast for 2022-06-15, Whole region\"."
         ),
         "zh": (
             "我是 **Luciana**，疫苗接种点规划机器人。我根据感染预测放置 **6 个接种点**，不会编造点位或年份。\n\n"
@@ -155,16 +155,14 @@ STRINGS: dict[str, dict[str, str]] = {
     },
     "ask_date": {
         "en": (
-            "Our latest forecast date is **{latest}**. "
-            "You can tap that option, type another date (YYYY-MM-DD or 15 June 2022), "
-            "or name the city and date together. "
-            "I will not run a model until you choose a task."
+            "The source timeline begins on **8 March 2020**. Available forecast targets run from "
+            "**{earliest}** to **{latest_valid}**. Type YYYY-MM-DD or choose from the date list below. "
+            "Invalid dates are blocked before any model or solver runs."
         ),
         "zh": (
-            "我们目前最新的预测日期是 **{latest}**。"
-            "可以点下面的「最新预测日」，自己输入日期（如 2022-06-15 或 2022年6月15日），"
-            "或一句话说「格拉斯哥 2022年6月15日的预测」。"
-            "选定任务之前，我不会运行模型。"
+            "源数据时间线从 **2020年3月8日** 开始；当前可选预测目标日期为 "
+            "**{earliest}** 至 **{latest_valid}**。可输入 YYYY-MM-DD，或从下方日期列表选择。"
+            "无效日期会在模型或求解器运行前被阻止。"
         ),
     },
     "ask_task": {
@@ -177,7 +175,7 @@ STRINGS: dict[str, dict[str, str]] = {
             "I first ask which policy (coverage, equity, preventive, or balanced), "
             "then Drive or Walk and the time threshold. Then I show the six points on the map.\n"
             "- **Show the forecast** — I show the predicted infection-rate map, "
-            "uncertainty, and how the three graphs mix. I then ask which neighbourhood "
+            "and uncertainty. I then ask which neighbourhood "
             "to explain with GeoShapley. That explains the forecast, not the site choice.\n"
             "- **Compare four policies** — I keep the same six-site cap and travel rule, "
             "and show how the four policies differ.\n\n"
@@ -189,7 +187,7 @@ STRINGS: dict[str, dict[str, str]] = {
             "求解器恰好放 6 个，让街区能在出行时限内到达某个点。\n\n"
             "- **规划 6 个疫苗接种点** — 先问你用哪种政策（覆盖、公平、预防或均衡），"
             "再问驾车/步行和时限，然后在地图上放出这 6 个接种点。\n"
-            "- **查看预测** — 展示预测感染率、不确定性和三张图的混合权重，"
+            "- **查看预测** — 展示预测感染率和不确定性，"
             "再问要解释哪个街区。GeoShapley 解释预报，不是选址分数。\n"
             "- **比较四种政策** — 在同样的 6 点上限和出行规则下对比四种政策。\n\n"
             "请点选一项，或直接输入。"
@@ -205,14 +203,14 @@ STRINGS: dict[str, dict[str, str]] = {
     "scope_question": {
         "en": (
             "I have the city-wide forecast. Choose one view first; maps appear only after you pick.\n\n"
-            "- **Whole-region view (all Intermediate Zones)** — every neighbourhood on the map, plus the graph mix\n"
+            "- **Whole region view (all Intermediate Zones)** — every neighbourhood on the map and a regional summary\n"
             "- **Selected Intermediate Zone view** — pick one Intermediate Zone from the full list, then see that zone\n\n"
             "Type a choice in the box below, or press **Enter** on an empty box to see the two view buttons.\n"
             "GeoShapley explains a zone's forecast; it is not a siting score."
         ),
         "zh": (
             "全市预报已经取回。请先选一种展示方式，选完后才会出现对应结果。\n\n"
-            "- **全区域展示（整座城市的全部中间区）** — 所有中间区的地图和图结构混合\n"
+            "- **全区域展示（整座城市的全部中间区）** — 所有中间区的地图和区域摘要\n"
             "- **按所选中间区（Intermediate Zone）展示** — 从完整名单里选一个中间区，再看该区结果\n\n"
             "请在下方输入；若想看两种展示按钮，把输入框留空后按 **回车**。\n"
             "GeoShapley 解释该区预报，不是选址分数。"
@@ -231,15 +229,15 @@ STRINGS: dict[str, dict[str, str]] = {
         "zh": "请先选择展示方式，选完后才会出现对应结果：",
     },
     "scope_need": {
-        "en": "Please choose **Whole-region view (all Intermediate Zones)** or **Selected Intermediate Zone view**.",
+        "en": "Please choose **Whole region view (all Intermediate Zones)** or **Selected Intermediate Zone view**.",
         "zh": "请选择 **全区域展示（整座城市的全部中间区）** 或 **按所选中间区（Intermediate Zone）展示**。",
     },
     "scope_region_accept": {
-        "en": "I will show the whole-region forecast. The maps cover every Intermediate Zone.",
+        "en": "I will show the Whole region forecast. The maps cover every Intermediate Zone.",
         "zh": "我将展示全区域预报。地图覆盖这座城市的每一个中间区。",
     },
     "btn_scope_region": {
-        "en": "Whole-region view (all Intermediate Zones)",
+        "en": "Whole region view (all Intermediate Zones)",
         "zh": "全区域展示（整座城市的全部中间区）",
     },
     "btn_scope_iz": {
@@ -247,10 +245,10 @@ STRINGS: dict[str, dict[str, str]] = {
         "zh": "按所选中间区（Intermediate Zone）展示",
     },
     "btn_switch_region": {
-        "en": "Back to whole-region view (all Intermediate Zones)",
+        "en": "Back to Whole region view (all Intermediate Zones)",
         "zh": "改回全区域展示（全部中间区）",
     },
-    "region_summary": {"en": "Whole-region summary", "zh": "全区域摘要"},
+    "region_summary": {"en": "Whole region summary", "zh": "全区域摘要"},
     "region_zones": {"en": "Intermediate Zones", "zh": "中间区数"},
     "region_high_unc": {"en": "High-uncertainty IZs", "zh": "高不确定性中间区"},
     "zone_question": {
@@ -303,7 +301,7 @@ STRINGS: dict[str, dict[str, str]] = {
         "zh": "好。请点选驾车或步行，再点选我给出的分钟范围（10、15、20、25 或 30）。",
     },
     "input_mode_type_scope": {
-        "en": "All right. Type whole-region view, or name one Intermediate Zone.",
+        "en": "All right. Type Whole region view, or name one Intermediate Zone.",
         "zh": "好。请输入「全区域展示」，或写出一个中间区名称。",
     },
     "input_mode_buttons_scope": {
@@ -361,8 +359,8 @@ STRINGS: dict[str, dict[str, str]] = {
         "zh": "还需要目标日期。请按 YYYY-MM-DD 输入。",
     },
     "date_bad": {
-        "en": "Please type a date as YYYY-MM-DD.",
-        "zh": "请按 YYYY-MM-DD 输入日期。",
+        "en": "That date is invalid or unavailable. Use YYYY-MM-DD and choose a date from the valid range shown above. Nothing has been run.",
+        "zh": "该日期无效或不可用。请按 YYYY-MM-DD 输入，并选择上方有效范围内的日期。系统尚未运行模型或求解器。",
     },
     "confirm_need": {
         "en": "Please answer **Yes, build a model** or **No, pick another city**.",
@@ -421,9 +419,9 @@ STRINGS: dict[str, dict[str, str]] = {
         "zh": "我还没有做过规划。请让我规划 6 个疫苗接种点，或点下面的按钮。",
     },
     "btn_latest": {"en": "Latest forecast date ({day})", "zh": "最新预测日（{day}）"},
-    "btn_plan": {"en": "Plan 6 vaccination sites", "zh": "规划 6 个疫苗接种点"},
-    "btn_forecast": {"en": "Show the forecast", "zh": "查看预测"},
-    "btn_compare": {"en": "Compare four policies", "zh": "比较四种政策"},
+    "btn_plan": {"en": "Task 2: Plan 6 vaccination sites", "zh": "Task 2：规划 6 个疫苗接种点"},
+    "btn_forecast": {"en": "Task 1: Show the forecast", "zh": "Task 1：查看预测"},
+    "btn_compare": {"en": "Task 3: Compare four policies", "zh": "Task 3：比较四种政策"},
     "btn_train_yes": {"en": "Yes, build a model", "zh": "是，新建模型"},
     "btn_train_no": {"en": "No, pick another city", "zh": "否，换一座城市"},
     "btn_back": {"en": "← Back to Luciana", "zh": "← 返回 Luciana"},
@@ -456,6 +454,36 @@ STRINGS: dict[str, dict[str, str]] = {
             "**目前支持的城市：** 爱丁堡（City of Edinburgh）· 格拉斯哥（Glasgow City）"
         ),
     },
+    "values_intro_short": {
+        "en": "The GeoAI Health Agent supports value-sensitive public health planning. You choose the planning policy and travel constraint; the Agent does not decide what is ‘best’ or ‘fairest’ on your behalf.",
+        "zh": "GeoAI Health Agent 支持价值敏感的公共卫生规划。规划政策和出行约束由用户选择；Agent 不会代替用户决定什么是“最佳”或“最公平”。",
+    },
+    "values_intro_title": {
+        "en": "About values, policies and responsible use",
+        "zh": "关于价值、政策与负责任使用",
+    },
+    "values_intro_full": {
+        "en": (
+            "The GeoAI Health Agent supports **value-sensitive public health planning**.\n\n"
+            "There is no single universally ‘best’ or ‘fairest’ allocation because risk, vulnerability and equity depend on planning priorities and community values. The Agent therefore does not choose these values for the user.\n\n"
+            "Instead, users select a planning policy and travel constraint. The Agent then combines infection forecasts, uncertainty, population, deprivation, healthcare accessibility and travel information to allocate exactly six recorded vaccination sites and show the consequences of that choice.\n\n"
+            "- **Coverage:** reach as many residents as possible.\n"
+            "- **Equity:** prioritise deprived and healthcare-underserved areas.\n"
+            "- **Preventive:** prioritise areas with higher predicted risk or uncertainty.\n"
+            "- **Balanced:** combine coverage, equity and preventive considerations.\n\n"
+            "The results are decision support, not a replacement for public health expertise, community consultation or statutory approval."
+        ),
+        "zh": (
+            "GeoAI Health Agent 支持**价值敏感的公共卫生规划**。\n\n"
+            "不存在一个普遍适用的“最佳”或“最公平”方案，因为风险、脆弱性与公平取决于规划重点和社区价值。因此，Agent 不替用户选择这些价值。\n\n"
+            "用户需要选择规划政策和出行约束。随后，Agent 综合感染预测、不确定性、人口、贫困程度、医疗服务可达性和出行信息，从已记录的候选点中准确分配 6 个疫苗接种点，并展示该选择的后果。\n\n"
+            "- **覆盖政策：** 尽可能覆盖更多居民。\n"
+            "- **公平政策：** 优先考虑贫困程度较高和医疗服务不足的地区。\n"
+            "- **预防政策：** 优先考虑预测风险或不确定性较高的地区。\n"
+            "- **均衡政策：** 综合覆盖、公平与预防因素。\n\n"
+            "这些结果用于辅助决策，不能替代公共卫生专业判断、社区协商或法定审批。"
+        ),
+    },
     "caption_reading": {"en": "Reading: **{city}** · {date}", "zh": "当前：**{city}** · {date}"},
     "continue_agent": {"en": "Continue with Luciana", "zh": "继续与 Luciana 对话"},
     "continue_caption": {
@@ -475,7 +503,7 @@ STRINGS: dict[str, dict[str, str]] = {
         "zh": "例如：步行 20 分钟…",
     },
     "placeholder_type_scope": {
-        "en": "e.g. whole region, or an Intermediate Zone name…",
+        "en": "e.g. Whole region, or an Intermediate Zone name…",
         "zh": "例如：全区域，或一个中间区名称…",
     },
     "forecast_maps": {
@@ -499,6 +527,8 @@ STRINGS: dict[str, dict[str, str]] = {
         "en": "How much the forecast used the neighbour graph, the road graph, and the commuting graph. These weights are not a risk share and not a siting score.",
         "zh": "预报分别用了多少邻接图、道路图和通勤图。这些权重不是风险占比，也不是选址分数。",
     },
+    "graph_mix_decision": {"en": "Practical use: check whether the forecast consistently relies more on nearby areas, road connections, or commuting links. This is a model diagnostic and does not change which six sites are selected.", "zh": "实际用途：查看预报是否持续更依赖邻近地区、道路连接或通勤联系。这是模型诊断信息，不会改变所选的 6 个接种点。"},
+    "advanced_model_details": {"en": "Advanced explanation: model graph mix", "zh": "高级说明：模型图结构混合"},
     "graph_mix_saved": {
         "en": "This city has no rolling update trail. The points are the fusion weights stored in the current model, not a made-up time path.",
         "zh": "这座城市没有滚动更新轨迹。图上的点是当前保存模型里的融合权重，不是编造的时间路径。",
@@ -524,6 +554,19 @@ STRINGS: dict[str, dict[str, str]] = {
         "en": "Display names only. The solver still uses the recorded field names in the data tables.",
         "zh": "仅用于展示。求解器仍使用数据表中的原字段名。",
     },
+    "glossary_open": {"en": "Terminology guide", "zh": "术语指南"},
+    "history_title": {"en": "Previous results in this session", "zh": "本次会话的历史结果"},
+    "history_caption": {"en": "Returning home does not delete these runs. Select one to reopen it.", "zh": "返回主页不会删除这些结果。点击任意一项即可重新打开。"},
+    "history_item": {"en": "{city} · {date} · {task}", "zh": "{city} · {date} · {task}"},
+    "history_forecast": {"en": "Forecast", "zh": "预测"},
+    "history_allocation": {"en": "Six-site plan", "zh": "六点选址方案"},
+    "history_compare": {"en": "Policy comparison", "zh": "政策比较"},
+    "workflow_home": {"en": "Workflow: 1 Choose city → 2 Choose a valid date → 3 Choose a task → 4 Review results", "zh": "流程：1 选择城市 → 2 选择有效日期 → 3 选择任务 → 4 查看结果"},
+    "workflow_task": {"en": "Workflow: ✓ City → ✓ Date → 3 Choose one independent task → 4 Review results", "zh": "流程：✓ 城市 → ✓ 日期 → 3 选择一个可独立执行的任务 → 4 查看结果"},
+    "workflow_results": {"en": "Workflow: ✓ City → ✓ Date → ✓ Task → 4 Results. The three tasks are independent and reuse the same saved forecast; site planning and policy comparison do not require you to open the forecast first.", "zh": "流程：✓ 城市 → ✓ 日期 → ✓ 任务 → 4 结果。三个任务可独立执行并复用同一份已保存预测；选址和政策比较不要求先打开预测页面。"},
+    "advanced_geoshapley": {"en": "Advanced explanation: exact GeoShapley values", "zh": "高级说明：GeoShapley 精确数值"},
+    "scale_region_explain": {"en": "You are viewing the Whole region: maps compare every Intermediate Zone and the summary aggregates all zones. Select a zone for local factors and GeoShapley detail.", "zh": "当前为全区域视图：地图比较所有中间区，摘要汇总全部中间区。选择一个中间区后可查看当地因素和 GeoShapley 细节。"},
+    "scale_iz_explain": {"en": "You are viewing one Intermediate Zone: metrics and GeoShapley describe this neighbourhood only. The maps remain visible for geographic context, so their broader coverage is intentional.", "zh": "当前为单个中间区视图：指标和 GeoShapley 只描述该街区；地图仍保留更广范围作为地理背景，这是有意的尺度设计。"},
     "covered_pop": {"en": "Covered population", "zh": "覆盖人口"},
     "izs_covered": {"en": "IZs covered", "zh": "覆盖中间区"},
     "mean_travel": {"en": "Mean travel time", "zh": "平均出行时间"},
@@ -548,7 +591,7 @@ STRINGS: dict[str, dict[str, str]] = {
     },
     "placeholder_date": {"en": "Type a date as YYYY-MM-DD…", "zh": "请输入日期 YYYY-MM-DD…"},
     "placeholder_scope": {
-        "en": "Type whole region or a neighbourhood name…",
+        "en": "Type Whole region or a neighbourhood name…",
         "zh": "请输入「全区域」或一个街区名称…",
     },
     "placeholder_zone": {
@@ -599,8 +642,8 @@ STRINGS: dict[str, dict[str, str]] = {
     "col_max_tt": {"en": "Max Travel Time", "zh": "最长出行时间"},
     "col_unserved_iz": {"en": "Unserved IZs", "zh": "未覆盖中间区"},
     "geo_baseline_help": {
-        "en": "Predicted rate if this zone's SIMD indicators and location were replaced by this city's reference medians. Neighbours stay as observed.",
-        "zh": "若将该区的 SIMD 指标和区位换成该市参考中位数后的预测感染率。邻区保持观测值。",
+        "en": "Predicted rate if this zone's Scottish Index of Multiple Deprivation indicators and location were replaced by this city's reference medians. Neighbours stay as observed.",
+        "zh": "若将该区的 Scottish Index of Multiple Deprivation（苏格兰多重剥夺指数）指标和区位换成该市参考中位数后的预测感染率。邻区保持观测值。",
     },
     "geo_rate_help": {
         "en": "Model forecast for this zone (rolling 7-day rate per 100,000).",
@@ -611,9 +654,38 @@ STRINGS: dict[str, dict[str, str]] = {
         "zh": "各指标条之和。基线加上该合计等于预测感染率。",
     },
     "geo_baseline_info": {
-        "en": "**Baseline** is not a city-average infection rate. It is the model's prediction for **this zone** after swapping its SIMD values and its map location for this city's reference medians. The bars below then show how this zone's real values push the forecast from Baseline up or down to the Predicted rate.",
-        "zh": "**基线**不是全市平均感染率。它是把该区 SIMD 和区位换成该市参考中位数后，模型对该区的预测。下方柱状图显示真实值如何把预报从基线推到预测感染率。",
+        "en": "**Baseline means the model's starting point.** First, the system does not use this area's own socioeconomic and location details. Instead, it uses an ordinary reference situation. The infection-rate prediction at that point is the Baseline. The system then considers income deprivation, employment deprivation, housing overcrowding, public-transport time to a GP, crime, higher education and geographic location. These factors move the prediction up or down from the Baseline to produce this area's final predicted value.",
+        "zh": "**Baseline（基线）就是模型预测的起点。** 系统首先不使用该地区自身的具体社会经济和位置信息，而是采用一个普通的参考情况；此时模型给出的感染率预测就是 Baseline。随后，系统逐一考虑该地区的收入贫困程度、就业贫困程度、住房拥挤程度、公共交通到全科诊所（GP）的时间、犯罪情况、高等教育情况和地理位置。这些因素会使预测从 Baseline 向上或向下调整，最终得到该地区的预测值。",
     },
+    "glossary_invite": {"en": "Some terms in this planning tool are technical. Would you like me to open the plain-language Terminology Guide before you continue?", "zh": "本规划工具包含一些专业术语。继续之前，需要我打开通俗易懂的术语指南吗？"},
+    "glossary_invite_short": {"en": "Need help with a term? Open the Terminology Guide.", "zh": "需要了解专业术语吗？可以打开术语指南。"},
+    "glossary_yes": {"en": "Yes: open the guide", "zh": "需要：打开术语指南"},
+    "glossary_yes_short": {"en": "Open guide", "zh": "打开指南"},
+    "glossary_no": {"en": "Not now", "zh": "暂时不需要"},
+    "floating_glossary_hint": {"en": "Move the pointer away to close this guide.", "zh": "鼠标移开后，指南会自动收起。"},
+    "floating_glossary_title": {"en": "Terminology Guide", "zh": "术语指南"},
+    "date_timeline": {"en": "Data coverage begins on 8 March 2020. The dropdown contains only dates for which this interface has a forecast result.", "zh": "数据覆盖从 2020年3月8日开始。下拉列表只包含当前界面已有预测结果的日期。"},
+    "date_list_label": {"en": "Available forecast dates", "zh": "可选预测日期列表"},
+    "date_list_placeholder": {"en": "Choose a forecast date…", "zh": "请选择预测日期……"},
+    "date_use_selected": {"en": "Use this date", "zh": "使用这个日期"},
+    "policy_help_coverage": {"en": "Selects six sites to reach the largest possible population within the chosen travel-time limit.", "zh": "选择 6 个点，使尽可能多的人口能在所选出行时限内到达接种点。"},
+    "policy_help_equity": {"en": "Gives more priority to income-deprived neighbourhoods and places with poorer existing access to a GP.", "zh": "更加优先考虑收入剥夺程度较高、目前前往全科诊所较不方便的街区。"},
+    "policy_help_preventive": {"en": "Gives more priority to neighbourhoods with a high predicted infection rate or high forecast uncertainty.", "zh": "更加优先考虑预测感染率较高或预测不确定性较高的街区。"},
+    "policy_help_balanced": {"en": "Combines population coverage, equity and preventive risk instead of optimising only one objective.", "zh": "综合人口覆盖、公平性和预防风险，而不是只优化一个目标。"},
+    "graph_mix_question": {"en": "Would you like a deeper model explanation showing the learned α (alpha) weights for the geographic, road-transport and commuting graphs? This diagnostic is optional and does not affect site selection.", "zh": "是否需要进一步了解模型使用的地理、道路交通和通勤图 α（alpha）权重？这是可选的模型诊断信息，不影响接种点选择。"},
+    "graph_mix_yes": {"en": "Yes: show the α results", "zh": "需要：显示 α 结果"},
+    "graph_mix_no": {"en": "No: keep to the forecast", "zh": "不需要：继续查看预测"},
+    "graph_mix_declined": {"en": "The optional α model explanation is hidden. You can ask me for it later.", "zh": "可选的 α 模型解释已隐藏；之后仍可随时向我询问。"},
+    "graph_mix_accept": {"en": "Certainly. Here are the learned α results and what they mean.", "zh": "可以。下面是模型学习到的 α 结果及其含义。"},
+    "graph_mix_answer_needed": {"en": "Please reply Yes if you want the α explanation, or No to continue without it.", "zh": "如果需要查看 α 解释，请回复“是”；如果不需要，请回复“否”。"},
+    "placeholder_alpha_answer": {"en": "Reply Yes or No about the optional α explanation…", "zh": "请回复是否需要查看可选的 α 解释……"},
+    "alpha_next_question": {"en": "You have now seen the optional α model explanation. Which forecast result would you like to view next?", "zh": "你已经看完可选的 α 模型解释。接下来想查看哪一种预测结果？"},
+    "alpha_next_region": {"en": "Whole region forecast", "zh": "查看全区域预测"},
+    "alpha_next_zone": {"en": "Choose an Intermediate Zone", "zh": "选择一个中间区查看与解释"},
+    "history_conversation": {"en": "View this conversation", "zh": "查看这段对话"},
+    "history_you": {"en": "You", "zh": "你"},
+    "reopen_message_result": {"en": "↗ Reopen the result from this message", "zh": "↗ 重新打开这条消息对应的结果"},
+    "new_search_prompt": {"en": "Your earlier conversation and result links remain above. Let us start another query: which city should I use?", "zh": "之前的对话及其结果入口仍保留在上方。现在开始一次新查询：要使用哪个城市？"},
     "geo_scope": {"en": "Local explanation for the selected zone", "zh": "针对所选街区的局部解释"},
     "site_gp": {"en": "GP", "zh": "全科诊所"},
     "site_pharmacy": {"en": "Pharmacy", "zh": "药店"},
@@ -648,16 +720,16 @@ GLOSSARY_ZH = [
     ("驾车 / 步行", "OSM 路网上的出行方式。驾车按 30 km/h，步行按 4.5 km/h。"),
     ("出行时限", "若最近已选点在该分钟数内，则该中间区视为已覆盖。"),
     ("覆盖优先", "在时限内覆盖尽可能多的人口，选出 6 个疫苗接种点。"),
-    ("公平优先", "优先收入剥夺高、当前服务不足的街区（SIMD 收入剥夺率与公交到全科诊所时间）。"),
+    ("公平优先", "优先收入剥夺高、当前服务不足的街区（Scottish Index of Multiple Deprivation〔苏格兰多重剥夺指数〕收入剥夺率与公交到全科诊所时间）。"),
     ("预防优先", "优先预测感染率高和/或不确定性高的街区。"),
     ("均衡", "综合覆盖、公平与预防热点权重。"),
-    ("基线", "将该区六项 SIMD 指标和区位设为全市中位数后的预测感染率。邻区保持观测值。不是全市平均感染率。"),
-    ("收入剥夺", "SIMD 收入剥夺人口占比。用于解释预报，不用作选址分数。"),
-    ("就业剥夺", "该区 SIMD 就业剥夺指标。"),
-    ("高等教育", "SIMD 高等教育/升学指标。"),
-    ("过度拥挤", "SIMD 过度拥挤指标。"),
-    ("犯罪", "SIMD 街区犯罪指标。"),
-    ("公交到全科诊所时间", "SIMD 公交到全科诊所的分钟数。这是现状可达性，不是我们的 OSM 出行矩阵。"),
+    ("基线", "同一街区的参考预测：将六项 Scottish Index of Multiple Deprivation（苏格兰多重剥夺指数）指标和区位替换为全市典型值后计算。它不是全市平均感染率。"),
+    ("收入剥夺", "Scottish Index of Multiple Deprivation（苏格兰多重剥夺指数）中的收入剥夺人口占比。用于解释预报，不用作选址分数。"),
+    ("就业剥夺", "该区 Scottish Index of Multiple Deprivation（苏格兰多重剥夺指数）就业剥夺指标。"),
+    ("高等教育", "Scottish Index of Multiple Deprivation（苏格兰多重剥夺指数）高等教育/升学指标。"),
+    ("过度拥挤", "Scottish Index of Multiple Deprivation（苏格兰多重剥夺指数）过度拥挤指标。"),
+    ("犯罪", "Scottish Index of Multiple Deprivation（苏格兰多重剥夺指数）街区犯罪指标。"),
+    ("公交到全科诊所时间", "Scottish Index of Multiple Deprivation（苏格兰多重剥夺指数）公交到全科诊所的分钟数。这是现状可达性，不是我们的 OSM 出行矩阵。"),
     ("区位", "命名特征之后的残差空间贡献（东/北坐标）。"),
     ("区位 × …", "区位与该特征的交互。以固定图结构为条件。"),
     ("地理 / 交通 / 通勤图", "三张图的学习融合权重（α）。是图源相对重要性，不是 COVID 风险占比。"),

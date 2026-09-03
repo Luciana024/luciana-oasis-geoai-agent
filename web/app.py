@@ -8,6 +8,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from copy import deepcopy
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,6 +17,7 @@ if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
 import importlib
+import html as html_lib
 
 import geopandas as gpd
 import pandas as pd
@@ -147,6 +149,7 @@ def format_agent_markdown(text: str) -> str:
     out = plain_agent_text(text)
     out = out.replace("干预点", "疫苗接种点").replace("intervention sites", "vaccination sites")
     out = out.replace("Intervention sites", "Vaccination sites")
+    out = out.replace(" — ", ": ").replace("——", "：")
     return re.sub(r"\s*(?=\*\*[1-4]\. )", "\n\n", out).strip()
 
 
@@ -156,7 +159,7 @@ def _lang() -> str:
 
 _TX_FALLBACK = {
     "btn_scope_region": {
-        "en": "Whole-region view (all Intermediate Zones)",
+        "en": "Whole region view (all Intermediate Zones)",
         "zh": "全区域展示（整座城市的全部中间区）",
     },
     "btn_scope_iz": {
@@ -164,7 +167,7 @@ _TX_FALLBACK = {
         "zh": "按所选中间区（Intermediate Zone）展示",
     },
     "btn_switch_region": {
-        "en": "Back to whole-region view (all Intermediate Zones)",
+        "en": "Back to Whole region view (all Intermediate Zones)",
         "zh": "改回全区域展示（全部中间区）",
     },
     "btn_another_zone": {
@@ -200,7 +203,7 @@ _TX_FALLBACK = {
         "zh": "请输入出行方式和时限，例如「步行 20 分钟」或「驾车 15」。",
     },
     "input_mode_type_scope": {
-        "en": "Type whole-region view, or name one Intermediate Zone.",
+        "en": "Type Whole region view, or name one Intermediate Zone.",
         "zh": "请输入「全区域展示」，或写出一个中间区名称。",
     },
     "type_box_caption": {
@@ -216,7 +219,7 @@ _TX_FALLBACK = {
         "zh": "例如：步行 20 分钟…",
     },
     "placeholder_type_scope": {
-        "en": "e.g. whole region, or an Intermediate Zone name…",
+        "en": "e.g. Whole region, or an Intermediate Zone name…",
         "zh": "例如：全区域，或一个中间区名称…",
     },
     "scenario_question": {
@@ -551,7 +554,7 @@ def _add_allocated_sites(fig, sites_xy: list[dict], highlight_id: str | None = N
     else:
         scatter_cls = go.Scattermap
     hover = [
-        f"{site['site_id']} — {site['site_name']} ({site_type_display(_lang(), label_of(SITE_TYPE_LABELS, site['site_type']))})"
+        f"{site['site_id']}: {site['site_name']} ({site_type_display(_lang(), label_of(SITE_TYPE_LABELS, site['site_type']))})"
         for site in sites_xy
     ]
     fig.add_trace(
@@ -586,7 +589,7 @@ def _add_allocated_sites(fig, sites_xy: list[dict], highlight_id: str | None = N
             name="Selected site",
             showlegend=False,
             hovertext=[
-                f"{hi_site['site_id']} — {hi_site['site_name']} ({site_type_display(_lang(), label_of(SITE_TYPE_LABELS, hi_site['site_type']))})"
+                f"{hi_site['site_id']}: {hi_site['site_name']} ({site_type_display(_lang(), label_of(SITE_TYPE_LABELS, hi_site['site_type']))})"
             ],
             hovertemplate="%{hovertext}<extra></extra>",
         )
@@ -621,6 +624,55 @@ def render_glossary() -> None:
         {_tx("glossary_name"): [row[0] for row in rows], _tx("glossary_meaning"): [row[1] for row in rows]},
         width="stretch",
         hide_index=True,
+    )
+
+
+def render_glossary_expander() -> None:
+    """Fixed right-side glossary that expands on pointer hover or keyboard focus."""
+    rows = glossary_rows(_lang(), GLOSSARY_ROWS)
+    items = "".join(
+        f"<div class='term-row'><strong>{html_lib.escape(str(name))}</strong>"
+        f"<span>{html_lib.escape(str(meaning))}</span></div>"
+        for name, meaning in rows
+    )
+    title = html_lib.escape(_tx("floating_glossary_title"))
+    hint = html_lib.escape(_tx("floating_glossary_hint"))
+    st.html(
+        f"""
+        <style>
+        .floating-glossary {{
+            position: fixed; right: 0; top: 32%; z-index: 999999;
+            width: 48px; max-height: 68vh; overflow: hidden;
+            color: white; background: #003865; border: 2px solid #00AEEF;
+            border-right: 0; border-radius: 12px 0 0 12px;
+            box-shadow: 0 5px 18px rgba(0, 35, 70, .35);
+            transition: width .22s ease, max-height .22s ease;
+        }}
+        .floating-glossary:hover, .floating-glossary:focus-within {{
+            width: min(430px, 88vw); overflow-y: auto;
+        }}
+        .floating-glossary .tab {{
+            position: absolute; top: 0; left: 0; width: 48px; height: 100%;
+            display: flex; align-items: center; justify-content: center;
+            writing-mode: vertical-rl; transform: rotate(180deg);
+            font-weight: 800; letter-spacing: .04em; cursor: help;
+            color: #ffffff !important; background: #003865 !important; z-index: 3;
+        }}
+        .floating-glossary .content {{
+            margin-left: 48px; padding: 14px 16px; min-width: 350px;
+            background: #ffffff; color: #172B3A; min-height: 68vh;
+        }}
+        .floating-glossary h3 {{ color: #003865; margin: 0 0 4px; font-size: 1.05rem; }}
+        .floating-glossary .hint {{ color: #31566F; font-size: .78rem; margin-bottom: 10px; }}
+        .floating-glossary .term-row {{ border-top: 1px solid #D8E4EC; padding: 7px 0; }}
+        .floating-glossary .term-row strong {{ display: block; color: #003865; font-size: .85rem; }}
+        .floating-glossary .term-row span {{ display: block; color: #172B3A; font-size: .78rem; line-height: 1.3; }}
+        </style>
+        <aside class="floating-glossary" tabindex="0" aria-label="{title}">
+          <div class="tab">{title}</div>
+          <div class="content"><h3>{title}</h3><div class="hint">{hint}</div>{items}</div>
+        </aside>
+        """
     )
 
 
@@ -758,6 +810,7 @@ def render_graph_fusion() -> None:
     if not weights and (trajectory is None or trajectory.empty):
         return
     st.subheader(_tx("graph_mix"))
+    st.info(_tx("graph_mix_decision"))
     st.caption(_tx("graph_mix_caption"))
     alpha_shown = {
         "alpha_geo": _tx("graph_geo"),
@@ -997,6 +1050,14 @@ if "alloc_input_mode" not in st.session_state:
     st.session_state.alloc_input_mode = None
 if "forecast_input_mode" not in st.session_state:
     st.session_state.forecast_input_mode = None
+if "result_history" not in st.session_state:
+    st.session_state.result_history = []
+if "show_glossary" not in st.session_state:
+    st.session_state.show_glossary = False
+if "graph_mix_choice" not in st.session_state:
+    st.session_state.graph_mix_choice = None
+if "alpha_qa_step" not in st.session_state:
+    st.session_state.alpha_qa_step = None
 
 study_area = st.session_state.brief_study_area
 area_code, _area_name = map_study_area(study_area)
@@ -1097,6 +1158,43 @@ def _open_result_page(artifact: str) -> None:
     st.session_state.result_artifact = artifact
 
 
+def _remember_result(result: dict, artifact: str) -> None:
+    """Keep successful runs available after navigating home during this browser session."""
+    if not result or not result.get("success"):
+        return
+    entry = {
+        "id": repr((study_area, selected_date, _active_scenario(), travel_mode, float(travel_threshold))),
+        "city": study_area, "date": selected_date, "scenario": _active_scenario(),
+        "travel_mode": travel_mode, "threshold": float(travel_threshold),
+        "artifact": artifact, "result": deepcopy(result),
+        "messages": deepcopy(st.session_state.get("messages") or []),
+    }
+    entry["history_key"] = f"{entry['id']}::{artifact}"
+    for message in reversed(st.session_state.get("messages") or []):
+        if message.get("role") == "assistant" and message.get("artifact") == artifact:
+            message["history_key"] = entry["history_key"]
+            break
+    entry["messages"] = deepcopy(st.session_state.get("messages") or [])
+    history = [row for row in st.session_state.result_history if row.get("id") != entry["id"] or row.get("artifact") != artifact]
+    st.session_state.result_history = ([entry] + history)[:10]
+
+
+def _restore_result(entry: dict) -> None:
+    st.session_state.brief_study_area = entry["city"]
+    st.session_state.brief_date = next((label for label in date_options if str(label).split()[0] == entry["date"]), entry["date"])
+    st.session_state.brief_scenario_label = SCENARIO_LABELS.get(entry["scenario"], SCENARIO_LABELS["balanced"])
+    st.session_state.brief_travel_label = TRAVEL_MODE_LABELS.get(entry["travel_mode"], TRAVEL_MODE_LABELS["drive"])
+    st.session_state.brief_threshold = float(entry["threshold"])
+    st.session_state.pipeline_result = entry["result"]
+    st.session_state.messages = deepcopy(entry.get("messages") or st.session_state.messages)
+    st.session_state.result_artifact = entry["artifact"]
+    st.session_state.brief_city_ready = True
+    st.session_state.brief_date_ready = True
+    st.session_state.explicit_task = True
+    st.session_state.brief_qa_step = "task"
+    st.session_state.view = "results"
+
+
 def _is_hidden_chat_line(message: dict) -> bool:
     text = str(message.get("text") or "")
     if text.startswith("I am the health planning agent.") or text.startswith("我是卫生规划助手"):
@@ -1123,7 +1221,9 @@ def _go_home() -> None:
     """Return to the first agent screen: greeting and city question."""
     st.session_state.view = "agent"
     st.session_state.explicit_task = False
-    st.session_state.messages = [{"role": "assistant", "text": _tx("greeting"), "artifact": None}]
+    st.session_state.messages.append(
+        {"role": "assistant", "text": _tx("new_search_prompt"), "artifact": None}
+    )
     st.session_state.brief_city_ready = False
     st.session_state.brief_date_ready = False
     st.session_state.brief_qa_step = "city"
@@ -1144,6 +1244,24 @@ def _go_home() -> None:
     st.session_state.force_realloc = False
     st.session_state.inspected_iz_code = None
     st.session_state.iz_inspect_box = None
+
+
+def _render_history() -> None:
+    history = st.session_state.get("result_history") or []
+    if not history:
+        return
+    with st.expander(_tx("history_title"), expanded=False):
+        st.caption(_tx("history_caption"))
+        for index, entry in enumerate(history):
+            task = _tx(f"history_{entry['artifact']}") if entry["artifact"] in {"forecast", "allocation", "compare"} else entry["artifact"]
+            label = _tx("history_item", city=city_display(_lang(), entry["city"]), date=entry["date"], task=task)
+            if st.button(label, key=f"history_restore_{index}", width="stretch"):
+                _restore_result(entry)
+                st.rerun()
+            with st.expander(_tx("history_conversation"), expanded=False):
+                for message in entry.get("messages") or []:
+                    who = _tx("label_agent") if message.get("role") == "assistant" else _tx("history_you")
+                    st.markdown(f"**{who}:** {format_agent_markdown(message.get('text') or '')}")
 
 
 def _render_brand_mark() -> None:
@@ -1179,6 +1297,14 @@ def _render_brand_bar() -> None:
     _render_brand_mark()
 
 
+def _render_responsible_use_intro() -> None:
+    """Explain value choices and decision-support boundaries on the landing page."""
+    st.info(_tx("values_intro_short"))
+    with st.container(key="responsible_use_panel"):
+        with st.expander(_tx("values_intro_title"), expanded=False):
+            st.markdown(_tx("values_intro_full"))
+
+
 def _agent_heading(text: str) -> None:
     """Section label with the same navy-and-white robot used in chat."""
     icon, title = st.columns([1, 18], vertical_alignment="center")
@@ -1199,7 +1325,7 @@ def _render_agent_bubble(text: str | None) -> None:
 
 
 def _render_agent_transcript(*, hide_briefing: bool = False) -> None:
-    for message in st.session_state.messages:
+    for index, message in enumerate(st.session_state.messages):
         if hide_briefing and _is_hidden_chat_line(message):
             continue
         role = message.get("role") or "assistant"
@@ -1209,6 +1335,24 @@ def _render_agent_transcript(*, hide_briefing: bool = False) -> None:
         else:
             with st.chat_message("user", avatar=USER_AVATAR):
                 st.markdown(format_agent_markdown(message["text"]))
+        artifact = message.get("artifact")
+        if role == "assistant" and artifact in {"forecast", "allocation", "compare"}:
+            history_key = message.get("history_key")
+            saved = next(
+                (
+                    entry for entry in st.session_state.get("result_history", [])
+                    if (history_key and entry.get("history_key") == history_key)
+                    or (not history_key and entry.get("artifact") == artifact)
+                ),
+                None,
+            )
+            if saved and st.button(
+                _tx("reopen_message_result"),
+                key=f"reopen_message_result_{index}_{artifact}",
+                type="primary",
+            ):
+                _restore_result(saved)
+                st.rerun()
 
 
 def _render_typed_answer_box(
@@ -1266,6 +1410,8 @@ def _render_ask_bar(*, key_prefix: str) -> None:
         hint = _tx("placeholder_scope")
     elif st.session_state.get("iz_qa_step") in {"zone", "zone_disambiguate"}:
         hint = _tx("placeholder_zone")
+    elif st.session_state.get("alpha_qa_step") == "ask":
+        hint = _tx("placeholder_alpha_answer")
     else:
         hint = _tx("placeholder_ask")
     with st.form(f"{key_prefix}_ask", clear_on_submit=True, border=False):
@@ -1305,7 +1451,13 @@ def _latest_forecast_day() -> str:
 
 
 def _qa_date_question() -> str:
-    return _tx("ask_date", latest=_latest_forecast_day())
+    valid_days = [str(label).split()[0] for label in date_options]
+    return _tx("ask_date", latest=_latest_forecast_day(), earliest=min(valid_days), latest_valid=max(valid_days))
+
+
+def _looks_like_date_attempt(text: str) -> bool:
+    raw = str(text or "").strip()
+    return bool(re.search(r"\b\d{4}[-/]\d{1,2}(?:[-/]\d{1,2})?\b", raw) or re.search(r"\b\d{1,2}\s+[A-Za-z]+\s+\d{4}\b", raw) or re.search(r"\b\d{4}\s*年\s*\d{1,2}\s*月", raw))
 QA_TASK_QUESTION = (
     "What should I do next?\n\n"
             "The six points are **vaccination sites** — existing GPs, pharmacies, "
@@ -1331,9 +1483,9 @@ QA_ZONE_QUESTION = (
     "GeoShapley explains that zone's forecast; it is not a siting score."
 )
 QA_TASK_BUTTONS = (
-    ("Plan 6 sites", "Plan 6 sites"),
-    ("Show the forecast", "Show the forecast"),
-    ("Compare four policies", "Compare the four allocation policies."),
+    ("Task 1: Show the forecast", "Show the forecast"),
+    ("Task 2: Plan 6 sites", "Plan 6 sites"),
+    ("Task 3: Compare four policies", "Compare the four allocation policies."),
 )
 
 
@@ -1452,6 +1604,77 @@ def _apply_interaction_button_style() -> None:
         background-color: #9B0C24 !important;
         border-color: #7A091C !important;
         color: #ffffff !important;
+    }
+    div[class*="st-key-terminology_guide_panel"] {
+        background: #003865 !important;
+        color: #ffffff !important;
+        border: 3px solid #00AEEF !important;
+        border-radius: 12px !important;
+        padding: 0.2rem 0.55rem !important;
+        margin: 0.25rem 0 0.6rem 0 !important;
+        box-shadow: 0 4px 14px rgba(0, 56, 101, 0.28) !important;
+    }
+    div[class*="st-key-terminology_guide_panel"] p,
+    div[class*="st-key-terminology_guide_panel"] h2,
+    div[class*="st-key-terminology_guide_panel"] h3,
+    div[class*="st-key-terminology_guide_panel"] div {
+        color: #ffffff !important;
+    }
+    div[class*="st-key-terminology_guide_panel"] p {
+        font-size: 0.88rem !important;
+        margin: 0 !important;
+        line-height: 1.2 !important;
+    }
+    .stApp div[class*="st-key-terminology_guide_panel"] button {
+        min-height: 2rem !important;
+        height: 2rem !important;
+        padding: 0.15rem 0.35rem !important;
+        font-size: 0.78rem !important;
+        line-height: 1 !important;
+    }
+    div[class*="st-key-qa_date_list"] [data-baseweb="select"] > div,
+    div[class*="st-key-qa_date_list"] [data-baseweb="select"] div,
+    div[class*="st-key-qa_date_list"] [data-baseweb="select"] input {
+        background-color: #ffffff !important;
+        color: #003865 !important;
+        fill: #003865 !important;
+    }
+    .stApp div[class*="st-key-qa_date_list"] [data-testid="stSelectbox"] > div > div,
+    .stApp div[class*="st-key-qa_date_list"] [data-baseweb="select"] > div {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        color: #003865 !important;
+        border-color: #003865 !important;
+    }
+    .stApp div[class*="st-key-qa_date_list"] [data-baseweb="select"] *,
+    .stApp div[class*="st-key-qa_date_list"] [data-testid="stSelectbox"] * {
+        color: #003865 !important;
+        fill: #003865 !important;
+    }
+    .stApp div[class*="st-key-qa_date_use_selected"] button,
+    .stApp div[class*="st-key-qa_date_latest"] button {
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #003865 !important;
+        border: 2px solid #003865 !important;
+    }
+    .stApp div[class*="st-key-qa_date_use_selected"] button:hover,
+    .stApp div[class*="st-key-qa_date_latest"] button:hover {
+        background-color: #E6F1F8 !important;
+        color: #00264A !important;
+    }
+    div[class*="st-key-responsible_use_panel"] [data-testid="stExpander"] details > summary,
+    div[class*="st-key-responsible_use_panel"] details > summary {
+        background: #C8102E !important;
+        color: #ffffff !important;
+        border-radius: 8px !important;
+        border: 1px solid #9B0C24 !important;
+        font-weight: 800 !important;
+        padding: 0.35rem 0.7rem !important;
+    }
+    div[class*="st-key-responsible_use_panel"] details > summary * {
+        color: #ffffff !important;
+        fill: #ffffff !important;
     }
     div[class*="st-key-qa_"] button,
     div[class*="st-key-switch_"] button,
@@ -1607,6 +1830,7 @@ def _qa_ask_forecast_scope(*, intro: str | None = None) -> None:
     st.session_state.iz_qa_step = "scope"
     st.session_state.iz_qa_matches = []
     st.session_state.iz_picked_by_user = False
+    st.session_state.graph_mix_choice = None
     st.session_state.explicit_task = True
     st.session_state.pop("iz_qa_select", None)
     _open_result_page("forecast")
@@ -1624,7 +1848,13 @@ def _qa_accept_scope_region() -> None:
     st.session_state.messages.append(
         {"role": "assistant", "text": _tx("scope_region_accept"), "artifact": "forecast"}
     )
-    _open_result_page("forecast")
+    st.session_state.graph_mix_choice = None
+    st.session_state.alpha_qa_step = "ask"
+    st.session_state.messages.append(
+        {"role": "assistant", "text": _tx("graph_mix_question"), "artifact": None}
+    )
+    st.session_state.view = "agent"
+    st.session_state.brief_qa_step = None
 
 
 def _qa_accept_scope_iz() -> None:
@@ -2006,6 +2236,11 @@ def _continue_brief_qa_from_text(text: str, intent: dict) -> bool:
         return False
     city = _parse_city_name(text)
     date = _canonical_date_label(text)
+    if _looks_like_date_attempt(text) and not date:
+        st.session_state.messages.append({"role": "assistant", "text": _tx("date_bad"), "artifact": None})
+        st.session_state.brief_qa_step = "date" if st.session_state.get("brief_city_ready") or city else "city"
+        st.session_state.pending_brief_task = None
+        return True
     intent_name = intent.get("intent") if intent.get("intent") in {"plan", "allocation", "forecast", "compare"} else None
     if step == "city":
         if city:
@@ -2136,6 +2371,17 @@ def _render_brief_qa() -> None:
     if step == "date":
         latest = _latest_forecast_label()
         day = _latest_forecast_day()
+        st.info(_tx("date_timeline"))
+        picked_date = st.selectbox(
+            _tx("date_list_label"),
+            [_tx("date_list_placeholder")] + date_options,
+            key="qa_date_list",
+        )
+        if picked_date != _tx("date_list_placeholder"):
+            if st.button(_tx("date_use_selected"), key="qa_date_use_selected", width="stretch", type="primary"):
+                st.session_state.messages.append({"role": "user", "text": picked_date, "artifact": None})
+                _qa_accept_date(picked_date)
+                st.rerun()
         if st.button(_tx("btn_latest", day=day), width="stretch", key="qa_date_latest", type="primary"):
             st.session_state.messages.append({"role": "user", "text": latest, "artifact": None})
             _qa_accept_date(latest)
@@ -2155,8 +2401,8 @@ def _render_brief_qa() -> None:
         return
     cols = st.columns(3)
     task_btns = (
-        (_tx("btn_plan"), "Plan 6 sites", "plan"),
         (_tx("btn_forecast"), "Show the forecast", "forecast"),
+        (_tx("btn_plan"), "Plan 6 sites", "plan"),
         (_tx("btn_compare"), "Compare the four allocation policies.", "compare"),
     )
     for col, (shown, payload, intent_name) in zip(cols, task_btns):
@@ -2398,12 +2644,20 @@ def _render_siting_qa() -> None:
     if step == "scenario":
         st.markdown(_tx("show_policy_options"))
         cols = st.columns(2)
+        policy_help = {
+            "Coverage priority": _tx("policy_help_coverage"),
+            "Equity priority": _tx("policy_help_equity"),
+            "Preventive priority": _tx("policy_help_preventive"),
+            "Balanced": _tx("policy_help_balanced"),
+        }
         for i, label in enumerate(SCENARIO_LABELS.values()):
             shown = scenario_display(_lang(), label)
-            if cols[i % 2].button(shown, width="stretch", key=f"qa_scen_{label}", type="primary"):
-                st.session_state.messages.append({"role": "user", "text": shown, "artifact": None})
-                _qa_accept_scenario(label)
-                st.rerun()
+            with cols[i % 2]:
+                st.info(f"**{shown}**\n\n{policy_help.get(label, '')}")
+                if st.button(shown, width="stretch", key=f"qa_scen_{label}", type="primary"):
+                    st.session_state.messages.append({"role": "user", "text": shown, "artifact": None})
+                    _qa_accept_scenario(label)
+                    st.rerun()
         return
     mode_cols = st.columns(2)
     for col, label in zip(mode_cols, TRAVEL_MODE_LABELS.values()):
@@ -2490,9 +2744,51 @@ def _resolve_user_intent(text: str, intent: dict) -> dict:
     return intent
 
 
+def _answer_alpha_question(*, show: bool, user_text: str) -> None:
+    """Record the user's explicit α choice, then open only the requested result."""
+    st.session_state.messages.append({"role": "user", "text": user_text, "artifact": None})
+    st.session_state.graph_mix_choice = show
+    st.session_state.alpha_qa_step = None
+    if show:
+        st.session_state.messages.append(
+            {"role": "assistant", "text": _tx("graph_mix_accept"), "artifact": "alpha"}
+        )
+        _open_result_page("alpha")
+    else:
+        st.session_state.messages.append(
+            {"role": "assistant", "text": _tx("graph_mix_declined"), "artifact": "forecast"}
+        )
+        _open_result_page("forecast")
+
+
+def _render_alpha_qa() -> None:
+    if st.session_state.get("alpha_qa_step") != "ask":
+        return
+    yes, no = st.columns(2)
+    if yes.button(_tx("graph_mix_yes"), key="alpha_answer_yes", width="stretch", type="primary"):
+        _answer_alpha_question(show=True, user_text=_tx("graph_mix_yes"))
+        st.rerun()
+    if no.button(_tx("graph_mix_no"), key="alpha_answer_no", width="stretch"):
+        _answer_alpha_question(show=False, user_text=_tx("graph_mix_no"))
+        st.rerun()
+
+
 def handle_user_turn(text: str) -> None:
     st.session_state.explicit_task = True
     _note_user_language(text)
+    if st.session_state.get("alpha_qa_step") == "ask":
+        raw = str(text or "").strip()
+        lowered = raw.lower()
+        yes = any(word in lowered for word in ("yes", "show", "please", "ok", "sure", "可以", "需要", "想", "是", "好"))
+        no = any(word in lowered for word in ("no", "not", "skip", "不用", "不需要", "否", "不要"))
+        if no:
+            _answer_alpha_question(show=False, user_text=raw)
+        elif yes:
+            _answer_alpha_question(show=True, user_text=raw)
+        else:
+            st.session_state.messages.append({"role": "user", "text": raw, "artifact": None})
+            st.session_state.messages.append({"role": "assistant", "text": _tx("graph_mix_answer_needed"), "artifact": None})
+        return
     from_brief = bool(st.session_state.pop("pending_from_brief", False)) or "task brief" in text.lower()
     prior = st.session_state.get("pipeline_result")
     site_ids, iz_codes = _known_ids(prior)
@@ -2922,15 +3218,16 @@ def render_forecast_artifact() -> None:
         return
     if gdf_plot is None or getattr(gdf_plot, "empty", True):
         if scope == "region":
-            render_graph_fusion()
+            with st.expander(_tx("advanced_model_details"), expanded=False):
+                render_graph_fusion()
         return
     if scope == "iz" and not st.session_state.get("iz_picked_by_user"):
         return
     if forecast.get("is_unverified"):
         st.warning(_tx("unverified"))
+    st.info(_tx("scale_region_explain") if scope == "region" else _tx("scale_iz_explain"))
     if scope == "region":
         _render_forecast_maps(scope=scope)
-        render_graph_fusion()
         st.subheader(_tx("region_summary"))
         rates = [float(row.get("predicted_rate") or 0) for row in zones.values()]
         r1, r2, r3 = st.columns(3)
@@ -2945,7 +3242,6 @@ def render_forecast_artifact() -> None:
         return
     _render_iz_detail()
     _render_forecast_maps(scope=scope)
-    render_glossary()
 
 
 def render_allocation_artifact() -> None:
@@ -3054,8 +3350,37 @@ def render_notes_artifact() -> None:
             )
 
 
+def render_alpha_next_options() -> None:
+    """Guide users from the optional α explanation back to decision-facing forecasts."""
+    with st.chat_message("assistant", avatar=AGENT_AVATAR):
+        st.markdown(_tx("alpha_next_question"))
+        region_col, zone_col = st.columns(2)
+        if region_col.button(
+            _tx("alpha_next_region"), key="alpha_next_region", width="stretch", type="primary"
+        ):
+            st.session_state.messages.append(
+                {"role": "user", "text": _tx("alpha_next_region"), "artifact": None}
+            )
+            st.session_state.messages.append(
+                {"role": "assistant", "text": _tx("scope_region_accept"), "artifact": "forecast"}
+            )
+            st.session_state.forecast_scope = "region"
+            st.session_state.alpha_qa_step = None
+            _open_result_page("forecast")
+            st.rerun()
+        if zone_col.button(
+            _tx("alpha_next_zone"), key="alpha_next_zone", width="stretch", type="primary"
+        ):
+            st.session_state.messages.append(
+                {"role": "user", "text": _tx("alpha_next_zone"), "artifact": None}
+            )
+            _qa_accept_scope_iz()
+            st.rerun()
+
+
 _apply_interaction_button_style()
 _render_brand_bar()
+render_glossary_expander()
 messages = st.session_state.messages
 qa_on_alloc = (
     st.session_state.get("view") == "results"
@@ -3076,6 +3401,7 @@ show_results = qa_on_chat or (
 )
 
 if show_results:
+    st.caption(_tx("workflow_results"))
     top = st.columns([1, 5])
     with top[0]:
         if st.button(_tx("btn_back"), type="primary", width="stretch", key="back_to_agent"):
@@ -3123,21 +3449,33 @@ if show_results:
                     }
                 )
             st.dataframe(frame, width="stretch", hide_index=True)
+        elif artifact == "alpha":
+            render_graph_fusion()
+            render_alpha_next_options()
         elif artifact == "notes":
             render_notes_artifact()
+        if artifact in {"forecast", "allocation", "compare"}:
+            _remember_result(res, artifact)
     if not qa_on_chat:
         _render_agent_followups(key_prefix="result")
 else:
     st.title(_tx("title_agent"))
+    st.caption(_tx("workflow_home" if not st.session_state.get("brief_city_ready") else "workflow_task"))
     if st.session_state.get("brief_city_ready"):
         st.caption(_tx("caption_reading", city=city_display(_lang(), study_area), date=selected_date))
     else:
+        _render_responsible_use_intro()
         st.markdown(_tx("home_coverage", latest=_latest_forecast_day()))
         first = st.session_state.messages[0] if st.session_state.messages else None
         if first and first.get("role") == "assistant" and len(st.session_state.messages) == 1:
             first["text"] = _tx("greeting")
     _agent_heading(_tx("label_agent"))
-    _render_agent_transcript()
+    if st.session_state.get("alpha_qa_step") == "ask":
+        last = next((msg for msg in reversed(st.session_state.messages) if msg.get("role") == "assistant"), None)
+        if last:
+            _render_agent_bubble(last.get("text") or "")
+    else:
+        _render_agent_transcript()
     _render_ask_bar(key_prefix="agent")
+    _render_alpha_qa()
     _render_brief_qa()
-
