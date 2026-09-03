@@ -1,5 +1,5 @@
 {
-  "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model/geo_transport_mobility/checkpoint.pt",
+  "checkpoint_path": "data/results/regions/S12000049/model/geo_transport_mobility/checkpoint.pt",
   "checkpoint_sha256": "4a1e18442400d472e5eb0066072e578cba3abbc7b3125c24d66dfec69d19a4b2",
   "method": "finite-sample corrected empirical calibration",
   "exchangeability_limitation": "Rolling seven-day COVID-19 outcomes are temporally overlapping and spatially dependent, so calibrated intervals are empirical uncertainty intervals rather than intervals with a formal exchangeability-based coverage guarantee.",

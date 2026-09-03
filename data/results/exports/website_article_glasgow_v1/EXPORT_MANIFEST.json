@@ -2,13 +2,13 @@
   "area_code": "S12000049",
   "area_name": "Glasgow City",
   "n_iz": 136,
-  "export_dir": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/exports/website_article_glasgow_v1",
+  "export_dir": "data/results/exports/website_article_glasgow_v1",
   "did_not_overwrite_edinburgh": true,
   "sources": {
-    "predictions": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/rolling/final_test/W730/predictions.csv",
-    "rolling_alpha": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/rolling/final_test/W730/rolling_alpha.csv",
-    "split65": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/forecast_split65_10_25",
-    "geoshapley": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model/geo_transport_mobility/exports/geoshapley.csv"
+    "predictions": "data/results/regions/S12000049/rolling/final_test/W730/predictions.csv",
+    "rolling_alpha": "data/results/regions/S12000049/rolling/final_test/W730/rolling_alpha.csv",
+    "split65": "data/results/regions/S12000049/forecast_split65_10_25",
+    "geoshapley": "data/results/regions/S12000049/model/geo_transport_mobility/exports/geoshapley.csv"
   },
   "notes": {
     "table02": "Same 65/10/25 rolling test days for Persistence and Rolling. No fixed-65 Glasgow model was scored on these days, so that row is omitted.",

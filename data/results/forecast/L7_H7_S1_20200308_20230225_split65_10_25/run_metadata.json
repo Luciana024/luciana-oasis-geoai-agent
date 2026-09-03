@@ -1,7 +1,7 @@
 {
-  "input_data_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/fill1.csv",
+  "input_data_path": "data/results/fill1.csv",
   "input_data_mtime": "2026-08-16T19:31:41.253096+00:00",
-  "simd_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/simd_iz.csv",
+  "simd_path": "data/results/simd_iz.csv",
   "processing_timestamp": "2026-08-16T20:40:05.144575+00:00",
   "pipeline_version": "0.1.0",
   "study_area": "City of Edinburgh",
@@ -10,7 +10,7 @@
   "geography_vintage": "2011",
   "upstream_edinburgh_filter": true,
   "area_filter_repeated": false,
-  "iz_master_source": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/raw/boundaries/Code lookup.csv",
+  "iz_master_source": "data/raw/boundaries/Code lookup.csv",
   "analysis_period": {
     "start": "2020-03-08",
     "end": "2023-02-25"
@@ -48,7 +48,7 @@
     "n_nodes": 111,
     "node_index_rule": "contiguous integer node_index from 0 to N-1, ordered by the IZ master",
     "node_order_sha256": "7b08ceb27e05b32553d2cd54b4f7b8d0bfb48c7fad090771e30d7dd9d437ff09",
-    "iz_master_source": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/raw/boundaries/Code lookup.csv",
+    "iz_master_source": "data/raw/boundaries/Code lookup.csv",
     "reference": "2011 Intermediate Zone; vintage=2011; n=111; node_index=0..N-1; sha256=7b08ceb27e05b32553d2cd54b4f7b8d0bfb48c7fad090771e30d7dd9d437ff09"
   },
   "node_order_reference": "2011 Intermediate Zone; vintage=2011; n=111; node_index=0..N-1; sha256=7b08ceb27e05b32553d2cd54b4f7b8d0bfb48c7fad090771e30d7dd9d437ff09",
@@ -59,20 +59,20 @@
     "Horizon equals 7, so the target is the immediately subsequent complete seven-day period after the last input report (approximately t+1 through t+7)."
   ],
   "output_paths": {
-    "node_order": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/forecast/L7_H7_S1_20200308_20230225/node_order.csv",
-    "panel_quality": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/forecast/L7_H7_S1_20200308_20230225/panel_quality.json",
-    "valid_samples": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/forecast/L7_H7_S1_20200308_20230225/valid_samples.csv",
-    "excluded_samples": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/forecast/L7_H7_S1_20200308_20230225/excluded_samples.csv",
-    "split_manifest": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/forecast/L7_H7_S1_20200308_20230225/split_manifest.csv",
-    "split_summary": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/forecast/L7_H7_S1_20200308_20230225/split_summary.json",
-    "scaler": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/forecast/L7_H7_S1_20200308_20230225/scaler.csv",
-    "static_features": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/forecast/L7_H7_S1_20200308_20230225/static_features.csv",
-    "array_integrity": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/forecast/L7_H7_S1_20200308_20230225/array_integrity.json",
-    "train_arrays": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/forecast/L7_H7_S1_20200308_20230225/train.npz",
-    "validation_arrays": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/forecast/L7_H7_S1_20200308_20230225/validation.npz",
-    "test_arrays": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/forecast/L7_H7_S1_20200308_20230225/test.npz",
-    "run_metadata": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/forecast/L7_H7_S1_20200308_20230225/run_metadata.json"
+    "node_order": "data/results/forecast/L7_H7_S1_20200308_20230225/node_order.csv",
+    "panel_quality": "data/results/forecast/L7_H7_S1_20200308_20230225/panel_quality.json",
+    "valid_samples": "data/results/forecast/L7_H7_S1_20200308_20230225/valid_samples.csv",
+    "excluded_samples": "data/results/forecast/L7_H7_S1_20200308_20230225/excluded_samples.csv",
+    "split_manifest": "data/results/forecast/L7_H7_S1_20200308_20230225/split_manifest.csv",
+    "split_summary": "data/results/forecast/L7_H7_S1_20200308_20230225/split_summary.json",
+    "scaler": "data/results/forecast/L7_H7_S1_20200308_20230225/scaler.csv",
+    "static_features": "data/results/forecast/L7_H7_S1_20200308_20230225/static_features.csv",
+    "array_integrity": "data/results/forecast/L7_H7_S1_20200308_20230225/array_integrity.json",
+    "train_arrays": "data/results/forecast/L7_H7_S1_20200308_20230225/train.npz",
+    "validation_arrays": "data/results/forecast/L7_H7_S1_20200308_20230225/validation.npz",
+    "test_arrays": "data/results/forecast/L7_H7_S1_20200308_20230225/test.npz",
+    "run_metadata": "data/results/forecast/L7_H7_S1_20200308_20230225/run_metadata.json"
   },
-  "parent_dataset": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/forecast/L7_H7_S1_20200308_20230225",
+  "parent_dataset": "data/results/forecast/L7_H7_S1_20200308_20230225",
   "windows_not_rebuilt": true
 }

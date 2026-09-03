@@ -52,6 +52,51 @@ def results_dir() -> Path:
     return project_root() / "data" / "results"
 
 
+def resolve_project_path(value: str | Path) -> Path:
+    """Resolve stored artefact paths without depending on the author's machine.
+
+    New artefacts should store paths relative to the repository root. For
+    backwards compatibility, a missing legacy absolute path is relocated from
+    its first recognised project directory (for example ``data/results``).
+    """
+    path = Path(value).expanduser()
+    if not path.is_absolute():
+        return project_root() / path
+    if path.exists():
+        return path
+    parts = path.parts
+    for marker in ("data", "configs", "outputs", "checkpoints"):
+        if marker in parts:
+            candidate = project_root().joinpath(*parts[parts.index(marker) :])
+            if candidate.exists():
+                return candidate
+    return path
+
+
+def project_relative_path(value: str | Path) -> str:
+    """Return a portable repository-relative path when the target is local."""
+    path = Path(value).expanduser()
+    if not path.is_absolute():
+        return path.as_posix()
+    try:
+        return path.resolve().relative_to(project_root().resolve()).as_posix()
+    except ValueError:
+        return str(path)
+
+
+def _portable_json_value(value: Any) -> Any:
+    """Recursively remove the local repository prefix from JSON metadata."""
+    if isinstance(value, dict):
+        return {key: _portable_json_value(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_portable_json_value(item) for item in value]
+    if isinstance(value, Path):
+        return project_relative_path(value)
+    if isinstance(value, str) and Path(value).is_absolute():
+        return project_relative_path(value)
+    return value
+
+
 def load_yaml(relative_path: str) -> dict[str, Any]:
     path = project_root() / relative_path
     with path.open(encoding="utf-8") as handle:
@@ -85,7 +130,8 @@ def write_table(df: pd.DataFrame, path: Path) -> Path:
 
 def write_json(payload: dict[str, Any], path: Path) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, default=str), encoding="utf-8")
+    portable = _portable_json_value(payload)
+    path.write_text(json.dumps(portable, indent=2, default=str), encoding="utf-8")
     return path
 
 

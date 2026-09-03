@@ -66,8 +66,8 @@ rolling_evaluation:
   selected_window_days: 730
   window_selection_split: validation
   origin_split: test
-  output_dir: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/rolling
-  fixed_s1_dir: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model
+  output_dir: data/results/regions/S12000049/rolling
+  fixed_s1_dir: data/results/regions/S12000049/model
   write_geoshapley: false
 calibration:
   method: finite-sample corrected empirical calibration
@@ -114,12 +114,12 @@ training:
   grad_clip: 5.0
   seed: 42
 paths:
-  dataset: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/forecast_split65_10_25
-  geo: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/graph/geo/adjacency_geo.npz
-  transport: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/graph/road/adjacency_road.npz
-  mobility: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/graph/mobility/adjacency_mobility.npz
-  geo_report: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/graph/geo/validation_report.json
-  transport_report: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/graph/road/validation_report.json
-  mobility_report: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/graph/mobility/validation_report.json
-  road_nodes: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/graph/road/nodes.csv
-  checkpoints: /mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model
+  dataset: data/results/regions/S12000049/forecast_split65_10_25
+  geo: data/results/regions/S12000049/graph/geo/adjacency_geo.npz
+  transport: data/results/regions/S12000049/graph/road/adjacency_road.npz
+  mobility: data/results/regions/S12000049/graph/mobility/adjacency_mobility.npz
+  geo_report: data/results/regions/S12000049/graph/geo/validation_report.json
+  transport_report: data/results/regions/S12000049/graph/road/validation_report.json
+  mobility_report: data/results/regions/S12000049/graph/mobility/validation_report.json
+  road_nodes: data/results/regions/S12000049/graph/road/nodes.csv
+  checkpoints: data/results/regions/S12000049/model

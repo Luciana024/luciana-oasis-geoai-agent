@@ -62,9 +62,9 @@ pytest -q
 PYTHONPATH=src python -m agent --help
 ```
 
-The expected source-only result is `177 passed, 9 deselected`. After staging
+The expected source-only result is `181 passed, 9 deselected`. After staging
 the external artefact archive, run `pytest -q -m external_data` for the nine
-data/checkpoint integration checks; the combined suite contains 186 tests.
+data/checkpoint integration checks; the combined suite contains 190 tests.
 
 The curated inference bundle in this repository supplies checkpoints and
 published outputs, but intentionally omits the multi-gigabyte raw OSM and OD

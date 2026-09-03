@@ -892,5 +892,5 @@
     "PH_1540": "Step 6 (cover): covering gain 0.0000, travel-time reduction 0.3866; 86 IZs within threshold of this site."
   },
   "invented": false,
-  "forecast_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/forecast_for_allocation.csv"
+  "forecast_path": "data/results/regions/S12000049/forecast_for_allocation.csv"
 }

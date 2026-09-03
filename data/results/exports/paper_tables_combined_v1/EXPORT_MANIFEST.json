@@ -1,5 +1,5 @@
 {
-  "export_dir": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/exports/paper_tables_combined_v1",
+  "export_dir": "data/results/exports/paper_tables_combined_v1",
   "did_not_overwrite_edinburgh": true,
   "paper_use": {
     "include": [

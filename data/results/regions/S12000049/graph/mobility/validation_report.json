@@ -112,7 +112,7 @@
   "missing_internal_od_pairs": 0,
   "is_complete_internal_od_matrix": true,
   "node_order_source": "covid.load_iz_master",
-  "od_source": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/raw/mobility/Glasgow/averaged_od_matrix_2019_2023.csv",
+  "od_source": "data/raw/mobility/Glasgow/averaged_od_matrix_2019_2023.csv",
   "node_order_hash": "3e44e848ac57c8c218038fa723aa89b2bcb84fcb5b8b900a0d4269ff60296ca3",
   "node_order_hash_algorithm": "SHA256",
   "node_order_n": 136,

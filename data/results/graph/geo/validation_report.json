@@ -26,7 +26,7 @@
   "n_boundary_polygons_not_in_node_order": 1168,
   "n_geometries_repaired": 2,
   "node_order_source": "covid.load_iz_master",
-  "boundary_source": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/raw/boundaries/SG_IntermediateZoneBdry_2011/SG_IntermediateZone_Bdry_2011.shp",
+  "boundary_source": "data/raw/boundaries/SG_IntermediateZoneBdry_2011/SG_IntermediateZone_Bdry_2011.shp",
   "node_index_sequence": [
     0,
     1,

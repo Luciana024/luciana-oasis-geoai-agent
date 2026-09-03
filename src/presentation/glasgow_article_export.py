@@ -16,7 +16,7 @@ import pandas as pd
 
 from agent.region_training import GLASGOW_CA, region_output_dir
 from common.errors import ModelError
-from common.utils import project_root
+from common.utils import project_relative_path, project_root
 from data.node_order import sha256_file
 from model.constants import FEATURE_PLAYER_NAMES, LOCATION_PLAYER
 from model.heads import RAW80_Z, RAW95_Z
@@ -347,13 +347,13 @@ def export_glasgow_article() -> dict[str, Any]:
         "area_code": GLASGOW_CA,
         "area_name": "Glasgow City",
         "n_iz": N_IZ,
-        "export_dir": str(out),
+        "export_dir": project_relative_path(out),
         "did_not_overwrite_edinburgh": True,
         "sources": {
-            "predictions": str(pred_path),
-            "rolling_alpha": str(alpha_path),
-            "split65": str(split_dir),
-            "geoshapley": str(geo_path),
+            "predictions": project_relative_path(pred_path),
+            "rolling_alpha": project_relative_path(alpha_path),
+            "split65": project_relative_path(split_dir),
+            "geoshapley": project_relative_path(geo_path),
         },
         "notes": {
             "table02": "Same 65/10/25 rolling test days for Persistence and Rolling. No fixed-65 Glasgow model was scored on these days, so that row is omitted.",

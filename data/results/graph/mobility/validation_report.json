@@ -105,7 +105,7 @@
   "missing_internal_od_pairs": 0,
   "is_complete_internal_od_matrix": true,
   "node_order_source": "covid.load_iz_master",
-  "od_source": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/raw/mobility/Edinburgh/averaged_od_matrix_2019_2023.csv",
+  "od_source": "data/raw/mobility/Edinburgh/averaged_od_matrix_2019_2023.csv",
   "node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34",
   "node_order_hash_algorithm": "SHA256",
   "node_order_n": 111,

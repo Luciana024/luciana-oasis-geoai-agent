@@ -788,7 +788,9 @@ def _zone_forecasts(forecast: dict[str, Any]) -> dict[str, dict[str, Any]]:
     path = forecast.get("forecast_path")
     if not path:
         return {}
-    frame = pd.read_csv(path)
+    from common.utils import resolve_project_path
+
+    frame = pd.read_csv(resolve_project_path(path))
     if "iz_code" not in frame.columns:
         return {}
     if "predicted_rate" not in frame.columns:

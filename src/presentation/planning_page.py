@@ -9,7 +9,7 @@ from typing import Any
 import pandas as pd
 
 from allocation.contracts import FORECAST_CACHE, N_SITES, SCENARIO_LABELS
-from common.utils import project_root, write_json
+from common.utils import project_root, resolve_project_path, write_json
 
 PAGE_DIR = Path("data") / "results" / "planning"
 
@@ -34,7 +34,7 @@ def write_planning_page(bundle: dict[str, Any], output_dir: str | Path | None = 
 
 def _forecast_rows(bundle: dict[str, Any]) -> list[dict[str, Any]]:
     path = (bundle.get("forecast") or {}).get("forecast_path")
-    file_path = Path(path) if path else project_root() / FORECAST_CACHE
+    file_path = resolve_project_path(path) if path else project_root() / FORECAST_CACHE
     if not file_path.exists():
         return []
     frame = pd.read_csv(file_path)

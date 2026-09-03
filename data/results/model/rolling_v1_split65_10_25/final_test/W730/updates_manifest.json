@@ -33,14 +33,14 @@
         "beats_persistence": true
       },
       "refit": {
-        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U01/checkpoint.pt",
+        "checkpoint_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U01/checkpoint.pt",
         "checkpoint_sha256": "e5ea291056067b0da66f3769ef94969a256674c2d4f77a7bcb397ade53a6fe9a",
         "selected_epoch": 28,
         "refit_on": "fitting_plus_selection"
       },
-      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U01/residual_scalers.json",
-      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U01/calibration.json",
-      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U01/predictions.csv",
+      "scaler_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U01/residual_scalers.json",
+      "calibration_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U01/calibration.json",
+      "predictions_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U01/predictions.csv",
       "metrics": {
         "n_valid_cells": 3108,
         "model_mae": 105.68125774874183,
@@ -94,14 +94,14 @@
         "beats_persistence": true
       },
       "refit": {
-        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U02/checkpoint.pt",
+        "checkpoint_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U02/checkpoint.pt",
         "checkpoint_sha256": "4026f42c3f87e7c3144034ab7166946970d882f419b34374d22c82dc67f5bbba",
         "selected_epoch": 19,
         "refit_on": "fitting_plus_selection"
       },
-      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U02/residual_scalers.json",
-      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U02/calibration.json",
-      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U02/predictions.csv",
+      "scaler_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U02/residual_scalers.json",
+      "calibration_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U02/calibration.json",
+      "predictions_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U02/predictions.csv",
       "metrics": {
         "n_valid_cells": 3108,
         "model_mae": 91.44859033229602,
@@ -155,14 +155,14 @@
         "beats_persistence": true
       },
       "refit": {
-        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U03/checkpoint.pt",
+        "checkpoint_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U03/checkpoint.pt",
         "checkpoint_sha256": "8d51d73c11fa83811fb8e53fe95b90899e45e28fa6a9c4ae9a3cdd37cc8a783b",
         "selected_epoch": 22,
         "refit_on": "fitting_plus_selection"
       },
-      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U03/residual_scalers.json",
-      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U03/calibration.json",
-      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U03/predictions.csv",
+      "scaler_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U03/residual_scalers.json",
+      "calibration_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U03/calibration.json",
+      "predictions_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U03/predictions.csv",
       "metrics": {
         "n_valid_cells": 3108,
         "model_mae": 49.1571958640664,
@@ -216,14 +216,14 @@
         "beats_persistence": true
       },
       "refit": {
-        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U04/checkpoint.pt",
+        "checkpoint_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U04/checkpoint.pt",
         "checkpoint_sha256": "4169fb70938548c5422e258e4daf036b68f8f294323361e1c7a444e9000092e1",
         "selected_epoch": 21,
         "refit_on": "fitting_plus_selection"
       },
-      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U04/residual_scalers.json",
-      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U04/calibration.json",
-      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U04/predictions.csv",
+      "scaler_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U04/residual_scalers.json",
+      "calibration_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U04/calibration.json",
+      "predictions_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U04/predictions.csv",
       "metrics": {
         "n_valid_cells": 3108,
         "model_mae": 38.35221410624671,
@@ -277,14 +277,14 @@
         "beats_persistence": true
       },
       "refit": {
-        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U05/checkpoint.pt",
+        "checkpoint_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U05/checkpoint.pt",
         "checkpoint_sha256": "46ee3954de20c6bdde2bbe6fc89605aa920045ef4670fcf79ce86553c419bc7b",
         "selected_epoch": 32,
         "refit_on": "fitting_plus_selection"
       },
-      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U05/residual_scalers.json",
-      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U05/calibration.json",
-      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U05/predictions.csv",
+      "scaler_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U05/residual_scalers.json",
+      "calibration_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U05/calibration.json",
+      "predictions_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U05/predictions.csv",
       "metrics": {
         "n_valid_cells": 3108,
         "model_mae": 38.664905585781874,
@@ -338,14 +338,14 @@
         "beats_persistence": true
       },
       "refit": {
-        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U06/checkpoint.pt",
+        "checkpoint_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U06/checkpoint.pt",
         "checkpoint_sha256": "94fdf51757b76941a5d17d751534935cced150f6ac66946582a792e2faa513ba",
         "selected_epoch": 35,
         "refit_on": "fitting_plus_selection"
       },
-      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U06/residual_scalers.json",
-      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U06/calibration.json",
-      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U06/predictions.csv",
+      "scaler_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U06/residual_scalers.json",
+      "calibration_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U06/calibration.json",
+      "predictions_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U06/predictions.csv",
       "metrics": {
         "n_valid_cells": 3108,
         "model_mae": 26.258355993819304,
@@ -399,14 +399,14 @@
         "beats_persistence": true
       },
       "refit": {
-        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U07/checkpoint.pt",
+        "checkpoint_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U07/checkpoint.pt",
         "checkpoint_sha256": "475dc11e901e0fad96f826de816cf9a92d4b4f7947966b0c59b5e2f6ba554424",
         "selected_epoch": 14,
         "refit_on": "fitting_plus_selection"
       },
-      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U07/residual_scalers.json",
-      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U07/calibration.json",
-      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U07/predictions.csv",
+      "scaler_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U07/residual_scalers.json",
+      "calibration_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U07/calibration.json",
+      "predictions_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U07/predictions.csv",
       "metrics": {
         "n_valid_cells": 3108,
         "model_mae": 26.769766133050265,
@@ -460,14 +460,14 @@
         "beats_persistence": true
       },
       "refit": {
-        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U08/checkpoint.pt",
+        "checkpoint_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U08/checkpoint.pt",
         "checkpoint_sha256": "a40c30461f49ff7f6dfe8e5f9c27887c3bc6deb5935db8dece6d2273ae63f403",
         "selected_epoch": 23,
         "refit_on": "fitting_plus_selection"
       },
-      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U08/residual_scalers.json",
-      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U08/calibration.json",
-      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U08/predictions.csv",
+      "scaler_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U08/residual_scalers.json",
+      "calibration_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U08/calibration.json",
+      "predictions_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U08/predictions.csv",
       "metrics": {
         "n_valid_cells": 3108,
         "model_mae": 29.331421241018155,
@@ -521,14 +521,14 @@
         "beats_persistence": true
       },
       "refit": {
-        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U09/checkpoint.pt",
+        "checkpoint_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U09/checkpoint.pt",
         "checkpoint_sha256": "5c04365e1163c93bbfed48446d2b10770fdd850da6f60d9f6d23e2cfb0e8a798",
         "selected_epoch": 16,
         "refit_on": "fitting_plus_selection"
       },
-      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U09/residual_scalers.json",
-      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U09/calibration.json",
-      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U09/predictions.csv",
+      "scaler_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U09/residual_scalers.json",
+      "calibration_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U09/calibration.json",
+      "predictions_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U09/predictions.csv",
       "metrics": {
         "n_valid_cells": 3108,
         "model_mae": 25.27331673210112,
@@ -582,14 +582,14 @@
         "beats_persistence": true
       },
       "refit": {
-        "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/checkpoint.pt",
+        "checkpoint_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/checkpoint.pt",
         "checkpoint_sha256": "79d4d6c0cb55599546517aef60598e330b7dd07f31538b6995d964aeedaa5c64",
         "selected_epoch": 15,
         "refit_on": "fitting_plus_selection"
       },
-      "scaler_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/residual_scalers.json",
-      "calibration_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/calibration.json",
-      "predictions_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/predictions.csv",
+      "scaler_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/residual_scalers.json",
+      "calibration_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/calibration.json",
+      "predictions_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/predictions.csv",
       "metrics": {
         "n_valid_cells": 1332,
         "model_mae": 18.203552195604942,

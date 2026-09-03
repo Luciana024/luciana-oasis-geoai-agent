@@ -16,7 +16,7 @@ Python 3.13.9 was used for the final verification. The commands below use an iso
 ```bash
 git clone https://github.com/Luciana024/luciana-oasis-geoai-agent.git
 cd luciana-oasis-geoai-agent
-git checkout oasis-2026-submission-v6
+git checkout oasis-2026-submission-v7
 ```
 
 The tag identifies the exact reviewed version. Reviewers who want the newest development version may remain on the `main` branch instead.
@@ -54,7 +54,7 @@ pytest -q
 The expected result is:
 
 ```text
-177 passed, 9 deselected
+181 passed, 9 deselected
 ```
 
 The nine deselected tests rebuild or directly inspect separately distributed raw OpenStreetMap, mobility, lookup, and model-training inputs. Those large or access-controlled inputs are not required to run the dashboard or inspect its frozen results.

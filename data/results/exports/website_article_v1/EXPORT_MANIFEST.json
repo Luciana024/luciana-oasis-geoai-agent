@@ -1,8 +1,8 @@
 {
-  "export_dir": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/exports/website_article_v1",
+  "export_dir": "data/results/exports/website_article_v1",
   "sources_not_overwritten": [
-    "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730",
-    "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/split65_10_25/geo_transport_mobility"
+    "data/results/model/rolling_v1_split65_10_25/final_test/W730",
+    "data/results/model/split65_10_25/geo_transport_mobility"
   ],
   "source_checkpoints": {
     "U01": "e5ea291056067b0da66f3769ef94969a256674c2d4f77a7bcb397ade53a6fe9a",
@@ -44,13 +44,6 @@
     "mse_skill": 0.2861865292330318
   },
   "files": [
-    {
-      "path": "EXPORT_MANIFEST.json",
-      "bytes": 14023,
-      "sha256": "2b8fff6aefb91f12ad621e7be78e9385857f73d725f0a521738cf460191f69c1",
-      "n_rows": null,
-      "n_columns": null
-    },
     {
       "path": "article/full_precision/table01_split_summary.csv",
       "bytes": 727,
@@ -393,8 +386,8 @@
     },
     {
       "path": "website/model_metadata.json",
-      "bytes": 4021,
-      "sha256": "8621ba37bd64a300bc09a73c10de0cd7ec05dff0a34571058786dd9ee5216b85",
+      "bytes": 3954,
+      "sha256": "4f7ee341b3645d198e02e0351a8e597be928fb72961dbe1d6f73f7ed54030ed7",
       "n_rows": null,
       "n_columns": null
     },

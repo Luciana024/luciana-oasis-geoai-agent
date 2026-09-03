@@ -27,9 +27,9 @@
     "area_code": "S12000049",
     "forecast_date": "2023-03-04",
     "checkpoint_id": "U10",
-    "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/checkpoint.pt",
+    "checkpoint_path": "data/results/model/rolling_v1_split65_10_25/final_test/W730/U10/checkpoint.pt",
     "checkpoint_exists": true,
-    "forecast_cache_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/exports/website_article_v1/website/future_forecast_20230304.csv",
+    "forecast_cache_path": "data/results/exports/website_article_v1/website/future_forecast_20230304.csv",
     "node_order_hash": "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34",
     "hash_ok": true,
     "replay_from_table": false,
@@ -40,7 +40,7 @@
   "checkpoint": {
     "status": "ok",
     "checkpoint_id": "S12000049-trained",
-    "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model/geo_transport_mobility/checkpoint.pt",
+    "checkpoint_path": "data/results/regions/S12000049/model/geo_transport_mobility/checkpoint.pt",
     "update_id": "S12000049-trained",
     "target_date": "2023-03-04"
   },
@@ -58,8 +58,8 @@
   "forecast": {
     "status": "ok",
     "source": "new_region_training",
-    "forecast_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/forecast_for_allocation.csv",
-    "geoshapley_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model/geo_transport_mobility/exports/geoshapley.csv",
+    "forecast_path": "data/results/regions/S12000049/forecast_for_allocation.csv",
+    "geoshapley_path": "data/results/regions/S12000049/model/geo_transport_mobility/exports/geoshapley.csv",
     "forecast_status": "unverified_extrapolation",
     "retrained": false,
     "checkpoint_id": "S12000049-trained",
@@ -959,11 +959,11 @@
       "PH_1695": "Step 6 (cover): covering gain 0.0000, travel-time reduction 622804.5000; 69 IZs within threshold of this site."
     },
     "invented": false,
-    "forecast_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/forecast_for_allocation.csv",
+    "forecast_path": "data/results/regions/S12000049/forecast_for_allocation.csv",
     "export_paths": {
-      "selected_sites": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/allocation/coverage/selected_sites.csv",
-      "assignments": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/allocation/coverage/assignments.csv",
-      "result": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/allocation/coverage/result.json"
+      "selected_sites": "data/results/regions/S12000049/allocation/coverage/selected_sites.csv",
+      "assignments": "data/results/regions/S12000049/allocation/coverage/assignments.csv",
+      "result": "data/results/regions/S12000049/allocation/coverage/result.json"
     }
   },
   "validation": {
@@ -1062,26 +1062,26 @@
       "area_code": "S12000049",
       "area_name": "Glasgow City",
       "n_iz": 136,
-      "od_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/raw/mobility/Glasgow/averaged_od_matrix_2019_2023.csv",
-      "output_dir": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049",
+      "od_path": "data/raw/mobility/Glasgow/averaged_od_matrix_2019_2023.csv",
+      "output_dir": "data/results/regions/S12000049",
       "checkpoint_id": "S12000049-trained",
-      "checkpoint_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model/geo_transport_mobility/checkpoint.pt",
-      "forecast_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/forecast_for_allocation.csv",
-      "geoshapley_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model/geo_transport_mobility/exports/geoshapley.csv",
-      "config_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model.yaml",
+      "checkpoint_path": "data/results/regions/S12000049/model/geo_transport_mobility/checkpoint.pt",
+      "forecast_path": "data/results/regions/S12000049/forecast_for_allocation.csv",
+      "geoshapley_path": "data/results/regions/S12000049/model/geo_transport_mobility/exports/geoshapley.csv",
+      "config_path": "data/results/regions/S12000049/model.yaml",
       "steps": [
         {
           "step": "preprocess_covid",
-          "reused": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/covid/fill1.csv",
+          "reused": "data/results/regions/S12000049/covid/fill1.csv",
           "n_iz": 136
         },
         {
           "step": "simd",
-          "reused": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/simd_iz.csv"
+          "reused": "data/results/regions/S12000049/simd_iz.csv"
         },
         {
           "step": "forecast_dataset",
-          "reused": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/forecast"
+          "reused": "data/results/regions/S12000049/forecast"
         },
         {
           "step": "graphs",
@@ -1090,16 +1090,16 @@
         },
         {
           "step": "sites",
-          "reused": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/candidate_sites/S12000049/merged_candidate_sites.csv",
+          "reused": "data/results/candidate_sites/S12000049/merged_candidate_sites.csv",
           "n_sites": 363
         },
         {
           "step": "travel",
-          "reused": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/travel_time/S12000049/travel_time_matrix.csv"
+          "reused": "data/results/travel_time/S12000049/travel_time_matrix.csv"
         },
         {
           "step": "train",
-          "reused": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model/geo_transport_mobility/checkpoint.pt"
+          "reused": "data/results/regions/S12000049/model/geo_transport_mobility/checkpoint.pt"
         }
       ],
       "message": "Reused the saved model for Glasgow City."

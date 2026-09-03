@@ -73,6 +73,6 @@
     "test_arrays": "data/results/regions/S12000049/forecast/test.npz",
     "run_metadata": "data/results/regions/S12000049/forecast/run_metadata.json"
   },
-  "parent_dataset": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/forecast",
+  "parent_dataset": "data/results/regions/S12000049/forecast",
   "windows_not_rebuilt": true
 }

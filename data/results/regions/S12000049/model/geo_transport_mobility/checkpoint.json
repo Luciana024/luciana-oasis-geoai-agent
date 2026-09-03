@@ -1,5 +1,5 @@
 {
-  "path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/model/geo_transport_mobility/checkpoint.pt",
+  "path": "data/results/regions/S12000049/model/geo_transport_mobility/checkpoint.pt",
   "sha256": "4a1e18442400d472e5eb0066072e578cba3abbc7b3125c24d66dfec69d19a4b2",
   "graph_set": [
     "geo",

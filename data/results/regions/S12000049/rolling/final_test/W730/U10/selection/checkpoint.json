@@ -1,5 +1,5 @@
 {
-  "path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/rolling/final_test/W730/U10/selection/checkpoint.pt",
+  "path": "data/results/regions/S12000049/rolling/final_test/W730/U10/selection/checkpoint.pt",
   "sha256": "2b2a91de67addcd1070245f94b041bd9046a63798f0ee42d05c32b2058d8d528",
   "graph_set": [
     "geo",

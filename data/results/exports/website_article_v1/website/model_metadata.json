@@ -52,7 +52,7 @@
   "split_design": "Chronological 65/10/25 by target_date on 1054 frozen S1 windows. Validation internally 50/50 selection then calibration.",
   "leakage_check_status": {
     "passed": true,
-    "source": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/model/rolling_v1_split65_10_25/final_test/W730/leakage_audit.json"
+    "source": "data/results/model/rolling_v1_split65_10_25/final_test/W730/leakage_audit.json"
   },
   "warning_definitions": {
     "retrospective_evaluation": "Labelled test forecasts; observations exist.",

@@ -9,7 +9,7 @@ from typing import Any
 import pandas as pd
 
 from allocation.contracts import N_SITES, SCENARIO_LABELS, SCENARIOS
-from common.utils import project_root
+from common.utils import project_relative_path, project_root
 from presentation.website_export import write_article_tables
 
 OUT_RELATIVE = "data/results/exports/paper_tables_combined_v1"
@@ -282,7 +282,7 @@ def export_combined_paper_tables() -> dict[str, Any]:
     write_article_tables(out / "article", tables)
     write_overleaf(out / "overleaf_paper_tables.tex", forecast, intervals, periods, alpha, allocation)
     manifest = {
-        "export_dir": str(out),
+        "export_dir": project_relative_path(out),
         "did_not_overwrite_edinburgh": True,
         "paper_use": {
             "include": ["table_forecast_both_cities", "table_allocation_both_cities", "table_alpha_last_update"],

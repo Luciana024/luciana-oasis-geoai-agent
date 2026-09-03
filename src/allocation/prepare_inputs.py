@@ -10,7 +10,7 @@ import pandas as pd
 from allocation.contracts import FORECAST_CACHE, SITE_TYPES
 from allocation.objectives import attach_equity_labels
 from common.errors import ModelError
-from common.utils import PANEL_CSV, project_root
+from common.utils import PANEL_CSV, project_root, resolve_project_path
 from data.candidate_sites import load_candidate_sites
 from data.travel_time import load_travel_time
 
@@ -79,7 +79,11 @@ def prepare_allocation_inputs(payload: dict[str, Any]) -> dict[str, Any]:
 
 
 def _load_iz_table(payload: dict[str, Any]) -> pd.DataFrame:
-    forecast_path = Path(payload["forecast_path"]) if payload.get("forecast_path") else project_root() / FORECAST_CACHE
+    forecast_path = (
+        resolve_project_path(payload["forecast_path"])
+        if payload.get("forecast_path")
+        else project_root() / FORECAST_CACHE
+    )
     if not forecast_path.exists():
         raise ModelError(f"Forecast table missing: {forecast_path}", code="missing_forecast")
     forecast = pd.read_csv(forecast_path)

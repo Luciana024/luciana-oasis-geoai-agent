@@ -740,5 +740,5 @@
     "GP_70662": "Step 6 (access): covering gain 0.0000, travel-time reduction 2.4281; 90 IZs within threshold of this site."
   },
   "invented": false,
-  "forecast_path": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/exports/website_article_v1/website/future_forecast_20230304.csv"
+  "forecast_path": "data/results/exports/website_article_v1/website/future_forecast_20230304.csv"
 }

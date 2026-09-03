@@ -4,7 +4,7 @@
   "forecast_horizon_days": 7,
   "config_id": "L7_H7_S1",
   "n_iz": 136,
-  "source_dataset": "/mnt/4TB_Hard_Disk/user_homes/fli/projects/oasis/oasis_geoai_agent/data/results/regions/S12000049/forecast",
+  "source_dataset": "data/results/regions/S12000049/forecast",
   "split_rule": "chronological by target_date; floor(0.65) / floor(0.1) / remainder",
   "requested_proportions": {
     "train": 0.65,

@@ -28,7 +28,7 @@ from model.constants import (
 from common.errors import ModelError
 from model.heads import RAW80_Z, RAW95_Z
 from data.node_order import sha256_file
-from common.utils import NODE_KEY, PANEL_CSV, project_root, results_dir
+from common.utils import NODE_KEY, PANEL_CSV, project_relative_path, project_root, results_dir
 
 EXPORT_RELATIVE = "data/results/exports/website_article_v1"
 CANONICAL_HASH = "8f625000ca42af45709b4e887a429c93971443f30f2fbddbe07863342ca16d34"
@@ -774,10 +774,10 @@ def export_website_and_article() -> dict[str, Any]:
                 }
             )
     export_manifest = {
-        "export_dir": str(out),
+        "export_dir": project_relative_path(out),
         "sources_not_overwritten": [
-            str(rolling_dir),
-            str(root / "data/results/model/split65_10_25/geo_transport_mobility"),
+            project_relative_path(rolling_dir),
+            project_relative_path(root / "data/results/model/split65_10_25/geo_transport_mobility"),
         ],
         "source_checkpoints": checksums,
         "quality_checks": {
