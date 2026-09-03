@@ -91,6 +91,34 @@ def test_saved_region_reuse_does_not_require_raw_od(tmp_path, monkeypatch):
     assert result["od_path"] is None
 
 
+def test_regional_allocation_uses_frozen_simd_population_without_panel(tmp_path, monkeypatch):
+    from allocation.prepare_inputs import _load_iz_table
+
+    region = tmp_path / "data" / "results" / "regions" / "S12000049"
+    region.mkdir(parents=True)
+    (region / "simd_iz.csv").write_text(
+        "IntZone,total_population,income_rate,pt_gp_min\n"
+        "IZ1,1000,0.10,12.0\n"
+        "IZ2,2000,0.20,18.0\n",
+        encoding="utf-8",
+    )
+    forecast = region / "forecast_for_allocation.csv"
+    forecast.write_text(
+        "iz_code,predicted_rate,predicted_sigma\nIZ1,10.0,1.0\nIZ2,20.0,2.0\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr("allocation.prepare_inputs.project_root", lambda: tmp_path)
+
+    result = _load_iz_table(
+        {"area_code": "S12000049", "forecast_path": str(forecast)}
+    )
+
+    assert result.set_index("iz_code")["population"].to_dict() == {
+        "IZ1": 1000,
+        "IZ2": 2000,
+    }
+
+
 def test_confirmed_new_region_calls_training_pipeline(monkeypatch):
     monkeypatch.setattr(
         "agent.region_training.run_new_region_training",

@@ -116,18 +116,27 @@ def _load_iz_table(payload: dict[str, Any]) -> pd.DataFrame:
         panel_path = project_root() / PANEL_PATH
     if not simd_path.exists():
         raise ModelError(f"SIMD IZ table missing: {simd_path}", code="missing_dataset")
-    if not panel_path.exists():
-        raise ModelError(f"Panel missing: {panel_path}", code="missing_dataset")
     simd = pd.read_csv(simd_path)
-    panel = pd.read_csv(panel_path)
-    last_date = panel["Date"].max()
-    pop_cols = [col for col in ("IntZone", "iz_code") if col in panel.columns]
-    if not pop_cols or "Population" not in panel.columns:
-        raise ModelError("Population table must contain IntZone and Population.", code="missing_dataset")
-    zone_col = pop_cols[0]
-    pop = panel.loc[panel["Date"] == last_date, [zone_col, "Population"]].drop_duplicates(zone_col)
-    pop = pop.rename(columns={zone_col: "iz_code", "Population": "population"})
     simd = simd.rename(columns={"IntZone": "iz_code"})
+    if panel_path.exists():
+        panel = pd.read_csv(panel_path)
+        last_date = panel["Date"].max()
+        pop_cols = [col for col in ("IntZone", "iz_code") if col in panel.columns]
+        if not pop_cols or "Population" not in panel.columns:
+            raise ModelError("Population table must contain IntZone and Population.", code="missing_dataset")
+        zone_col = pop_cols[0]
+        pop = panel.loc[panel["Date"] == last_date, [zone_col, "Population"]].drop_duplicates(zone_col)
+        pop = pop.rename(columns={zone_col: "iz_code", "Population": "population"})
+    elif "total_population" in simd.columns:
+        # Packaged regional results intentionally omit the raw COVID panel.
+        # The frozen SIMD aggregation contains the same planning population.
+        pop = simd[["iz_code", "total_population"]].drop_duplicates("iz_code")
+        pop = pop.rename(columns={"total_population": "population"})
+    else:
+        raise ModelError(
+            f"Population missing: neither {panel_path} nor total_population in {simd_path} is available.",
+            code="missing_dataset",
+        )
     out = forecast.merge(pop, on="iz_code", how="left").merge(
         simd[["iz_code", "income_rate", "pt_gp_min"]],
         on="iz_code",

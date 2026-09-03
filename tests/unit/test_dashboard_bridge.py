@@ -110,6 +110,20 @@ def test_bundle_to_ui_uses_real_population_fields():
     assert isinstance(ui["comparison_df"], pd.DataFrame)
 
 
+def test_region_population_falls_back_to_frozen_simd(tmp_path, monkeypatch):
+    from agent.dashboard_bridge import _population_by_iz
+
+    region = tmp_path / "data" / "results" / "regions" / "S12000049"
+    region.mkdir(parents=True)
+    (region / "simd_iz.csv").write_text(
+        "IntZone,total_population\nIZ1,1234\nIZ2,5678\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr("agent.dashboard_bridge.project_root", lambda: tmp_path)
+
+    assert _population_by_iz("S12000049") == {"IZ1": 1234.0, "IZ2": 5678.0}
+
+
 def test_blocked_bundle_does_not_invent_sites():
     ui = bundle_to_ui(
         {

@@ -747,10 +747,23 @@ def _population_by_iz(area_code: str | None = None) -> dict[str, float]:
     code = str(area_code or EDINBURGH_CA).strip()
     if code not in {EDINBURGH_CA, "", "UNKNOWN"}:
         path = project_root() / "data" / "results" / "regions" / code / "covid" / "fill1.csv"
+        simd_path = project_root() / "data" / "results" / "regions" / code / "simd_iz.csv"
     else:
         path = project_root() / "data" / "results" / PANEL_CSV
+        simd_path = project_root() / "data" / "results" / "simd_iz.csv"
     if not path.exists():
-        return {}
+        if not simd_path.exists():
+            return {}
+        simd = pd.read_csv(simd_path)
+        zone_col = next((name for name in ("IntZone", "iz_code") if name in simd.columns), None)
+        if zone_col is None or "total_population" not in simd.columns:
+            return {}
+        pop = simd[[zone_col, "total_population"]].drop_duplicates(zone_col)
+        return {
+            str(row[0]): float(row[1])
+            for row in pop.itertuples(index=False)
+            if pd.notna(row[1])
+        }
     panel = pd.read_csv(path)
     date_col = "Date" if "Date" in panel.columns else None
     if date_col:
