@@ -1,8 +1,9 @@
-# External artefact manifest
+# Reproduction Artefact Manifest
 
-Large, licensed or generated artefacts are distributed separately from the
-source archive. Preserve the following relative path families when assembling
-the official reproduction bundle.
+The repository includes the frozen processed artefacts required for dashboard
+and submitted-result reproduction. Restricted raw inputs used to rebuild the
+pipeline from the beginning are distributed separately. Preserve the following
+relative paths when staging the controlled raw-data bundle.
 
 | Path family | Contents | Required for |
 |---|---|---|

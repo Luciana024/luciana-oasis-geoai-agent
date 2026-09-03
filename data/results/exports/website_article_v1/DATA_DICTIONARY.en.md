@@ -2,8 +2,6 @@
 
 Location: `data/results/exports/website_article_v1/`
 
-Chinese version: `DATA_DICTIONARY.md`
-
 This note is for collaborators who did not run the model. Read **Section 1 (glossary)** first, then look up files and column names.
 
 In one sentence: for 111 neighbourhoods in Edinburgh, we use the past 7 days of the rolling seven-day infection rate to forecast the rolling seven-day rate **7 days ahead**, with uncertainty every day and an explanation for the last (unverified) day only.
@@ -127,7 +125,6 @@ website_article_v1/
   website/                  → future website (one row per zone and day)
   article/                  → paper tables (rounded for display)
   article/full_precision/   → same tables, full precision
-  DATA_DICTIONARY.md        → Chinese guide
   DATA_DICTIONARY.en.md     → this file
   EXPORT_MANIFEST.json      → file list and checksums
 ```

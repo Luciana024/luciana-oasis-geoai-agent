@@ -33,14 +33,11 @@ tests/         unit and workflow contract tests
 web/           Streamlit dashboard and static assets
 ```
 
-Raw data, trained checkpoints and generated results are intentionally not
-stored in the source archive. See [REPRODUCING.md](REPRODUCING.md) and
-[ARTIFACTS.md](ARTIFACTS.md).
-
-This official submission repository also includes the curated frozen inference
-artefacts documented in [INFERENCE_ARTIFACTS.md](INFERENCE_ARTIFACTS.md). It
-therefore runs the dashboard and reproduces the published Edinburgh/Glasgow
-outputs without downloading the full raw-data archive.
+This official submission repository includes the trained checkpoints and
+curated frozen results needed to run the dashboard and reproduce the submitted
+Edinburgh and Glasgow outputs. Restricted source data used only for training
+from the beginning are distributed separately. See
+[REPRODUCING.md](REPRODUCING.md) and [ARTIFACTS.md](ARTIFACTS.md).
 
 ## Quick verification
 

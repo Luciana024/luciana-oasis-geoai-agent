@@ -16,7 +16,7 @@ Python 3.13.9 was used for the final verification. The commands below use an iso
 ```bash
 git clone https://github.com/Luciana024/luciana-oasis-geoai-agent.git
 cd luciana-oasis-geoai-agent
-git checkout oasis-2026-submission-v5
+git checkout oasis-2026-submission-v6
 ```
 
 The tag identifies the exact reviewed version. Reviewers who want the newest development version may remain on the `main` branch instead.
@@ -106,7 +106,7 @@ The agent is rule-based and tool-using; it is not a large language model. The DC
 - **A module is missing:** confirm that the virtual environment is active and rerun `python -m pip install -e '.[dev,web]'` (use double quotes in PowerShell).
 - **The page shows stale content:** stop the server with `Ctrl+C`, restart it, and refresh the browser without cache.
 
-Full raw-data retraining artefacts are maintained in a separate controlled archive because redistribution rights and file sizes differ from the codebase. See [REPRODUCING.md](REPRODUCING.md), [ARTIFACTS.md](ARTIFACTS.md), and [INFERENCE_ARTIFACTS.md](INFERENCE_ARTIFACTS.md) for the technical reproduction boundaries.
+Full raw-data retraining artefacts are maintained in a separate controlled archive because redistribution rights and file sizes differ from the codebase. See [REPRODUCING.md](REPRODUCING.md) and [ARTIFACTS.md](ARTIFACTS.md) for the technical reproduction boundaries.
 
 ## 9. Restricted raw data for training from scratch
 
