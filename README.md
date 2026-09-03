@@ -52,6 +52,10 @@ Reviewers should follow the complete, platform-specific instructions in
 exact tagged version, install dependencies, verify the tests, start an
 independent local dashboard and reproduce each of the three user tasks.
 
+For a section-by-section explanation of the interface, Agent interactions,
+planning policies, model explanations and result history, see
+[AGENT_INTERFACE_GUIDE.md](AGENT_INTERFACE_GUIDE.md).
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
