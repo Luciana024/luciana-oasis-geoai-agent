@@ -54,7 +54,7 @@ pytest -q
 The expected result is:
 
 ```text
-185 passed, 9 deselected
+186 passed, 9 deselected
 ```
 
 The nine deselected tests rebuild or directly inspect separately distributed raw OpenStreetMap, mobility, lookup, and model-training inputs. Those large or access-controlled inputs are not required to run the dashboard or inspect its frozen results.

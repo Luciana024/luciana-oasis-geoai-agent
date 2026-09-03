@@ -27,14 +27,18 @@ def region_output_dir(area_code: str) -> Path:
 
 
 def region_artefacts_ready(area_code: str) -> bool:
-    """True when this city already has a trained checkpoint and allocation forecast."""
+    """True when this city has a frozen forecast that the dashboard can replay.
+
+    A checkpoint is deliberately not required here.  The standard reviewer
+    workflow displays and reallocates from packaged inference outputs; it does
+    not run model inference or training.
+    """
     code = str(area_code or "").strip()
     if not code or code in {EDINBURGH_CA, "UNKNOWN"}:
         return False
     out = region_output_dir(code)
-    ckpt = out / "model" / "geo_transport_mobility" / "checkpoint.pt"
     forecast = out / "forecast_for_allocation.csv"
-    return ckpt.exists() and ckpt.stat().st_size > 0 and forecast.exists()
+    return forecast.is_file() and forecast.stat().st_size > 0
 
 
 def region_boundaries_path(area_code: str) -> Path:
@@ -118,17 +122,17 @@ def run_new_region_training(request: dict[str, Any]) -> dict[str, Any]:
             "message": "This training step is only for a new city, not Edinburgh.",
         }
 
-    # A packaged city checkpoint must be reusable without any restricted raw
-    # inputs. Check this before resolving OD, COVID, SIMD, or road sources.
+    # A packaged forecast is sufficient for the reviewer workflow.  Check it
+    # before resolving OD, COVID, SIMD, road sources, or a model checkpoint.
+    # The dashboard replays this table and never retrains unless force_retrain
+    # is explicitly requested by a separate developer workflow.
     out = region_output_dir(area_code)
     model_dir = out / "model"
     existing_ckpt = model_dir / "geo_transport_mobility" / "checkpoint.pt"
     existing_forecast = out / "forecast_for_allocation.csv"
     existing_geoshapley = model_dir / "geo_transport_mobility" / "exports" / "geoshapley.csv"
     if (
-        existing_ckpt.is_file()
-        and existing_ckpt.stat().st_size > 0
-        and existing_forecast.is_file()
+        existing_forecast.is_file()
         and existing_forecast.stat().st_size > 0
         and not request.get("force_retrain")
     ):
@@ -147,7 +151,7 @@ def run_new_region_training(request: dict[str, Any]) -> dict[str, Any]:
             "od_path": None,
             "output_dir": str(out),
             "checkpoint_id": f"{area_code}-trained",
-            "checkpoint_path": str(existing_ckpt),
+            "checkpoint_path": str(existing_ckpt) if existing_ckpt.is_file() else None,
             "forecast_path": str(existing_forecast),
             "geoshapley_path": str(existing_geoshapley) if existing_geoshapley.is_file() else None,
             "config_path": str(out / "model.yaml") if (out / "model.yaml").is_file() else None,

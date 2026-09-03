@@ -91,6 +91,32 @@ def test_saved_region_reuse_does_not_require_raw_od(tmp_path, monkeypatch):
     assert result["od_path"] is None
 
 
+def test_frozen_region_replay_does_not_require_checkpoint_or_raw_od(tmp_path, monkeypatch):
+    from agent.region_training import region_artefacts_ready, run_new_region_training
+
+    region = tmp_path / "S12000049"
+    region.mkdir(parents=True)
+    forecast = region / "forecast_for_allocation.csv"
+    forecast.write_text("iz_code,predicted_rate\nIZ1,10.0\nIZ2,20.0\n", encoding="utf-8")
+
+    monkeypatch.setattr("agent.region_training.region_output_dir", lambda _code: region)
+    monkeypatch.setattr(
+        "agent.region_training.default_od_path",
+        lambda _code: (_ for _ in ()).throw(AssertionError("OD must not be accessed")),
+    )
+
+    assert region_artefacts_ready("S12000049") is True
+    result = run_new_region_training(
+        {"area_code": "S12000049", "area_name": "Glasgow City", "force_retrain": False}
+    )
+
+    assert result["status"] == "ok"
+    assert result["retrained"] is False
+    assert result["checkpoint_path"] is None
+    assert result["forecast_path"] == str(forecast)
+    assert result["od_path"] is None
+
+
 def test_regional_allocation_uses_frozen_simd_population_without_panel(tmp_path, monkeypatch):
     from allocation.prepare_inputs import _load_iz_table
 
